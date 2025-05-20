@@ -8,6 +8,8 @@ Mikołaj Nietupski, mnietupski@student.agh.edu.pl
 
 ## Description
 
+This project models a beverage vending machine using AADL (Architecture Analysis & Design Language). The system is composed of multiple interconnected hardware and software components, enabling user interaction, beverage preparation, and resource management.
+
 ### General
 
 ### For user
