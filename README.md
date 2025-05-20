@@ -2,9 +2,9 @@
 
 ## Authors' data
 
-Armatys Konrad, karmatys@student.agh.edu.pl
+Konrad Armatys, karmatys@student.agh.edu.pl
 
-Mikołaj Nietupski, 
+Mikołaj Nietupski, mnietupski@student.agh.edu.pl
 
 ## Description
 
