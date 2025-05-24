@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="8dd89fc1-8a40-4e33-9683-49321a7f61b9" manual="true">
+    <element uuid="638998da-3711-470a-a38d-42064feed8cf" manual="true">
+      <element uuid="78416b43-de28-4f33-8a34-b572ebf84f6a" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>eth</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>Cont_cpu</seg>
+      </bo>
+      <position x="1070.0" y="390.0"/>
+      <size width="175.0" height="64.0"/>
+    </element>
+    <element uuid="45a40568-e068-4360-9ae1-8cd1a8d5ebaa" manual="true">
+      <element uuid="a80b979b-a0a6-4b13-a5f1-71e5cfcb46f1" manual="true">
+        <element uuid="ee14a0af-5f04-44fe-85e1-2fa952cbd392" manual="true" dockArea="right">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>HeatCmd</seg>
+          </bo>
+          <position x="169.34666442871094" y="10.0"/>
+        </element>
+        <element uuid="9eddfc82-deb7-40a9-97a2-a6944d8a4048" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>Temp</seg>
+          </bo>
+          <position y="30.0"/>
+        </element>
+        <element uuid="2d9d11bc-4403-431a-8ac3-aad8a89f9244" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Processor_Binding</seg>
+            <seg>638998da-3711-470a-a38d-42064feed8cf</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>component_instance</seg>
+          <seg>Control</seg>
+        </bo>
+        <position x="120.00000000000011" y="30.0"/>
+        <size width="240.13333129882812" height="118.0"/>
+      </element>
+      <element uuid="352d8a46-6a06-4a6a-a36d-3e2bd763191e" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>ControlIn</seg>
+        </bo>
+        <position y="60.0"/>
+      </element>
+      <element uuid="a361c5dd-f095-4d5c-aa96-fcd05dfb3ac0" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>ControlOut</seg>
+        </bo>
+        <position x="367.97333526611305" y="40.0"/>
+      </element>
+      <element uuid="8cc21ce3-1a14-4584-9af0-be1799a86dfd" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Processor_Binding</seg>
+          <seg>638998da-3711-470a-a38d-42064feed8cf</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>Cont_pr</seg>
+      </bo>
+      <position x="920.0" y="140.0"/>
+      <size width="449.9999999999998" height="190.0"/>
+    </element>
+    <element uuid="2b8ad531-a454-4f42-b923-233e7be915c9" manual="true">
+      <element uuid="91c63a74-f8bc-4ba2-9528-a826ef7e3a46" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>eth</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>Heat_cpu</seg>
+      </bo>
+      <position x="1600.0" y="490.0"/>
+      <size width="176.0" height="64.0"/>
+    </element>
+    <element uuid="a9605c67-31d1-43b8-921a-464a3c18051d" manual="true">
+      <element uuid="fe706945-e7ea-4a5a-b835-c03c5ca3e875" manual="true">
+        <element uuid="aa122d99-59af-4e4e-9d22-516a2861ee06" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>PowerIn</seg>
+          </bo>
+          <position y="14.000000000000057"/>
+        </element>
+        <element uuid="7ad53842-0f6f-406e-a925-2b65342a1bb9" manual="true" dockArea="right">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>PowerOut</seg>
+          </bo>
+          <position x="132.8933334350586"/>
+        </element>
+        <element uuid="16349a59-1b77-44e6-9ca0-f74f0710c99c" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Processor_Binding</seg>
+            <seg>2b8ad531-a454-4f42-b923-233e7be915c9</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>component_instance</seg>
+          <seg>HeaterCtrl</seg>
+        </bo>
+        <position x="110.00000000000045" y="60.00000000000023"/>
+        <size width="208.0" height="90.0"/>
+      </element>
+      <element uuid="33abdb86-b1b6-4815-854a-03d6f71f49f5" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>HeaterIn</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="24e52b7b-9edf-4ad4-8e7c-cb67872c982f" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>HeaterOut</seg>
+        </bo>
+        <position x="371.81333160400436" y="60.00000000000023"/>
+      </element>
+      <element uuid="72ccf86b-5179-4919-9c68-aa89278d3b62" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Processor_Binding</seg>
+          <seg>2b8ad531-a454-4f42-b923-233e7be915c9</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>Heat_pr</seg>
+      </bo>
+      <position x="1469.9999999999995" y="169.99999999999977"/>
+      <size width="450.00000000000045" height="190.00000000000023"/>
+    </element>
+    <element uuid="59e5e2b8-43ed-4367-8f52-2be56615683e" manual="true">
+      <element uuid="3ee4c614-3618-406e-975a-19677776ae0d" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>Power</seg>
+        </bo>
+        <position/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>Heater</seg>
+      </bo>
+      <position x="1950.0" y="230.0"/>
+      <size width="198.0" height="64.0"/>
+    </element>
+    <element uuid="37c04468-be95-4d5d-8669-76fa7749469a" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>Mag_bus</seg>
+      </bo>
+      <position x="1070.0" y="520.0"/>
+      <size width="109.0" height="35.0"/>
+    </element>
+    <element uuid="cbd7b204-58d1-4925-853e-8e2bba94cc94" manual="true">
+      <element uuid="733e65f2-15d4-4660-865b-766bfbe4fa73" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>eth</seg>
+        </bo>
+        <position x="144.42666625976562" y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>Read_cpu</seg>
+      </bo>
+      <position x="540.0" y="480.0"/>
+      <size width="177.0" height="64.0"/>
+    </element>
+    <element uuid="009bb98e-af23-405c-a6f6-6faefb847579" manual="true">
+      <element uuid="d9c67a30-4b24-43e8-9670-a45c0cc8c1b2" manual="true">
+        <element uuid="59378694-1632-4f82-8544-4b24d93d180c" manual="true" dockArea="right">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>Temp</seg>
+          </bo>
+          <position x="205.23999786376953" y="30.0"/>
+        </element>
+        <element uuid="9843af31-894c-4f1d-ac72-137f54ab0752" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>TempIn</seg>
+          </bo>
+          <position y="30.0"/>
+        </element>
+        <element uuid="7bbf3021-898e-4144-b2d5-5a48718179ce" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Processor_Binding</seg>
+            <seg>cbd7b204-58d1-4925-853e-8e2bba94cc94</seg>
+          </bo>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>component_instance</seg>
+          <seg>TempReader</seg>
+        </bo>
+        <position x="59.99999999999997" y="40.0"/>
+        <size width="252.83999633789062" height="118.0"/>
+      </element>
+      <element uuid="900f6e0f-cb98-433a-9c77-9f50c12a7a7c" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>SensorIn</seg>
+        </bo>
+        <position y="70.0"/>
+      </element>
+      <element uuid="dc68fad5-b1b8-4d1b-ba4e-adcec8153081" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>SensorOut</seg>
+        </bo>
+        <position x="281.4933319091797" y="70.0"/>
+      </element>
+      <element uuid="860436c2-3027-46d0-b816-ab50aec27436" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Processor_Binding</seg>
+          <seg>cbd7b204-58d1-4925-853e-8e2bba94cc94</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>Read_pr</seg>
+      </bo>
+      <position x="430.0" y="130.0"/>
+      <size width="360.0" height="190.0"/>
+    </element>
+    <element uuid="0471adc8-c700-4a68-b84c-feab975be26e" manual="true">
+      <element uuid="9d328a07-1d04-464d-ab34-06faa9c1d053" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>Temp</seg>
+        </bo>
+        <position x="142.4000015258789" y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>Sensor</seg>
+      </bo>
+      <position x="130.0" y="190.0"/>
+      <size width="190.0" height="64.0"/>
+    </element>
+    <element uuid="be20a9cd-020f-4430-a510-4388039f6eee" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>c_to_h : TempControlSystem_impl_Instance.Cont_pr.ControlOut -> TempControlSystem_impl_Instance.Heat_pr.HeaterIn</seg>
+      </bo>
+    </element>
+    <element uuid="7e2d6ed9-c77a-4a70-96ae-6ae68499b973" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn1 : TempControlSystem_impl_Instance.Read_pr.SensorIn -> TempControlSystem_impl_Instance.Read_pr.TempReader.TempIn</seg>
+      </bo>
+    </element>
+    <element uuid="bf8b85b6-0997-4e16-9a90-4ae04adee829" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn2 : TempControlSystem_impl_Instance.Read_pr.TempReader.Temp -> TempControlSystem_impl_Instance.Read_pr.SensorOut</seg>
+      </bo>
+    </element>
+    <element uuid="d25d505c-71c7-41c7-8086-01329a6ca5cc" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn3 : TempControlSystem_impl_Instance.Cont_pr.ControlIn -> TempControlSystem_impl_Instance.Cont_pr.Control.Temp</seg>
+      </bo>
+    </element>
+    <element uuid="09f3cdb4-fcd5-4f97-832b-12fc92a57244" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn4 : TempControlSystem_impl_Instance.Cont_pr.Control.HeatCmd -> TempControlSystem_impl_Instance.Cont_pr.ControlOut</seg>
+      </bo>
+    </element>
+    <element uuid="7434a7af-f942-4d57-b1eb-ff8f7f38af52" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn5 : TempControlSystem_impl_Instance.Heat_pr.HeaterIn -> TempControlSystem_impl_Instance.Heat_pr.HeaterCtrl.PowerIn</seg>
+      </bo>
+    </element>
+    <element uuid="8213ecb0-69a1-493e-bf76-ad7433d35d7d" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn6 : TempControlSystem_impl_Instance.Heat_pr.HeaterCtrl.PowerOut -> TempControlSystem_impl_Instance.Heat_pr.HeaterOut</seg>
+      </bo>
+    </element>
+    <element uuid="43a1e84f-f056-419b-a7ef-bbbf526dadec" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>eth1 : TempControlSystem_impl_Instance.Read_cpu.eth -> TempControlSystem_impl_Instance.Mag_bus</seg>
+      </bo>
+    </element>
+    <element uuid="b1d230b4-9ad6-4f6c-8284-75418b4d0d11" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>eth2 : TempControlSystem_impl_Instance.Mag_bus -> TempControlSystem_impl_Instance.Cont_cpu.eth</seg>
+      </bo>
+    </element>
+    <element uuid="a968e8e3-0f4f-4f40-8b36-f895c4f1940a" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>eth3 : TempControlSystem_impl_Instance.Mag_bus -> TempControlSystem_impl_Instance.Heat_cpu.eth</seg>
+      </bo>
+    </element>
+    <element uuid="bc8f3f2b-195f-4f61-a7ab-3f63d874ed4e" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>h_to_he : TempControlSystem_impl_Instance.Heat_pr.HeaterOut -> TempControlSystem_impl_Instance.Heater.Power</seg>
+      </bo>
+    </element>
+    <element uuid="7be5e785-0976-4ff6-918a-45f78a5940d9" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>r_to_c : TempControlSystem_impl_Instance.Read_pr.SensorOut -> TempControlSystem_impl_Instance.Cont_pr.ControlIn</seg>
+      </bo>
+    </element>
+    <element uuid="c830442d-4ba9-4e17-95e6-0e693e3d2b6d" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>s_to_r : TempControlSystem_impl_Instance.Sensor.Temp -> TempControlSystem_impl_Instance.Read_pr.SensorIn</seg>
+      </bo>
+    </element>
+    <bo>
+      <seg>org.osate.ge.diagrams.instance</seg>
+      <seg>system_instance</seg>
+      <seg>/exampleem/instances/lab5_6_pak_tempcontrolsystem_impl_instance.aaxl2</seg>
+    </bo>
+    <position x="-530.0" y="-29.999999999999986"/>
+    <size width="2220.0" height="710.0"/>
+  </element>
+  <config type="structure" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties>
+      <property>deployment_properties::allowed_connection_binding</property>
+      <property>deployment_properties::actual_processor_binding</property>
+    </enabledAadlProperties>
+    <context>
+      <seg>org.osate.ge.diagrams.instance</seg>
+      <seg>system_instance</seg>
+      <seg>/exampleem/instances/lab5_6_pak_tempcontrolsystem_impl_instance.aaxl2</seg>
+    </context>
+  </config>
+</diagram:Diagram>
