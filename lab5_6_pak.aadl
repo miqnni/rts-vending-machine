@@ -1,6 +1,5 @@
 package lab5_6_pak
 public
-	with Base_Types; -- np. Base_Types::Character
 	with Data_Model;
 	
 	
@@ -156,5 +155,184 @@ public
 	  Actual_Processor_Binding => (reference(Heat_cpu)) applies to Heat_pr;
 	      
   end TempControlSystem.impl;
+  
+	data TeaLeavesAmount
+	  properties
+	    Data_Model::Data_Representation => Integer;
+	end TeaLeavesAmount;
+	
+	data LiquidTea
+	  properties
+	    Data_Model::Data_Representation => Integer;
+	end LiquidTea;
+	
+	device TeaLeavesDispenser
+	  features
+	    LeavesOut : out data port TeaLeavesAmount;
+	end TeaLeavesDispenser;
+	
+	device implementation TeaLeavesDispenser.impl
+	end TeaLeavesDispenser.impl;
+	
+	device TeaCooker
+	  features
+	    LeavesIn : in data port TeaLeavesAmount;
+	    -- WaterIn : in data port Water;
+	    TeaOut   : out data port LiquidTea;
+	end TeaCooker;
+	
+	device implementation TeaCooker.impl
+	end TeaCooker.impl;
+	
+	thread TeaController
+	  features
+	    TeaOut   : out data port LiquidTea;
+	    StartCmd : in data port StartSignal;
+	  properties
+	    Dispatch_Protocol => Periodic;
+	    Period => 800ms;
+	    Compute_Execution_Time => 1ms..3ms;
+	end TeaController;
+	
+	thread implementation TeaController.impl
+	end TeaController.impl;
+	
+	process TeaProcess
+	  features
+	    StartSignal : in data port StartSignal;
+	    TeaOut      : out data port LiquidTea;
+	end TeaProcess;
+	
+	process implementation TeaProcess.impl
+	  subcomponents
+	    teaLogic : thread TeaController.impl;
+	  connections
+	    conn9  : port StartSignal -> teaLogic.StartCmd;
+	    conn10 : port teaLogic.TeaOut -> TeaOut;
+	end TeaProcess.impl;
+	
+	data BeanAmount
+	  properties
+	    Data_Model::Data_Representation => Integer;
+	end BeanAmount;
+	
+	data GroundCoffee
+	  properties
+	    Data_Model::Data_Representation => Integer;
+	end GroundCoffee;
+	
+	data LiquidCoffee
+	  properties
+	    Data_Model::Data_Representation => Integer;
+	end LiquidCoffee;
+	
+	device CoffeeBeansStorage
+	  features
+	    -- SignalIn : in data port BeanSignal; -- pseudo code
+	    BeansOut : out data port BeanAmount;
+	end CoffeeBeansStorage;
+	
+	device implementation CoffeeBeansStorage.impl
+	end CoffeeBeansStorage.impl;
+	
+	device CoffeeGrinder
+	  features
+	    BeansIn   : in data port BeanAmount;
+	    GroundOut : out data port GroundCoffee;
+	end CoffeeGrinder;
+	
+	device implementation CoffeeGrinder.impl
+	end CoffeeGrinder.impl;
+	
+	device CoffeeBrewer
+	  features
+	    GroundIn  : in data port GroundCoffee;
+	    -- WaterIn : in data port Water;
+	    -- MilkIn  : in data port Milk;
+	    CoffeeOut : out data port LiquidCoffee;
+	end CoffeeBrewer;
+	
+	device implementation CoffeeBrewer.impl
+	end CoffeeBrewer.impl;
+	
+	thread CoffeeController
+	  features
+	    LiquidSend : out data port LiquidCoffee;
+	    StartCmd   : in data port StartSignal;
+	  properties
+	    Dispatch_Protocol => Periodic;
+	    Period => 800ms;
+	    Compute_Execution_Time => 1ms..3ms;
+	end CoffeeController;
+	
+	thread implementation CoffeeController.impl
+	end CoffeeController.impl;
+	
+	process CoffeeProcess
+	  features
+	    StartSignal : in data port StartSignal;
+	    CoffeeOut   : out data port LiquidCoffee;
+	end CoffeeProcess;
+	
+	process implementation CoffeeProcess.impl
+	  subcomponents
+	    coffeeLogic : thread CoffeeController.impl;
+	  connections
+	    conn7 : port StartSignal -> coffeeLogic.StartCmd;
+	    conn8 : port coffeeLogic.LiquidSend -> CoffeeOut;
+	end CoffeeProcess.impl;
+	
+	data StartSignal
+	  properties
+	    Data_Model::Data_Representation => Boolean;
+	end StartSignal;
+	
+	bus ethBus
+	end ethBus;
+	
+	processor CoffeeCPU
+	  features
+	    net : requires bus access ethBus;
+	  properties
+	    Scheduling_Protocol => (Round_Robin_Protocol);
+	    Clock_Period => 1ms;
+	    Timing_Properties::Processor_Capacity => 1.0 MIPS;
+	end CoffeeCPU;
+	
+	processor TeaCPU
+	  features
+	    net : requires bus access ethBus;
+	  properties
+	    Scheduling_Protocol => (Round_Robin_Protocol);
+	    Clock_Period => 1ms;
+	    Timing_Properties::Processor_Capacity => 1.0 MIPS;
+	end TeaCPU;
+	
+	system CoffeeTeaMachineSystem
+	end CoffeeTeaMachineSystem;
+	
+	system implementation CoffeeTeaMachineSystem.impl
+	  subcomponents
+	    BeanStorage   : device CoffeeBeansStorage.impl;
+	    Grinder       : device CoffeeGrinder.impl;
+	    Brewer        : device CoffeeBrewer.impl;
+	    TeaDispense   : device TeaLeavesDispenser.impl;
+	    Cooker        : device TeaCooker.impl;
+	    CoffeeProc    : process CoffeeProcess.impl;
+	    TeaProc       : process TeaProcess.impl;
+	    CPU_Coffee    : processor CoffeeCPU;
+	    CPU_Tea       : processor TeaCPU;
+	    Network       : bus ethBus;
+	  connections
+	    conn1 : port BeanStorage.BeansOut -> Grinder.BeansIn;
+	    conn2 : port Grinder.GroundOut    -> Brewer.GroundIn;
+	    conn3 : port TeaDispense.LeavesOut -> Cooker.LeavesIn;
+	  properties
+	    Actual_Processor_Binding => (reference(CPU_Coffee)) applies to CoffeeProc;
+	    Actual_Processor_Binding => (reference(CPU_Tea))    applies to TeaProc;
+	    Actual_Connection_Binding => (reference(Network)) applies to conn1;
+	    Actual_Connection_Binding => (reference(Network)) applies to conn2;
+	    Actual_Connection_Binding => (reference(Network)) applies to conn3;
+	end CoffeeTeaMachineSystem.impl;
 	
 end lab5_6_pak;
