@@ -26,7 +26,7 @@
             <seg>feature_instance</seg>
             <seg>HeatCmd</seg>
           </bo>
-          <position x="169.34666442871094" y="10.0"/>
+          <position x="171.68489837646484" y="10.0"/>
         </element>
         <element uuid="9eddfc82-deb7-40a9-97a2-a6944d8a4048" manual="true" dockArea="left">
           <bo>
@@ -48,8 +48,8 @@
           <seg>component_instance</seg>
           <seg>Control</seg>
         </bo>
-        <position x="120.00000000000011" y="30.0"/>
-        <size width="240.13333129882812" height="118.0"/>
+        <position x="120.0" y="30.0"/>
+        <size width="240.0" height="118.0"/>
       </element>
       <element uuid="352d8a46-6a06-4a6a-a36d-3e2bd763191e" manual="true" dockArea="left">
         <bo>
@@ -65,7 +65,7 @@
           <seg>feature_instance</seg>
           <seg>ControlOut</seg>
         </bo>
-        <position x="367.97333526611305" y="40.0"/>
+        <position x="373.52735137939453" y="40.0"/>
       </element>
       <element uuid="8cc21ce3-1a14-4584-9af0-be1799a86dfd" manual="true">
         <bo>
@@ -80,7 +80,7 @@
         <seg>Cont_pr</seg>
       </bo>
       <position x="920.0" y="140.0"/>
-      <size width="449.9999999999998" height="190.0"/>
+      <size width="450.0" height="190.0"/>
     </element>
     <element uuid="2b8ad531-a454-4f42-b923-233e7be915c9" manual="true">
       <element uuid="91c63a74-f8bc-4ba2-9528-a826ef7e3a46" manual="true" dockArea="left">
@@ -107,7 +107,7 @@
             <seg>feature_instance</seg>
             <seg>PowerIn</seg>
           </bo>
-          <position y="14.000000000000057"/>
+          <position y="14.0"/>
         </element>
         <element uuid="7ad53842-0f6f-406e-a925-2b65342a1bb9" manual="true" dockArea="right">
           <bo>
@@ -115,7 +115,7 @@
             <seg>feature_instance</seg>
             <seg>PowerOut</seg>
           </bo>
-          <position x="132.8933334350586"/>
+          <position x="136.71614837646484"/>
         </element>
         <element uuid="16349a59-1b77-44e6-9ca0-f74f0710c99c" manual="true">
           <bo>
@@ -129,7 +129,7 @@
           <seg>component_instance</seg>
           <seg>HeaterCtrl</seg>
         </bo>
-        <position x="110.00000000000045" y="60.00000000000023"/>
+        <position x="110.0" y="60.0"/>
         <size width="208.0" height="90.0"/>
       </element>
       <element uuid="33abdb86-b1b6-4815-854a-03d6f71f49f5" manual="true" dockArea="left">
@@ -146,7 +146,7 @@
           <seg>feature_instance</seg>
           <seg>HeaterOut</seg>
         </bo>
-        <position x="371.81333160400436" y="60.00000000000023"/>
+        <position x="376.48958587646484" y="60.0"/>
       </element>
       <element uuid="72ccf86b-5179-4919-9c68-aa89278d3b62" manual="true">
         <bo>
@@ -160,8 +160,8 @@
         <seg>component_instance</seg>
         <seg>Heat_pr</seg>
       </bo>
-      <position x="1469.9999999999995" y="169.99999999999977"/>
-      <size width="450.00000000000045" height="190.00000000000023"/>
+      <position x="1470.0" y="170.0"/>
+      <size width="450.0" height="190.0"/>
     </element>
     <element uuid="59e5e2b8-43ed-4367-8f52-2be56615683e" manual="true">
       <element uuid="3ee4c614-3618-406e-975a-19677776ae0d" manual="true" dockArea="left">
@@ -196,7 +196,7 @@
           <seg>feature_instance</seg>
           <seg>eth</seg>
         </bo>
-        <position x="144.42666625976562" y="10.0"/>
+        <position x="146.46484375" y="10.0"/>
       </element>
       <bo>
         <seg>org.osate.ge.diagrams.instance</seg>
@@ -214,7 +214,7 @@
             <seg>feature_instance</seg>
             <seg>Temp</seg>
           </bo>
-          <position x="205.23999786376953" y="30.0"/>
+          <position x="206.91796875" y="30.0"/>
         </element>
         <element uuid="9843af31-894c-4f1d-ac72-137f54ab0752" manual="true" dockArea="left">
           <bo>
@@ -236,8 +236,8 @@
           <seg>component_instance</seg>
           <seg>TempReader</seg>
         </bo>
-        <position x="59.99999999999997" y="40.0"/>
-        <size width="252.83999633789062" height="118.0"/>
+        <position x="60.0" y="40.0"/>
+        <size width="253.0" height="118.0"/>
       </element>
       <element uuid="900f6e0f-cb98-433a-9c77-9f50c12a7a7c" manual="true" dockArea="left">
         <bo>
@@ -253,7 +253,7 @@
           <seg>feature_instance</seg>
           <seg>SensorOut</seg>
         </bo>
-        <position x="281.4933319091797" y="70.0"/>
+        <position x="284.26302337646484" y="70.0"/>
       </element>
       <element uuid="860436c2-3027-46d0-b816-ab50aec27436" manual="true">
         <bo>
@@ -277,7 +277,7 @@
           <seg>feature_instance</seg>
           <seg>Temp</seg>
         </bo>
-        <position x="142.4000015258789" y="10.0"/>
+        <position x="143.91796875" y="10.0"/>
       </element>
       <bo>
         <seg>org.osate.ge.diagrams.instance</seg>
@@ -381,9 +381,9 @@
     <bo>
       <seg>org.osate.ge.diagrams.instance</seg>
       <seg>system_instance</seg>
-      <seg>/exampleem/instances/lab5_6_pak_tempcontrolsystem_impl_instance.aaxl2</seg>
+      <seg>/vendingmachine/instances/lab5_6_pak_tempcontrolsystem_impl_instance.aaxl2</seg>
     </bo>
-    <position x="-530.0" y="-29.999999999999986"/>
+    <position x="-530.0" y="-30.0"/>
     <size width="2220.0" height="710.0"/>
   </element>
   <config type="structure" connectionPrimaryLabelsVisible="false">
@@ -394,7 +394,7 @@
     <context>
       <seg>org.osate.ge.diagrams.instance</seg>
       <seg>system_instance</seg>
-      <seg>/exampleem/instances/lab5_6_pak_tempcontrolsystem_impl_instance.aaxl2</seg>
+      <seg>/vendingmachine/instances/lab5_6_pak_tempcontrolsystem_impl_instance.aaxl2</seg>
     </context>
   </config>
 </diagram:Diagram>
