@@ -1,3 +1,9 @@
+-- This is the main file, which defines
+-- all components (both hardware and software),
+-- the implementation of those components,
+-- and the resulting system:
+-- `CoffeeTeaMachineSystem`.
+
 package lab5_6_pak
 public
 	with Data_Model;
@@ -13,149 +19,168 @@ public
       Data_Model::Data_Representation => Boolean;
   end HeaterControlType;
   
-  device TempSensor
-    features
-      Temp : out data port TemperatureType;
-  end TempSensor;
-
-  device implementation TempSensor.impl
-  end TempSensor.impl;
+  -- ################ OLD PROJECT start ################
   
-  device Heater
-    features
-      Power : in data port HeaterControlType;
-  end Heater;
-
-  device implementation Heater.impl
-  end Heater.impl;
+--  -- [OLD PROJECT]
+--  device TempSensor
+--    features
+--      Temp : out data port TemperatureType;
+--  end TempSensor;
+--
+--  device implementation TempSensor.impl
+--  end TempSensor.impl;
+--  
+--  -- [OLD PROJECT]
+--  device Heater
+--    features
+--      Power : in data port HeaterControlType;
+--  end Heater;
+--
+--  device implementation Heater.impl
+--  end Heater.impl;
+--  
+--  
+--  -- [OLD PROJECT] Threads (1/3)
+--  thread TempReader
+--    features
+--      TempIn : in data port TemperatureType;
+--      Temp   : out data port TemperatureType;
+--    properties
+--      Dispatch_Protocol => Periodic;
+--      Period => 800ms;
+--      Compute_Execution_Time => 0ms..2ms;
+--  end TempReader;
+--
+--  thread implementation TempReader.impl
+--  end TempReader.impl;
+--  
+--  -- [OLD PROJECT] Threads (2/3)
+--  thread ControlLogic
+--    features
+--      Temp    : in data port TemperatureType;
+--      HeatCmd : out data port HeaterControlType;
+--    properties
+--      Dispatch_Protocol => Periodic;
+--      Period => 800ms;
+--      Compute_Execution_Time => 0ms..2ms;
+--  end ControlLogic;
+--
+--  thread implementation ControlLogic.impl
+--  end ControlLogic.impl;
+--  
+--  -- [OLD PROJECT] Threads (2/3)
+--  thread HeaterDriver
+--    features
+--      PowerIn : in data port HeaterControlType;
+--      PowerOut: out data port HeaterControlType;
+--    properties
+--      Dispatch_Protocol => Periodic;
+--      Period => 800ms;
+--      Compute_Execution_Time => 0ms..2ms;
+--  end HeaterDriver;
+--
+--  thread implementation HeaterDriver.impl
+--  end HeaterDriver.impl;
+--  
+--  -- [OLD PROJECT] Bus
+--  bus ethernet
+--  end ethernet;
+--  
+--  -- [OLD PROJECT] Processor (there are THREE of them)
+--  processor corei5
+--   		features
+--			eth: requires bus access ethernet;
+--   		properties
+--			Scheduling_Protocol => (Round_Robin_Protocol);
+--			Clock_Period => 1 ms;	
+--        	Timing_Properties::Processor_Capacity => 1.0 MIPS;
+--	end corei5;
+--  
+--  -- [OLD PROJECT] Processes containing threads (1/3)
+--  process Reader
+--  	features
+--    	SensorIn  : in data port TemperatureType;
+--    	SensorOut : out data port TemperatureType;
+--  end Reader;
+--
+--  process implementation Reader.impl
+--    subcomponents
+--      TempReader : thread TempReader.impl;
+--    connections
+--      conn1 : port SensorIn -> TempReader.TempIn;
+--      conn2 : port TempReader.Temp -> SensorOut;
+--  end Reader.impl;
+--
+--  -- [OLD PROJECT] Processes containing threads (2/3)
+--  process Controller
+--  	features
+--    	ControlIn  : in data port TemperatureType;
+--    	ControlOut : out data port HeaterControlType;
+--  end Controller;
+--
+--  process implementation Controller.impl
+--    subcomponents
+--      Control    : thread ControlLogic.impl;
+--    connections
+--      conn3 : port ControlIn -> Control.Temp;
+--      conn4 : port Control.HeatCmd -> ControlOut;
+--  end Controller.impl;
+--
+--  -- [OLD PROJECT] Processes containing threads (2/3)
+--  process Heat
+--  	features
+--  		HeaterIn  : in data port HeaterControlType;
+--    	HeaterOut : out data port HeaterControlType;
+--  end Heat;
+--
+--  process implementation Heat.impl
+--    subcomponents
+--      HeaterCtrl : thread HeaterDriver.impl;
+--    connections
+--      conn5 : port HeaterIn -> HeaterCtrl.PowerIn;
+--      conn6 : port HeaterCtrl.PowerOut -> HeaterOut;
+--  end Heat.impl;
+--  
+--  -- [OLD PROJECT] The system composed of the defined [OLD PROJECT]
+--  -- components. They can be found in the implementation below.
+--  system TempControlSystem
+--  end TempControlSystem;
+--
+--  system implementation TempControlSystem.impl
+--    subcomponents
+--      Sensor  : device TempSensor.impl;
+--      Heater  : device Heater.impl;
+--      Read_pr : process Reader.impl;
+--      Cont_pr : process Controller.impl;
+--      Heat_pr : process Heat.impl;
+--      Read_cpu: processor corei5;
+--	  Cont_cpu: processor corei5;
+--	  Heat_cpu: processor corei5;
+--	  Mag_bus : bus ethernet;
+--  	connections
+--  	  eth1: bus access Read_cpu.eth -> Mag_bus;
+--	  eth2: bus access Mag_bus -> Cont_cpu.eth;
+--	  eth3: bus access Mag_bus -> Heat_cpu.eth;
+--	  s_to_r : port Sensor.Temp -> Read_pr.SensorIn;
+--      r_to_c : port Read_pr.SensorOut -> Cont_pr.ControlIn;
+--      c_to_h : port Cont_pr.ControlOut -> Heat_pr.HeaterIn;
+--      h_to_he: port Heat_pr.HeaterOut -> Heater.Power;
+--    properties
+--	  Actual_Connection_Binding  => (reference(Mag_bus)) applies to r_to_c;
+--	  Actual_Connection_Binding  => (reference(Mag_bus)) applies to c_to_h;
+--	  Actual_Processor_Binding => (reference(Read_cpu))  applies to Read_pr;
+--	  Actual_Processor_Binding => (reference(Cont_cpu)) applies to Cont_pr;
+--	  Actual_Processor_Binding => (reference(Heat_cpu)) applies to Heat_pr;
+--	      
+--  end TempControlSystem.impl;
   
-  thread TempReader
-    features
-      TempIn : in data port TemperatureType;
-      Temp   : out data port TemperatureType;
-    properties
-      Dispatch_Protocol => Periodic;
-      Period => 800ms;
-      Compute_Execution_Time => 0ms..2ms;
-  end TempReader;
-
-  thread implementation TempReader.impl
-  end TempReader.impl;
-  
-  
-  thread ControlLogic
-    features
-      Temp    : in data port TemperatureType;
-      HeatCmd : out data port HeaterControlType;
-    properties
-      Dispatch_Protocol => Periodic;
-      Period => 800ms;
-      Compute_Execution_Time => 0ms..2ms;
-  end ControlLogic;
-
-  thread implementation ControlLogic.impl
-  end ControlLogic.impl;
-  
-  
-  thread HeaterDriver
-    features
-      PowerIn : in data port HeaterControlType;
-      PowerOut: out data port HeaterControlType;
-    properties
-      Dispatch_Protocol => Periodic;
-      Period => 800ms;
-      Compute_Execution_Time => 0ms..2ms;
-  end HeaterDriver;
-
-  thread implementation HeaterDriver.impl
-  end HeaterDriver.impl;
-  
-  bus ethernet
-  end ethernet;
-  
-  processor corei5
-   		features
-			eth: requires bus access ethernet;
-   		properties
-			Scheduling_Protocol => (Round_Robin_Protocol);
-			Clock_Period => 1 ms;	
-        	Timing_Properties::Processor_Capacity => 1.0 MIPS;
-	end corei5;
-  
-  process Reader
-  	features
-    	SensorIn  : in data port TemperatureType;
-    	SensorOut : out data port TemperatureType;
-  end Reader;
-
-  process implementation Reader.impl
-    subcomponents
-      TempReader : thread TempReader.impl;
-    connections
-      conn1 : port SensorIn -> TempReader.TempIn;
-      conn2 : port TempReader.Temp -> SensorOut;
-  end Reader.impl;
-  
-  process Controller
-  	features
-    	ControlIn  : in data port TemperatureType;
-    	ControlOut : out data port HeaterControlType;
-  end Controller;
-
-  process implementation Controller.impl
-    subcomponents
-      Control    : thread ControlLogic.impl;
-    connections
-      conn3 : port ControlIn -> Control.Temp;
-      conn4 : port Control.HeatCmd -> ControlOut;
-  end Controller.impl;
-  
-  process Heat
-  	features
-  		HeaterIn  : in data port HeaterControlType;
-    	HeaterOut : out data port HeaterControlType;
-  end Heat;
-
-  process implementation Heat.impl
-    subcomponents
-      HeaterCtrl : thread HeaterDriver.impl;
-    connections
-      conn5 : port HeaterIn -> HeaterCtrl.PowerIn;
-      conn6 : port HeaterCtrl.PowerOut -> HeaterOut;
-  end Heat.impl;
-  
-  
-  system TempControlSystem
-  end TempControlSystem;
-
-  system implementation TempControlSystem.impl
-    subcomponents
-      Sensor  : device TempSensor.impl;
-      Heater  : device Heater.impl;
-      Read_pr : process Reader.impl;
-      Cont_pr : process Controller.impl;
-      Heat_pr : process Heat.impl;
-      Read_cpu: processor corei5;
-	  Cont_cpu: processor corei5;
-	  Heat_cpu: processor corei5;
-	  Mag_bus : bus ethernet;
-  	connections
-  	  eth1: bus access Read_cpu.eth -> Mag_bus;
-	  eth2: bus access Mag_bus -> Cont_cpu.eth;
-	  eth3: bus access Mag_bus -> Heat_cpu.eth;
-	  s_to_r : port Sensor.Temp -> Read_pr.SensorIn;
-      r_to_c : port Read_pr.SensorOut -> Cont_pr.ControlIn;
-      c_to_h : port Cont_pr.ControlOut -> Heat_pr.HeaterIn;
-      h_to_he: port Heat_pr.HeaterOut -> Heater.Power;
-    properties
-	  Actual_Connection_Binding  => (reference(Mag_bus)) applies to r_to_c;
-	  Actual_Connection_Binding  => (reference(Mag_bus)) applies to c_to_h;
-	  Actual_Processor_Binding => (reference(Read_cpu))  applies to Read_pr;
-	  Actual_Processor_Binding => (reference(Cont_cpu)) applies to Cont_pr;
-	  Actual_Processor_Binding => (reference(Heat_cpu)) applies to Heat_pr;
-	      
-  end TempControlSystem.impl;
-  
+    -- ################ OLD PROJECT end ################
+    -- ################ NEW PROJECT start ################
+    
+    
+    -- DATA: describes types of information sent
+    -- through the ports.
+    
 	data TeaLeavesAmount
 	  properties
 	    Data_Model::Data_Representation => Integer;
@@ -166,6 +191,11 @@ public
 	    Data_Model::Data_Representation => Integer;
 	end LiquidTea;
 	
+	
+	-- DEVICES: these are the **hardware** components.
+	-- They contain input and output ports, through which
+	-- information is sent.
+	
 	device TeaLeavesDispenser
 	  features
 	    LeavesOut : out data port TeaLeavesAmount;
@@ -173,6 +203,7 @@ public
 	
 	device implementation TeaLeavesDispenser.impl
 	end TeaLeavesDispenser.impl;
+	
 	
 	device TeaCooker
 	  features
@@ -183,6 +214,9 @@ public
 	
 	device implementation TeaCooker.impl
 	end TeaCooker.impl;
+	
+	
+	-- THREADS: control logic
 	
 	thread TeaController
 	  features
@@ -196,6 +230,10 @@ public
 	
 	thread implementation TeaController.impl
 	end TeaController.impl;
+
+
+	-- PROCESSES: they contain a proper thread and communicate
+	-- with the surroundings.
 	
 	process TeaProcess
 	  features
@@ -205,11 +243,19 @@ public
 	
 	process implementation TeaProcess.impl
 	  subcomponents
-	    teaLogic : thread TeaController.impl;
+	    teaLogic : thread TeaController.impl;  -- contained thread
 	  connections
 	    conn9  : port StartSignal -> teaLogic.StartCmd;
 	    conn10 : port teaLogic.TeaOut -> TeaOut;
 	end TeaProcess.impl;
+
+
+	-- The same things (data, devices, etc.) as above,
+	-- but this time for COFFEE (instead of TEA).
+
+	
+	-- Coffee DATA:
+	-- bean amount, ground coffee, liquid coffee
 	
 	data BeanAmount
 	  properties
@@ -226,6 +272,10 @@ public
 	    Data_Model::Data_Representation => Integer;
 	end LiquidCoffee;
 	
+	
+	-- Coffee DEVICES:
+	-- coffee beans storage, coffee grinder, coffee brewer
+	
 	device CoffeeBeansStorage
 	  features
 	    -- SignalIn : in data port BeanSignal; -- pseudo code
@@ -235,6 +285,7 @@ public
 	device implementation CoffeeBeansStorage.impl
 	end CoffeeBeansStorage.impl;
 	
+	
 	device CoffeeGrinder
 	  features
 	    BeansIn   : in data port BeanAmount;
@@ -243,6 +294,7 @@ public
 	
 	device implementation CoffeeGrinder.impl
 	end CoffeeGrinder.impl;
+	
 	
 	device CoffeeBrewer
 	  features
@@ -254,6 +306,9 @@ public
 	
 	device implementation CoffeeBrewer.impl
 	end CoffeeBrewer.impl;
+	
+	
+	-- Coffee THREADS
 	
 	thread CoffeeController
 	  features
@@ -267,6 +322,9 @@ public
 	
 	thread implementation CoffeeController.impl
 	end CoffeeController.impl;
+	
+	
+	-- Coffee PROCESSES
 	
 	process CoffeeProcess
 	  features
@@ -287,8 +345,14 @@ public
 	    Data_Model::Data_Representation => Boolean;
 	end StartSignal;
 	
+	
+	-- BUS: used for communication.
+	
 	bus ethBus
 	end ethBus;
+	
+	
+	-- PROCESSORS: for coffee and tea.
 	
 	processor CoffeeCPU
 	  features
@@ -308,8 +372,205 @@ public
 	    Timing_Properties::Processor_Capacity => 1.0 MIPS;
 	end TeaCPU;
 	
+	
+	-- Coin Mechanism components
+		
+	data CoinSignal
+	  properties
+	    Data_Model::Data_Representation => Boolean;
+	end CoinSignal;
+	
+	data CoinValue
+	  properties
+	    Data_Model::Data_Representation => Integer;
+	end CoinValue;
+	  
+	data BillValue
+	  properties
+		Data_Model::Data_Representation => Integer;
+	end BillValue;
+	
+	data CardAuthSignal
+	  properties
+	    Data_Model::Data_Representation => Boolean;
+	end CardAuthSignal;
+	 
+	data TouchInput
+	  properties
+	    Data_Model::Data_Representation => Integer;
+	end TouchInput;
+	
+	data UserCommand
+	  properties
+	    Data_Model::Data_Representation => Integer;
+	end UserCommand;
+	
+	-- Data for additional payment mechanism / process
+	-- (integrating coins, notes and card).
+	data PaymentReady
+	  properties
+	    Data_Model::Data_Representation => Boolean;
+	end PaymentReady;
+	
+	data PaymentAmount
+	  properties
+	    Data_Model::Data_Representation => Integer;
+	end PaymentAmount;
+	
+	
+	device CoinMechanism
+	  features
+	    -- E.g. an impulse from the sensor that detects
+	    -- a coin being inserted.
+	    CoinIn   : in data port CoinSignal;
+	      
+	    -- The value of the inserted coin.
+	    ValueOut : out data port CoinValue;
+	end CoinMechanism;
+	
+	device implementation CoinMechanism.impl
+	end CoinMechanism.impl;
+	  
+
+	device BillAcceptor
+	  features
+	    BillInserted : in data port CoinSignal;
+	    ValueOut     : out data port BillValue;
+	end BillAcceptor;
+	
+	
+	device implementation BillAcceptor.impl
+	end BillAcceptor.impl;
+	
+	device CardScanner
+	  features
+	    ScanSignal : in data port CoinSignal;
+	    Auth       : out data port CardAuthSignal;
+	end CardScanner;
+	
+	
+	device implementation CardScanner.impl
+	end CardScanner.impl;
+	
+		
+	device TouchablePanel
+	  features
+	    TouchEvent : out data port TouchInput;
+	end TouchablePanel;
+	
+	device implementation TouchablePanel.impl
+	end TouchablePanel.impl;
+
+	-- Integration of the coin insertion mechanism
+	-- with the coin / money counter.
+	thread MoneyCounterThread
+	  features
+	    ValueIn     : in data port CoinValue;
+	    TotalAmount : out data port CoinValue;
+	  properties
+	    Dispatch_Protocol => Periodic;
+	    Period => 500ms;
+	    Compute_Execution_Time => 1ms..2ms;
+	end MoneyCounterThread;
+	
+	thread implementation MoneyCounterThread.impl
+	end MoneyCounterThread.impl;
+	
+	process MoneyCounterProcess
+	  features
+	    CoinValueIn : in data port CoinValue;
+	    SumOut      : out data port CoinValue;
+	end MoneyCounterProcess;
+	
+	process implementation MoneyCounterProcess.impl
+	  subcomponents
+	    counterThread : thread MoneyCounterThread.impl;
+	  connections
+	    conn1 : port CoinValueIn -> counterThread.ValueIn;
+	    conn2 : port counterThread.TotalAmount -> SumOut;
+	end MoneyCounterProcess.impl;
+	
+	thread UserActionsInterpreterThread
+	  features
+	    TouchIn   : in data port TouchInput;
+	    CommandOut: out data port UserCommand;
+	  properties
+	    Dispatch_Protocol => Periodic;
+	    Period => 600ms;
+	    Compute_Execution_Time => 1ms..2ms;
+	end UserActionsInterpreterThread;
+
+	thread implementation UserActionsInterpreterThread.impl
+	end UserActionsInterpreterThread.impl;
+	
+	process UserActionsInterpreterProcess
+	  features
+	    TouchInput   : in data port TouchInput;
+	    CommandOut   : out data port UserCommand;
+	end UserActionsInterpreterProcess;
+	
+	process implementation UserActionsInterpreterProcess.impl
+	  subcomponents
+	    interpreter : thread UserActionsInterpreterThread.impl;
+	  connections
+	    conn1 : port TouchInput -> interpreter.TouchIn;
+	    conn2 : port interpreter.CommandOut -> CommandOut;
+	end UserActionsInterpreterProcess.impl;
+
+
+	-- Thread and processes for additional payment integration
+	
+	-- This thread will be responsible for:
+	-- * summing the value of coins and notes;
+	-- * checking whether card payment was authorised;
+	-- * setting ReadyOut to `true` should the user pay
+	--   enough money.
+	thread PaymentController
+	  features
+	    CoinIn     : in data port CoinValue;
+	    BillIn     : in data port BillValue;
+	    CardIn     : in data port CardAuthSignal;
+	    AmountOut  : out data port PaymentAmount;
+	    ReadyOut   : out data port PaymentReady;
+	  properties
+	    Dispatch_Protocol => Periodic;
+	    Period => 500ms;
+	    Compute_Execution_Time => 2ms..4ms;
+	end PaymentController;
+	
+	thread implementation PaymentController.impl
+	end PaymentController.impl;
+	
+	process PaymentProcessor
+	  features
+	    CoinIn     : in data port CoinValue;
+	    BillIn     : in data port BillValue;
+	    CardIn     : in data port CardAuthSignal;
+	    AmountOut  : out data port PaymentAmount;
+	    ReadyOut   : out data port PaymentReady;
+	end PaymentProcessor;
+
+	process implementation PaymentProcessor.impl
+	  subcomponents
+	    logic : thread PaymentController.impl;
+	  connections
+	    c1 : port CoinIn -> logic.CoinIn;
+	    c2 : port BillIn -> logic.BillIn;
+	    c3 : port CardIn -> logic.CardIn;
+	    c4 : port logic.AmountOut -> AmountOut;
+	    c5 : port logic.ReadyOut -> ReadyOut;
+	end PaymentProcessor.impl;
+
+	-- ___===| MAIN SYSTEM |===___
+	-- * This is the composition of all other elements.
+	-- * Defines the DEVICES, PROCESSES, PROCESSORS and CONNECTIONS.
+	-- * Contains connections:
+	--   * logical (**connections**);
+	--   * physical (**Actual_Processor_Binding**, **Actual_Connection_Binding**).
+	
 	system CoffeeTeaMachineSystem
 	end CoffeeTeaMachineSystem;
+	
 	
 	system implementation CoffeeTeaMachineSystem.impl
 	  subcomponents
@@ -318,21 +579,57 @@ public
 	    Brewer        : device CoffeeBrewer.impl;
 	    TeaDispense   : device TeaLeavesDispenser.impl;
 	    Cooker        : device TeaCooker.impl;
+	    CoinMech      : device CoinMechanism.impl;
+	    BillAcceptor  : device BillAcceptor.impl;
+		CardScan      : device CardScanner.impl;
+		TouchPanel    : device TouchablePanel.impl;
+	    
 	    CoffeeProc    : process CoffeeProcess.impl;
 	    TeaProc       : process TeaProcess.impl;
+	    Counter       : process MoneyCounterProcess.impl;
+	    ActionsProc   : process UserActionsInterpreterProcess.impl;
+	    PaymentProc   : process PaymentProcessor.impl;  -- payment integration
+	    
 	    CPU_Coffee    : processor CoffeeCPU;
 	    CPU_Tea       : processor TeaCPU;
+	    
 	    Network       : bus ethBus;
+	    
 	  connections
+	    -- CONNECTION (explanation on an example):
 	    conn1 : port BeanStorage.BeansOut -> Grinder.BeansIn;
+	    -- This connection means that the coffee beans
+	    -- flow from the storage to the grinder.
+	    
 	    conn2 : port Grinder.GroundOut    -> Brewer.GroundIn;
 	    conn3 : port TeaDispense.LeavesOut -> Cooker.LeavesIn;
+	    conn4 : port CoinMech.ValueOut -> Counter.CoinValueIn;
+	    conn5 : port TouchPanel.TouchEvent -> ActionsProc.TouchInput;
+	    
+	    -- payment integration
+	    conn6 : port CoinMech.ValueOut -> PaymentProc.CoinIn;
+		conn7 : port BillAcceptor.ValueOut -> PaymentProc.BillIn;
+		conn8 : port CardScan.Auth -> PaymentProc.CardIn;
+	    
+	    
 	  properties
 	    Actual_Processor_Binding => (reference(CPU_Coffee)) applies to CoffeeProc;
 	    Actual_Processor_Binding => (reference(CPU_Tea))    applies to TeaProc;
+	    Actual_Processor_Binding => (reference(CPU_Tea)) applies to Counter;
+	    Actual_Processor_Binding => (reference(CPU_Tea)) applies to ActionsProc;
+	    -- payment integration
+	    Actual_Processor_Binding => (reference(CPU_Tea)) applies to PaymentProc;
+	    
+	    
 	    Actual_Connection_Binding => (reference(Network)) applies to conn1;
 	    Actual_Connection_Binding => (reference(Network)) applies to conn2;
 	    Actual_Connection_Binding => (reference(Network)) applies to conn3;
+		Actual_Connection_Binding => (reference(Network)) applies to conn5;
+		-- payment integration
+		Actual_Connection_Binding => (reference(Network)) applies to conn6, conn7, conn8;
+	
 	end CoffeeTeaMachineSystem.impl;
+	
+    -- ################ NEW PROJECT end  ################
 	
 end lab5_6_pak;
