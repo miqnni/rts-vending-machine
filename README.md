@@ -152,27 +152,27 @@ This project is an AADL (Architecture Analysis & Design Language) model of a ven
 
 The following weights have been assigned to the system's hardware components:
 
-| Component            | Type      | Weight (g) |
-| -------------------- | --------- | ---------- |
-| `TempSensor`         | device    | 50         |
-| `Heater`             | device    | 800        |
-| `Refrigerator`       | device    | 1500       |
-| `TeaLeavesDispenser` | device    | 400        |
-| `TeaCooker`          | device    | 1200       |
-| `CoffeeBeansStorage` | device    | 500        |
-| `CoffeeGrinder`      | device    | 1000       |
-| `CoffeeBrewer`       | device    | 1300       |
-| `RecipeStorage`      | device    | 200        |
-| `CupDispenser`       | device    | 700        |
-| `CupLifter`          | device    | 900        |
-| `CoinMechanism`      | device    | 600        |
-| `BillAcceptor`       | device    | 650        |
-| `CardScanner`        | device    | 350        |
-| `TouchablePanel`     | device    | 500        |
-| `corei5`             | processor | 100        |
-| `CoffeeCPU`          | processor | 70         |
-| `TeaCPU`             | processor | 70         |
-| `ethernet`           | bus       | 200        |
+| Component            | Type      | Weight (kg) |
+| -------------------- | --------- | ----------- |
+| `TempSensor`         | device    | 0.050       |
+| `Heater`             | device    | 0.800       |
+| `Refrigerator`       | device    | 1.500       |
+| `TeaLeavesDispenser` | device    | 0.400       |
+| `TeaCooker`          | device    | 1.200       |
+| `CoffeeBeansStorage` | device    | 0.500       |
+| `CoffeeGrinder`      | device    | 1.000       |
+| `CoffeeBrewer`       | device    | 1.300       |
+| `RecipeStorage`      | device    | 0.200       |
+| `CupDispenser`       | device    | 0.700       |
+| `CupLifter`          | device    | 0.900       |
+| `CoinMechanism`      | device    | 0.600       |
+| `BillAcceptor`       | device    | 0.650       |
+| `CardScanner`        | device    | 0.350       |
+| `TouchablePanel`     | device    | 0.500       |
+| `corei5`             | processor | 0.100       |
+| `CoffeeCPU`          | processor | 0.070       |
+| `TeaCPU`             | processor | 0.070       |
+| `ethernet`           | bus       | 0.200       |
 
 **Report**
 
