@@ -29,6 +29,15 @@
         </ownedValue>
         <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.136/@ownedPropertyAssociation.1"/>
       </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.BandWidthBudget"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RealLiteral" value="200.0">
+            <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.17/@ownedLiteral.5"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.136/@ownedPropertyAssociation.2"/>
+      </ownedPropertyAssociation>
       <subcomponent xsi:type="aadl2:BusSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedBusSubcomponent.0"/>
       <index>0</index>
       <classifier xsi:type="aadl2:BusType" href="../lab5_6_pak.aadl#lab5_6_pak.ethernet"/>
@@ -4129,6 +4138,15 @@
         </ownedValue>
       </ownedValue>
       <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.136/@ownedPropertyAssociation.1"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.BandWidthBudget"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:RealLiteral" value="200.0">
+          <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.17/@ownedLiteral.5"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.136/@ownedPropertyAssociation.2"/>
     </ownedPropertyAssociation>
     <classifier xsi:type="aadl2:BusType" href="../lab5_6_pak.aadl#lab5_6_pak.ethernet"/>
   </instance:ComponentInstance>

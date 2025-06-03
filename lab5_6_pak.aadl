@@ -1330,6 +1330,7 @@ bus ethernet
   properties
     SEI::GrossWeight => 0.200kg;
     SEI::BandWidthCapacity => 100.0 Mbps;
+    SEI::BandWidthBudget => 200.0 KBytesps;
 end ethernet;
 
 
