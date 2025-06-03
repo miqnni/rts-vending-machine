@@ -2,96 +2,236 @@ package lab5_6_pak
 public
 with Data_Model;
 
+
+-- DATA ---------------------------------------------
+-----------------------------------------------------
+
+
+-- Represents the value of temperature
+-- in the unit used in the model's implementation,
+-- e.g. Celsius degrees, Fahrenheit degrees, Kelvins.
 data TemperatureType
   properties
     Data_Model::Data_Representation => Integer;
 end TemperatureType;
 
+-- Contains the information on whether the
+-- heater is turned on or off.
+-- Applies to the preparation of hot beverages.
 data HeaterControlType
   properties
     Data_Model::Data_Representation => Boolean;
 end HeaterControlType;
 
+-- Contains the information on whether the
+-- cooler is turned on or off.
+-- Applies to the preparation of cold beverages.
 data CoolerControlType
   properties
     Data_Model::Data_Representation => Boolean;
 end CoolerControlType;
 
+-- Contains the information of the amount of
+-- tea leaves that can be used for tea preparation.
+-- The unit is dependent on the implementation of the model
+-- (e.g. grams, kilograms, pounds).
 data TeaLeavesAmount
   properties
     Data_Model::Data_Representation => Integer;
 end TeaLeavesAmount;
 
+-- Contains the information of the amount of
+-- water that can be used for any beverage preparation.
+-- The unit is dependent on the implementation of the model
+-- (e.g. litres, ounces).
 data WaterAmount
   properties
     Data_Model::Data_Representation => Integer;
 end WaterAmount;
 
+-- Contains the information of the amount of
+-- milk that can be used for specific beverage preparation,
+-- such as certain types of coffee.
+-- The unit is dependent on the implementation of the model
+-- (e.g. litres, ounces).
 data MilkAmount
   properties
     Data_Model::Data_Representation => Integer;
 end MilkAmount;
 
+-- Contains the information on the current temperature
+-- of the water used for beverage preparation.
 data WaterTemperature
   properties
     Data_Model::Data_Representation => Integer;
 end WaterTemperature;
 
+-- Contains the information on the current temperature
+-- of the milk used for beverage preparation.
 data MilkTemperature
   properties
     Data_Model::Data_Representation => Integer;
 end MilkTemperature;
 
+-- Contains the volume of liquid tea inside the machine.
 data LiquidTea
   properties
     Data_Model::Data_Representation => Integer;
 end LiquidTea;
 
+-- Contains the amount (e.g. in terms of weight) of
+-- coffee beans inside the machine.
 data BeanAmount
   properties
     Data_Model::Data_Representation => Integer;
 end BeanAmount;
 
+-- Contains the amount (e.g. in terms of weight) of
+-- ground coffee.
 data GroundCoffee
   properties
     Data_Model::Data_Representation => Integer;
 end GroundCoffee;
 
+-- Contains the amount (e.g. in terms of volume) of
+-- liquid coffee.
 data LiquidCoffee
   properties
     Data_Model::Data_Representation => Integer;
 end LiquidCoffee;
 
+-- Tells whether the signal to start the machine
+-- (and begin beverage preparation) has been sent.
 data StartSignal
   properties
     Data_Model::Data_Representation => Boolean;
 end StartSignal;
 
+-- Tells whether the signal to stop the machine
+-- (and finish beverage preparation) has been sent.
 data FinishSignal
   properties
     Data_Model::Data_Representation => Boolean;
 end FinishSignal;
 
+-- Contains the information on a beverage
+-- supplied by the machine.
 data RecipeInfo
 	properties
 		Data_Model::Data_Representation => String;
 end RecipeInfo;
 
+-- Contains the information on an ingredient
+-- used in beverages (and therefore in recipes
+-- for beverages).
 data IngredientInfo
 	properties
 		Data_Model::Data_Representation => String;
 end IngredientInfo;
 
+-- Tells whether a certain ingredient is available.
+-- This may determine the possibility of preparing
+-- a certain beverage that uses that ingredient.
 data IngredientAvailability
 	properties
 		Data_Model::Data_Representation => Boolean;
 end IngredientAvailability;
 
+-- Tells whether a certain beverage is available
+-- for preparation by the machine.
 data IsAvailable
   properties
     Data_Model::Data_Representation => Boolean;
 end IsAvailable;
 
+-- Determines if a coin is being inserted.
+data CoinSignal
+  properties
+    Data_Model::Data_Representation => Boolean;
+end CoinSignal;
+
+-- Determines if a note / bill is being inserted.
+data BillSignal
+  properties
+    Data_Model::Data_Representation => Boolean;
+end BillSignal;
+
+-- Determines if a credit card is being inserted.
+data CardSignal
+  properties
+    Data_Model::Data_Representation => Boolean;
+end CardSignal;
+
+-- Keeps the value of the inserted coin(s).
+data CoinValue
+  properties
+    Data_Model::Data_Representation => Integer;
+end CoinValue;
+
+-- Keeps the value of the inserted note(s) / bill(s).
+data BillValue
+  properties
+	Data_Model::Data_Representation => Integer;
+end BillValue;
+
+-- Determines if the inserted credit card
+-- has been authenticated.
+data CardAuthSignal
+  properties
+    Data_Model::Data_Representation => Boolean;
+end CardAuthSignal;
+
+-- Contains the monetary value regardless
+-- of the means it was introduced to the machine
+-- (whether it be coins, notes / bills
+-- or transfer by card).
+-- Can be used to keep the sum of the inserted
+-- money. That sum can be checked in terms of
+-- satisfying the product price.
+--data TotalMoneyValue
+--  properties
+--	Data_Model::Data_Representation => Integer;	
+--end TotalMoneyValue;
+-- REPLACED BY PAYMENT AMOUNT
+
+-- Contains the information introduced to the system
+-- via the touch panel.
+data TouchInput
+  properties
+    Data_Model::Data_Representation => Integer;
+end TouchInput;
+
+-- Contains the command that will be executed upon
+-- the user's input.
+data UserCommand
+  properties
+    Data_Model::Data_Representation => Integer;
+end UserCommand;
+
+-- Tells whether the payment can be carried on.
+data PaymentReady
+  properties
+    Data_Model::Data_Representation => Boolean;
+end PaymentReady;
+
+-- Contains the total amount of money that is / will be /
+-- has been transferred in a given transaction.
+data PaymentAmount
+  properties
+    Data_Model::Data_Representation => Integer;
+end PaymentAmount;
+
+
+
+
+
+-- DEVICES ------------------------------------------
+-----------------------------------------------------
+
+
+-- Checks the current temperature in a particular
+-- spot. May be applied to liquids that are subject to
+-- heating or cooling, such as water and milk.
 device TempSensor
   features
     Temp : out data port TemperatureType;
@@ -100,6 +240,9 @@ end TempSensor;
 device implementation TempSensor.impl
 end TempSensor.impl;
 
+
+-- Is responsible for heating the liquid
+-- beverage ingredients, e.g. water.
 device Heater
   features
     Power : in data port HeaterControlType;
@@ -108,6 +251,9 @@ end Heater;
 device implementation Heater.impl
 end Heater.impl;
 
+
+-- AKA Cooler. Is responsible for cooling the
+-- liquid beverage ingredients, e.g. water.
 device Refrigerator
   features
     Power : in data port CoolerControlType;
@@ -116,6 +262,10 @@ end Refrigerator;
 device implementation Refrigerator.impl
 end Refrigerator.impl;
 
+
+-- Is responsible for dispensing a designated
+-- amount of tea leaves (`TeaLeavesAmount`),
+-- that will be used for tea preparation.
 device TeaLeavesDispenser
   features
     LeavesOut : out data port TeaLeavesAmount;
@@ -124,6 +274,10 @@ end TeaLeavesDispenser;
 device implementation TeaLeavesDispenser.impl
 end TeaLeavesDispenser.impl;
 
+
+-- Combines leaves (`LeavesIn`)
+-- and water (`WaterWaterIn`) to produce
+-- **hot** liquid tea (`TeaOut`).
 device TeaCooker
   features
     LeavesIn : in data port TeaLeavesAmount;
@@ -134,6 +288,8 @@ end TeaCooker;
 device implementation TeaCooker.impl
 end TeaCooker.impl;
 
+
+-- `
 device CoffeeBeansStorage
   features
     BeansOut : out data port BeanAmount;
@@ -142,6 +298,10 @@ end CoffeeBeansStorage;
 device implementation CoffeeBeansStorage.impl
 end CoffeeBeansStorage.impl;
 
+
+-- Converts a designated amount of coffee beans
+-- (`BeansIn`) to a certain amount of
+-- ground coffee (`GroundOut`).
 device CoffeeGrinder
   features
     BeansIn   : in data port BeanAmount;
@@ -151,6 +311,9 @@ end CoffeeGrinder;
 device implementation CoffeeGrinder.impl
 end CoffeeGrinder.impl;
 
+
+-- Converts ground coffee (`GroundCoffee`)
+-- into **hot** liquid coffee (`LiquidCoffee`).
 device CoffeeBrewer
   features
     GroundIn  : in data port GroundCoffee;
@@ -160,6 +323,13 @@ end CoffeeBrewer;
 device implementation CoffeeBrewer.impl
 end CoffeeBrewer.impl;
 
+
+-- Stores recipes for various beverages
+-- that can be prepared by the machine on
+-- user's command. The user selects the recipe
+-- using the machine's touchable panel (`TouchEvent`),
+-- which results in returning the details of
+-- preparation of the selected beverage (`RecipeOut`).
 device RecipeStorage
   features
     TouchEvent    : in data port TouchInput;
@@ -167,44 +337,206 @@ device RecipeStorage
 end RecipeStorage;
 
 device implementation RecipeStorage.impl
+	-- properties?? capacity??
 end RecipeStorage.impl;
 
+
+-- Takes a beverage recipe (`RecipeIn`)
+-- and returns the liquid (e.g. water, milk)
+-- temperature (`TemperatureOut`).
+--device TemperatureSelector
+--  features
+--    RecipeIn       : in data port RecipeInfo;
+--    TemperatureOut : out data port TemperatureType;
+--end TemperatureSelector;
+--
+--device implementation TemperatureSelector.impl
+--end TemperatureSelector.impl;
+-- =====> Shouldn't be replaced by a process?
+
+
+-- Takes a recipe (`Recipe`),
+-- returns ingredients (`IngredientOut`)
+-- for that recipe.
+--device IngredientSelector
+--  features
+--    RecipeIn    : in data port RecipeInfo;
+--    IngredientOut  : out data port IngredientInfo;
+--end IngredientSelector;
+--
+--device implementation IngredientSelector.impl
+--end IngredientSelector.impl;
+-- =====> Shouldn't be replaced by a process?
+
+
+-- Checks whether a particular ingredient (`IngredientInfo`)
+-- is available (`Available`) in the machine.
+--device AvailabilityChecker
+--  features
+--    IngredientIn : in data port IngredientInfo;
+--    Available    : out data port IngredientAvailability;
+--end AvailabilityChecker;
+--
+--device implementation AvailabilityChecker.impl
+--end AvailabilityChecker.impl;
+-- =====> Shouldn't be replaced by a process?
+
+
+
+-- Upon receiving a start signal (`StartSignal`),
+-- dispenses a cup
+-- and returns a finish signal (`FinishSignal`).
+device CupDispenser
+  features
+    StartSignal  : in data port StartSignal;
+    FinishSignal : out data port FinishSignal;
+end CupDispenser;
+
+device implementation CupDispenser.impl
+end CupDispenser.impl;
+
+
+-- Upon receiving a start signal (`StartSignal`),
+-- lifts a cup
+-- and returns a finish signal (`FinishSignal`).
+device CupLifter
+  features
+    StartSignal  : in data port StartSignal;
+    FinishSignal : out data port FinishSignal;
+end CupLifter;
+
+device implementation CupLifter.impl
+end CupLifter.impl;
+
+
+-- Upon receiving a coin insertion signal (`CoinSignal`),
+-- determines the value (`CoinValue`) of the inserted coin.
+device CoinMechanism
+  features
+    -- E.g. an impulse from the sensor that detects
+    -- a coin being inserted.
+    CoinIn   : in data port CoinSignal;
+      
+    -- The value of the inserted coin.
+	ValueOut : out data port CoinValue;
+end CoinMechanism;
+	
+device implementation CoinMechanism.impl
+end CoinMechanism.impl;
+
+
+-- Upon receiving a note / bill insertion signal (`BillSignal`),
+-- determines the value (`BillValue`) of the inserted note / bill.
+device BillAcceptor
+  features
+    BillInserted : in data port BillSignal;
+    ValueOut     : out data port BillValue;
+end BillAcceptor;
+
+device implementation BillAcceptor.impl
+end BillAcceptor.impl;
+
+
+-- Upon receiving a credit card insertion signal (`CardSignal`),
+-- returns the result of the card authentication (`CardAuthSignal`).
+device CardScanner
+  features
+    ScanSignal : in data port CardSignal;
+    Auth       : out data port CardAuthSignal;
+end CardScanner;
+
+device implementation CardScanner.impl
+end CardScanner.impl;
+
+
+--device TotalMoneyCounter
+--  features
+--	CoinsInserted   : in data port CoinValue;
+--	BillsInserted   : in data port BillValue;
+--	TotalValue : out data port TotalMoneyValue;
+--end TotalMoneyCounter;
+--
+--device implementation TotalMoneyCounter.impl
+--end TotalMoneyCounter.impl;
+-- =====> REPLACED BY PROCESS: MONEY COUNTER PROCESS
+
+
+-- Based on the beverage price (`NeededValueIn`)
+-- and actual amount of money paid (`PaidValueIn`),
+-- determines the change to be returned (`ChangeValueOut`).
+--device ChangeCalculator
+--  features
+--    NeededValueIn : in data port PaymentAmount;
+--    PaidValueIn   : in data port PaymentAmount;
+--    ChangeValueOut: out data port PaymentAmount;
+--end ChangeCalculator;
+--
+--device implementation ChangeCalculator.impl
+--end ChangeCalculator.impl;
+-- =====> THIS SHOULD NOT BE A DEVICE (=> process?)
+
+
+-- Based on the amount of money that is to be returned
+-- as change (`Calculated Change`), determine the value
+-- of physical coins (`ReturnedCoins`)
+-- and bills (`ReturnedBills`) that will be returned.
+--device ChangeReturner
+--  features
+--	CalculatedChange : in data port PaymentAmount;
+--	ReturnedCoins    : out data port CoinValue;
+--	ReturnedBills    : out data port BillValue;
+--end ChangeReturner;
+--
+--
+--device implementation ChangeReturner.impl
+--end ChangeReturner.impl;
+-- =====> THIS SHOULD NOT BE A DEVICE (=> process?)
+
+
+-- Gets the current value of the input
+-- on the touchable panel (`TouchInput`).
+device TouchablePanel
+  features
+    TouchEvent : out data port TouchInput;
+end TouchablePanel;
+
+device implementation TouchablePanel.impl
+end TouchablePanel.impl;
+
+
+
+
+
+-- THREADS ------------------------------------------
+-----------------------------------------------------
+
+
+-- Based on the input on touch panel (`TouchInput`),
+-- returns a particular recipe (`RecipeInfo`).
+-- Gets executed every `1600ms` and the execution time
+-- ranges from `0ms` to `1ms`.
 thread GetRecipe
   features
-    TouchEvent    : in data port TouchInput;
+    TouchEvent : in data port TouchInput;
     RecipeOut  : out data port RecipeInfo;
   properties
+    -- The thread is executed every `1600ms`.
     Dispatch_Protocol => Periodic;
     Period => 1600ms;
+    
+    -- The thread's execution lasts from `0ms` to `1ms`.
     Compute_Execution_Time => 0ms..1ms;
 end GetRecipe;
 
 thread implementation GetRecipe.impl
 end GetRecipe.impl;
 
-process Recipe
-  features
-    TouchEvent    : in data port TouchInput;
-    RecipeOut  : out data port RecipeInfo;
-	end Recipe;
 
-process implementation Recipe.impl
-  subcomponents
-    GetRecipe : thread GetRecipe.impl;
-  connections
-    conn1 : port TouchEvent -> GetRecipe.TouchEvent;
-    conn2 : port GetRecipe.RecipeOut -> RecipeOut;
-end Recipe.impl;
-
-device IngredientSelector
-  features
-    RecipeIn    : in data port RecipeInfo;
-    IngredientOut  : out data port IngredientInfo;
-end IngredientSelector;
-
-device implementation IngredientSelector.impl
-end IngredientSelector.impl;
-
+-- Takes a recipe (`Recipe`),
+-- returns ingredients (`IngredientOut`)
+-- for that recipe (similarly to the
+-- `IngredientSelector` device, but with
+-- specified execution interval and duration).
 thread SelectIngredient
   features
     RecipeIn    : in data port RecipeInfo;
@@ -218,33 +550,14 @@ end SelectIngredient;
 thread implementation SelectIngredient.impl
 end SelectIngredient.impl;
 
-process Ingredient
-  features
-    RecipeIn    : in data port RecipeInfo;
-    IngredientOut  : out data port IngredientInfo;
-	end Ingredient;
 
-process implementation Ingredient.impl
-  subcomponents
-    SelectIngredient : thread SelectIngredient.impl;
-  connections
-    conn1 : port RecipeIn -> SelectIngredient.RecipeIn;
-    conn2 : port SelectIngredient.IngredientOut -> IngredientOut;
-end Ingredient.impl;
-
-device TemperatureSelector
-  features
-    RecipeIn       : in data port RecipeInfo;
-    TemperatureOut : out data port TemperatureType;
-end TemperatureSelector;
-
-device implementation TemperatureSelector.impl
-end TemperatureSelector.impl;
-
+-- Takes a recipe (`RecipeIn`) and returns
+-- the temperature (`TemperatureOut`)
+-- of the liquid used in that recipe.
 thread SelectTemperature
   features
     RecipeIn    : in data port RecipeInfo;
-    TemperatureOut  : out data port IngredientInfo;
+    TemperatureOut  : out data port TemperatureType;
   properties
     Dispatch_Protocol => Periodic;
     Period => 400ms;
@@ -254,29 +567,11 @@ end SelectTemperature;
 thread implementation SelectTemperature.impl
 end SelectTemperature.impl;
 
-process Temperature
-  features
-    RecipeIn    : in data port RecipeInfo;
-    TemperatureOut  : out data port IngredientInfo;
-	end Temperature;
 
-process implementation Temperature.impl
-  subcomponents
-    SelectTemperature : thread SelectTemperature.impl;
-  connections
-    conn1 : port RecipeIn -> SelectTemperature.RecipeIn;
-    conn2 : port SelectTemperature.TemperatureOut -> TemperatureOut;
-end Temperature.impl;
-
-device AvailabilityChecker
-  features
-    IngredientIn : in data port IngredientInfo;
-    Available    : out data port IngredientAvailability;
-end AvailabilityChecker;
-
-device implementation AvailabilityChecker.impl
-end AvailabilityChecker.impl;
-
+-- Takes an ingredient (`IngredientInfo`)
+-- and tells whether it is available (`IsAvailable`)
+-- to be used in the preparation of the selected
+-- beverage.
 thread CheckAvailability
   features
     IngredientIn    : in data port IngredientInfo;
@@ -290,29 +585,10 @@ end CheckAvailability;
 thread implementation CheckAvailability.impl
 end CheckAvailability.impl;
 
-process Availability
-  features
-    IngredientIn    : in data port IngredientInfo;
-    AvailabilityOut  : out data port IsAvailable;
-	end Availability;
 
-process implementation Availability.impl
-  subcomponents
-    CheckAvailability : thread CheckAvailability.impl;
-  connections
-    conn1 : port IngredientIn -> CheckAvailability.IngredientIn;
-    conn2 : port CheckAvailability.AvailabilityOut -> AvailabilityOut;
-end Availability.impl;
-
-device CupDispenser
-  features
-    StartSignal : in data port StartSignal;
-    FinishSignal    : out data port FinishSignal;
-end CupDispenser;
-
-device implementation CupDispenser.impl
-end CupDispenser.impl;
-
+-- Upon receiving a start signal (`StartSignal`),
+-- dispenses a cup
+-- and returns a finish signal (`FinishSignal`).
 thread DispenseCup
   features
     StartSignal : in data port StartSignal;
@@ -326,15 +602,10 @@ end DispenseCup;
 thread implementation DispenseCup.impl
 end DispenseCup.impl;
 
-device CupLifter
-  features
-    StartSignal  : in data port StartSignal;
-    FinishSignal : out data port FinishSignal;
-end CupLifter;
 
-device implementation CupLifter.impl
-end CupLifter.impl;
-
+-- Upon receiving a start signal (`StartSignal`),
+-- lifts a cup
+-- and returns a finish signal (`FinishSignal`).
 thread LiftCup
   features
     StartSignal  : in data port FinishSignal;
@@ -348,102 +619,80 @@ end LiftCup;
 thread implementation LiftCup.impl
 end LiftCup.impl;
 
-process Cup
+
+-- Adds the new coin value (`NewCoinValue`)
+-- to the accumulated sum (`TotalCoinValue`).
+thread AddCoinValue
   features
-    StartSignal  : in data port StartSignal;
-    FinishSignal : out data port FinishSignal;
-	end Cup;
+	NewCoinValue   : in data port CoinValue;
+	TotalCoinValue : out data port PaymentAmount;
+end AddCoinValue;
 
-process implementation Cup.impl
-  subcomponents
-    DispenseCup : thread DispenseCup.impl;
-    LiftCup : thread LiftCup.impl;
-  connections
-    conn1 : port StartSignal -> DispenseCup.StartSignal;
-    conn2 : port DispenseCup.FinishSignal -> LiftCup.StartSignal;
-    conn3 : port LiftCup.FinishSignal -> FinishSignal;
-end Cup.impl;
+thread implementation AddCoinValue.impl
+end AddCoinValue.impl;
 
-data CoinSignal
-	  properties
-	    Data_Model::Data_Representation => Boolean;
-	end CoinSignal;
-	
-	data CoinValue
-	  properties
-	    Data_Model::Data_Representation => Integer;
-	end CoinValue;
-	  
-	data BillValue
-	  properties
-		Data_Model::Data_Representation => Integer;
-	end BillValue;
-	
-	data CardAuthSignal
-	  properties
-	    Data_Model::Data_Representation => Boolean;
-	end CardAuthSignal;
-	 
-	data TouchInput
-	  properties
-	    Data_Model::Data_Representation => Integer;
-	end TouchInput;
-	
-	data UserCommand
-	  properties
-	    Data_Model::Data_Representation => Integer;
-	end UserCommand;
-	
-	-- Data for additional payment mechanism / process
-	-- (integrating coins, notes and card).
-	data PaymentReady
-	  properties
-	    Data_Model::Data_Representation => Boolean;
-	end PaymentReady;
-	
-	data PaymentAmount
-	  properties
-	    Data_Model::Data_Representation => Integer;
-	end PaymentAmount;
-	
-	
-	device CoinMechanism
-	  features
-	    -- E.g. an impulse from the sensor that detects
-	    -- a coin being inserted.
-	    CoinIn   : in data port CoinSignal;
-	      
-	    -- The value of the inserted coin.
-	    ValueOut : out data port CoinValue;
-	end CoinMechanism;
-	
-	device implementation CoinMechanism.impl
-	end CoinMechanism.impl;
 
-	device BillAcceptor
-	  features
-	    BillInserted : in data port CoinSignal;
-	    ValueOut     : out data port BillValue;
-	end BillAcceptor;
-	
-	device implementation BillAcceptor.impl
-	end BillAcceptor.impl;
+-- Adds the new bill value (`NewBillValue`)
+-- to the accumulated sum (`TotalBillValue`).
+thread AddBillValue
+  features
+	NewBillValue   : in data port BillValue;
+	TotalBillValue : out data port PaymentAmount;
+end AddBillValue;
 
-  device ChangeReturner
-    features
-      NeededValueIn : out data port BillValue;
-      PaidValueIn   : out data port BillValue;
-      ChangeValueOut: out data port BillValue;
-  end ChangeReturner;
+thread implementation AddBillValue.impl
+end AddBillValue.impl;
 
-  device implementation ChangeReturner.impl
-  end ChangeReturner.impl;
 
+-- Sums the total values of coins and bills.
+thread MoneyCounterThread
+  features
+    CoinPaymentAmount : in data port PaymentAmount;
+    BillPaymentAmount : in data port PaymentAmount;
+    TotalPaymentAmount : out data port PaymentAmount;
+  properties
+    Dispatch_Protocol => Periodic;
+    Period => 500ms;
+    Compute_Execution_Time => 1ms..2ms;
+end MoneyCounterThread;
+
+thread implementation MoneyCounterThread.impl
+end MoneyCounterThread.impl;
+
+
+-- Thread for additional payment integration.
+-- This thread will be responsible for:
+-- * summing the value of coins and notes;
+-- * checking whether card payment was authorized;
+-- * setting `ReadyOut` to `true` should the user pay
+--   enough money.
+thread ResolvePaymentAttempt
+  features
+    CoinIn     : in data port CoinValue;
+    BillIn     : in data port BillValue;
+    CardIn     : in data port CardAuthSignal;
+    AmountOut  : out data port PaymentAmount;
+    ChangeOut  : out data port PaymentAmount;
+    ReadyOut   : out data port PaymentReady;
+  properties
+    Dispatch_Protocol => Periodic;
+    Period => 500ms;
+    Compute_Execution_Time => 2ms..4ms;
+end ResolvePaymentAttempt;
+
+thread implementation ResolvePaymentAttempt.impl
+end ResolvePaymentAttempt.impl;
+
+
+-- Based on the beverage price (`NeededValueIn`)
+-- and actual amount of money paid (`PaidValueIn`),
+-- determines the change to be returned (`ChangeValueOut`).
 thread ReturnChange
   features
-    NeededValueIn : in data port BillValue;
-    PaidValueIn   : in data port BillValue;
-    ChangeValueOut: out data port BillValue;
+    NeededValueIn  : in data port PaymentAmount;
+    PaidValueIn    : in data port PaymentAmount;
+    ChangeCoinsOut : out data port CoinValue;
+    ChangeBillsOut : out data port BillValue;
   properties
     Dispatch_Protocol => Periodic;
     Period => 1600ms;
@@ -453,145 +702,27 @@ end ReturnChange;
 thread implementation ReturnChange.impl
 end ReturnChange.impl;
 
-process Change
-	  features
-	    NeededValueIn : in data port BillValue;
-      PaidValueIn   : in data port BillValue;
-      ChangeValueOut: out data port BillValue;
-	end Change;
 
-process implementation Change.impl
-  subcomponents
-    ReturnChange : thread ReturnChange.impl;
-  connections
-    conn1 : port NeededValueIn -> ReturnChange.NeededValueIn;
-    conn2 : port PaidValueIn -> ReturnChange.PaidValueIn;
-    conn3 : port ReturnChange.ChangeValueOut -> ChangeValueOut;
-end Change.impl;
+-- Take an input (`TouchInput`) from the touch panel
+-- and interpret it as a command (`UserCommand`).
+thread InterpretUserAction
+  features
+    TouchIn   : in data port TouchInput;
+    CommandOut: out data port UserCommand;
+  properties
+    Dispatch_Protocol => Periodic;
+    Period => 600ms;
+    Compute_Execution_Time => 1ms..2ms;
+end InterpretUserAction;
 
-	device CardScanner
-	  features
-	    ScanSignal : in data port CoinSignal;
-	    Auth       : out data port CardAuthSignal;
-	end CardScanner;
-	
-	
-	device implementation CardScanner.impl
-	end CardScanner.impl;
-	
-		
-	device TouchablePanel
-	  features
-	    TouchEvent : out data port TouchInput;
-	end TouchablePanel;
-	
-	device implementation TouchablePanel.impl
-	end TouchablePanel.impl;
-
-	-- Integration of the coin insertion mechanism
-	-- with the coin / money counter.
-	thread MoneyCounterThread
-	  features
-	    ValueIn     : in data port CoinValue;
-	    TotalAmount : out data port CoinValue;
-	  properties
-	    Dispatch_Protocol => Periodic;
-	    Period => 500ms;
-	    Compute_Execution_Time => 1ms..2ms;
-	end MoneyCounterThread;
-	
-	thread implementation MoneyCounterThread.impl
-	end MoneyCounterThread.impl;
-	
-	process MoneyCounterProcess
-	  features
-	    CoinValueIn : in data port CoinValue;
-	    SumOut      : out data port CoinValue;
-	end MoneyCounterProcess;
-	
-	process implementation MoneyCounterProcess.impl
-	  subcomponents
-	    counterThread : thread MoneyCounterThread.impl;
-	  connections
-	    conn1 : port CoinValueIn -> counterThread.ValueIn;
-	    conn2 : port counterThread.TotalAmount -> SumOut;
-	end MoneyCounterProcess.impl;
-	
-	thread UserActionsInterpreterThread
-	  features
-	    TouchIn   : in data port TouchInput;
-	    CommandOut: out data port UserCommand;
-	  properties
-	    Dispatch_Protocol => Periodic;
-	    Period => 600ms;
-	    Compute_Execution_Time => 1ms..2ms;
-	end UserActionsInterpreterThread;
-
-	thread implementation UserActionsInterpreterThread.impl
-	end UserActionsInterpreterThread.impl;
-	
-	process UserActionsInterpreterProcess
-	  features
-	    TouchInput   : in data port TouchInput;
-	    CommandOut   : out data port UserCommand;
-	end UserActionsInterpreterProcess;
-	
-	process implementation UserActionsInterpreterProcess.impl
-	  subcomponents
-	    interpreter : thread UserActionsInterpreterThread.impl;
-	  connections
-	    conn1 : port TouchInput -> interpreter.TouchIn;
-	    conn2 : port interpreter.CommandOut -> CommandOut;
-	end UserActionsInterpreterProcess.impl;
+thread implementation InterpretUserAction.impl
+end InterpretUserAction.impl;
 
 
-	-- Thread and processes for additional payment integration
-	
-	-- This thread will be responsible for:
-	-- * summing the value of coins and notes;
-	-- * checking whether card payment was authorized;
-	-- * setting ReadyOut to `true` should the user pay
-	--   enough money.
-	thread PaymentController
-	  features
-	    CoinIn     : in data port CoinValue;
-	    BillIn     : in data port BillValue;
-	    CardIn     : in data port CardAuthSignal;
-	    AmountOut  : out data port PaymentAmount;
-      ChangeOut  : out data port BillValue;
-	    ReadyOut   : out data port PaymentReady;
-	  properties
-	    Dispatch_Protocol => Periodic;
-	    Period => 500ms;
-	    Compute_Execution_Time => 2ms..4ms;
-	end PaymentController;
-	
-	thread implementation PaymentController.impl
-	end PaymentController.impl;
-	
-	process PaymentProcessor
-	  features
-	    CoinIn     : in data port CoinValue;
-	    BillIn     : in data port BillValue;
-	    CardIn     : in data port CardAuthSignal;
-	    AmountOut  : out data port PaymentAmount;
-      ChangeOut  : out data port BillValue;
-	    ReadyOut   : out data port PaymentReady;
-	end PaymentProcessor;
-
-	process implementation PaymentProcessor.impl
-	  subcomponents
-	    logic : thread PaymentController.impl;
-	  connections
-	    c1 : port CoinIn -> logic.CoinIn;
-	    c2 : port BillIn -> logic.BillIn;
-	    c3 : port CardIn -> logic.CardIn;
-	    c4 : port logic.AmountOut -> AmountOut;
-      c6 : port logic.ChangeOut -> ChangeOut;
-	    c5 : port logic.ReadyOut -> ReadyOut;
-	end PaymentProcessor.impl;
-
-thread TempReader
+-- Reads the temperature (`TempIn`) from
+-- a designated sensor (device) and returns
+-- its value (`TempOut`).
+thread ReadTemperature
   features
     TempIn : in data port TemperatureType;
     Temp   : out data port TemperatureType;
@@ -599,12 +730,18 @@ thread TempReader
     Dispatch_Protocol => Periodic;
     Period => 800ms;
     Compute_Execution_Time => 0ms..2ms;
-end TempReader;
+end ReadTemperature;
 
-thread implementation TempReader.impl
-end TempReader.impl;
+thread implementation ReadTemperature.impl
+end ReadTemperature.impl;
+-- =====> Is it really necessary?
 
-thread ControlLogic
+
+-- If the temperature (`Temp`) of the liquid is
+-- too low for the currently prepared beverage,
+-- turn on (`HeaterCmd`) the heater. Otherwise,
+-- turn it off.
+thread ToggleHeater
   features
     Temp    : in data port TemperatureType;
     HeatCmd : out data port HeaterControlType;
@@ -612,11 +749,13 @@ thread ControlLogic
     Dispatch_Protocol => Periodic;
     Period => 800ms;
     Compute_Execution_Time => 0ms..2ms;
-end ControlLogic;
+end ToggleHeater;
 
-thread implementation ControlLogic.impl
-end ControlLogic.impl;
+thread implementation ToggleHeater.impl
+end ToggleHeater.impl;
 
+
+-- A driver for the heater. Supports powering the heater on and off.
 thread HeaterDriver
   features
     PowerIn  : in data port HeaterControlType;
@@ -630,7 +769,12 @@ end HeaterDriver;
 thread implementation HeaterDriver.impl
 end HeaterDriver.impl;
 
-thread CoolingLogic
+
+-- If the temperature (`Temp`) of the liquid is
+-- too high for the currently prepared beverage,
+-- turn on (`HeaterCmd`) the refrigerator.
+-- Otherwise, turn it off.
+thread ToggleCooler
   features
     Temp    : in data port TemperatureType;
     CoolCmd : out data port CoolerControlType;
@@ -638,11 +782,13 @@ thread CoolingLogic
     Dispatch_Protocol => Periodic;
     Period => 800ms;
     Compute_Execution_Time => 0ms..2ms;
-end CoolingLogic;
+end ToggleCooler;
 
-thread implementation CoolingLogic.impl
-end CoolingLogic.impl;
+thread implementation ToggleCooler.impl
+end ToggleCooler.impl;
 
+
+-- A driver for the refrigerator. Supports powering the refrigerator on and off.
 thread RefrigerationDriver
   features
     PowerIn  : in data port CoolerControlType;
@@ -656,133 +802,481 @@ end RefrigerationDriver;
 thread implementation RefrigerationDriver.impl
 end RefrigerationDriver.impl;
 
-thread TeaController
+
+-- On the start signal (`StartSignal`),
+-- return the proper amount
+-- of tea (`TeaPoured`).
+thread PrepareTea
   features
-    TeaOut   : out data port LiquidTea;
-    StartCmd : in data port StartSignal;
+	StartCmd : in data port StartSignal;
+    TeaPoured   : out data port LiquidTea;
+    Done      : out event port;  -- signal of completion
   properties
     Dispatch_Protocol => Periodic;
     Period => 800ms;
     Compute_Execution_Time => 1ms..3ms;
-end TeaController;
+end PrepareTea;
 
-thread implementation TeaController.impl
-end TeaController.impl;
+thread implementation PrepareTea.impl
+end PrepareTea.impl;
 
-thread CoffeeController
+
+-- On the start signal (`StartSignal`),
+-- return the proper amount
+-- of coffee (`CoffeePoured`).
+thread PrepareCoffee
   features
-    LiquidSend : out data port LiquidCoffee;
-    StartCmd   : in data port StartSignal;
+	StartCmd   : in data port StartSignal;
+    CoffeePoured : out data port LiquidCoffee;
+    Done      : out event port;  -- signal of completion
   properties
     Dispatch_Protocol => Periodic;
     Period => 800ms;
     Compute_Execution_Time => 1ms..3ms;
-end CoffeeController;
+end PrepareCoffee;
 
-thread implementation CoffeeController.impl
-end CoffeeController.impl;
+thread implementation PrepareCoffee.impl
+end PrepareCoffee.impl;
 
-process Reader
+
+-- The thread that represents the full logic / flow
+-- of the exemplary use case of the vending machine.
+-- * Recipe choice by user.
+-- * Checking ingredient availability.
+-- * Checking if the proper amount of liquid
+-- (water or milk) is available.
+-- * Making a payment.
+-- * Dispensing and lifting the cup
+-- * Dispensing necessary ingredients:
+-- tea leaves or coffee beans..
+-- * Adjusting the liquid (water or milk)
+-- temperature.
+thread MainController
+  features
+	-- payment
+	PaymentIn : in data port PaymentReady;
+	
+	-- recipe choice
+	RecipeIn : in data port RecipeInfo;
+	RecipeOut : in data port RecipeInfo;
+	
+	-- ingredient availability
+	IngredientIn : in data port IngredientInfo;
+	IngredientOut : out data port IngredientInfo;
+	IsAvailable : in data port IsAvailable;
+	
+	-- cup handling
+	CupOut : out data port StartSignal;
+	CupIn : in data port FinishSignal;
+	
+	-- beans and leaves
+	BeansAmountOut : out data port BeanAmount;
+	TeaLeavesAmountOut : out data port TeaLeavesAmount;
+    
+    -- water
+    WaterAmountOut : out data port WaterAmount;
+    WaterTemperatureOut : out data port WaterTemperature;
+    
+    -- milk
+    MilkAmountOut : out data port MilkAmount;
+    MilkTemperatureOut : out data port MilkTemperature;
+  properties
+	Dispatch_Protocol => Periodic;
+	Period => 200ms;
+	Compute_Execution_Time => 15ms..20ms;
+end MainController;
+	
+thread implementation MainController.impl
+end MainController.impl;
+
+
+
+
+
+-- PROCESSES ----------------------------------------
+-----------------------------------------------------
+
+-- The process for selecting a recipe out of
+-- available recipes in the machine.
+process RecipeSelector
+  features
+    TouchEvent    : in data port TouchInput;
+    RecipeOut  : out data port RecipeInfo;
+	end RecipeSelector;
+
+process implementation RecipeSelector.impl
+  subcomponents
+    GetRecipe : thread GetRecipe.impl;
+  connections
+    conn1 : port TouchEvent -> GetRecipe.TouchEvent;
+    conn2 : port GetRecipe.RecipeOut -> RecipeOut;
+end RecipeSelector.impl;
+
+
+-- The process for automatic selection
+-- of ingredients required to follow
+-- a recipe.
+process IngredientForRecipeSelector
+  features
+    RecipeIn    : in data port RecipeInfo;
+    IngredientOut  : out data port IngredientInfo;
+	end IngredientForRecipeSelector;
+
+process implementation IngredientForRecipeSelector.impl
+  subcomponents
+    SelectIngredient : thread SelectIngredient.impl;
+  connections
+    conn1 : port RecipeIn -> SelectIngredient.RecipeIn;
+    conn2 : port SelectIngredient.IngredientOut -> IngredientOut;
+end IngredientForRecipeSelector.impl;
+
+
+-- The process for automatic selection of
+-- temperature needed to follow the recipe.
+process TemperatureForRecipeSelector
+  features
+    RecipeIn    : in data port RecipeInfo;
+    TemperatureOut  : out data port TemperatureType;
+	end TemperatureForRecipeSelector;
+
+process implementation TemperatureForRecipeSelector.impl
+  subcomponents
+    SelectTemperature : thread SelectTemperature.impl;
+  connections
+    conn1 : port RecipeIn -> SelectTemperature.RecipeIn;
+    conn2 : port SelectTemperature.TemperatureOut -> TemperatureOut;
+end TemperatureForRecipeSelector.impl;
+
+
+-- The process for automatic checking if
+-- a particular ingredient is available.
+process IngredientAvailabilityChecker
+  features
+    IngredientIn    : in data port IngredientInfo;
+    AvailabilityOut  : out data port IsAvailable;
+	end IngredientAvailabilityChecker;
+
+process implementation IngredientAvailabilityChecker.impl
+  subcomponents
+    CheckAvailability : thread CheckAvailability.impl;
+  connections
+    conn1 : port IngredientIn -> CheckAvailability.IngredientIn;
+    conn2 : port CheckAvailability.AvailabilityOut -> AvailabilityOut;
+end IngredientAvailabilityChecker.impl;
+
+
+-- The process for performing operations on a cup,
+-- such as dispensing and lifting.
+process CupControl
+  features
+    StartSignal  : in data port StartSignal;
+    FinishSignal : out data port FinishSignal;
+	end CupControl;
+
+process implementation CupControl.impl
+  subcomponents
+    DispenseCup : thread DispenseCup.impl;
+    LiftCup : thread LiftCup.impl;
+  connections
+    conn1 : port StartSignal -> DispenseCup.StartSignal;
+    conn2 : port DispenseCup.FinishSignal -> LiftCup.StartSignal;
+    conn3 : port LiftCup.FinishSignal -> FinishSignal;
+end CupControl.impl;
+
+
+
+-- The process for interpreting the user input
+-- on the touch panel.
+process UserActionsInterpreterProcess
+  features
+    TouchInput   : in data port TouchInput;
+    CommandOut   : out data port UserCommand;
+end UserActionsInterpreterProcess;
+
+process implementation UserActionsInterpreterProcess.impl
+  subcomponents
+    interpreter : thread InterpretUserAction.impl;
+  connections
+    conn1 : port TouchInput -> interpreter.TouchIn;
+    conn2 : port interpreter.CommandOut -> CommandOut;
+end UserActionsInterpreterProcess.impl;
+
+
+
+-- The process for summing all individual coin values
+-- into the total amount of money.
+process CoinCounter
+  features
+	NewCoinValue   : in data port CoinValue;
+	TotalCoinValue : out data port CoinValue;
+end CoinCounter;
+
+process implementation CoinCounter.impl
+  subcomponents	
+  	counterThread : thread AddCoinValue.impl;
+end CoinCounter.impl;
+
+
+-- The process for summing all individual note / bill values
+-- into the total amount of money.
+process BillCounter
+  features
+	NewBillValue   : in data port BillValue;
+	TotalBillValue : out data port BillValue;
+end BillCounter;
+
+process implementation BillCounter.impl
+  subcomponents	
+  	counterThread : thread AddBillValue.impl;
+end BillCounter.impl;
+
+
+-- The process for adding the total value of coins and
+-- the total value of notes / bills in order to receive
+-- the total amount of money deposited.
+process TotalMoneyCounter
+  features
+    CoinPaymentAmount  : in data port PaymentAmount;
+    BillPaymentAmount  : in data port PaymentAmount;
+    TotalPaymentAmount : out data port PaymentAmount;
+end TotalMoneyCounter;
+
+process implementation TotalMoneyCounter.impl
+  subcomponents
+    counterThread : thread MoneyCounterThread.impl;
+  connections
+    conn1 : port CoinPaymentAmount -> counterThread.CoinPaymentAmount;
+    conn2 : port BillPaymentAmount -> counterThread.BillPaymentAmount;
+    conn3 : port counterThread.TotalPaymentAmount -> TotalPaymentAmount;
+end TotalMoneyCounter.impl;
+
+
+-- The process for completing a transaction.
+process Payment
+  features
+    CoinIn     : in data port CoinValue;
+    BillIn     : in data port BillValue;
+    CardIn     : in data port CardAuthSignal;
+    AmountOut  : out data port PaymentAmount;
+    ChangeOut  : out data port PaymentAmount;
+    ReadyOut   : out data port PaymentReady;
+end Payment;
+
+process implementation Payment.impl
+  subcomponents
+    logic : thread ResolvePaymentAttempt.impl;
+  connections
+    conn1 : port CoinIn -> logic.CoinIn;
+    conn2 : port BillIn -> logic.BillIn;
+    conn3 : port CardIn -> logic.CardIn;
+    
+    conn4 : port logic.AmountOut -> AmountOut;
+    conn6 : port logic.ChangeOut -> ChangeOut;
+    conn5 : port logic.ReadyOut -> ReadyOut;
+end Payment.impl;
+
+
+-- The process for returning a change.
+process ChangeReturner
+  features
+	NeededValueIn : in data port PaymentAmount;
+	PaidValueIn   : in data port PaymentAmount;
+	ChangeCoinsOut: out data port CoinValue;
+	ChangeBillsOut: out data port BillValue;
+end ChangeReturner;
+
+process implementation ChangeReturner.impl
+  subcomponents
+    changeThread : thread ReturnChange.impl;
+  connections
+    conn1 : port NeededValueIn -> changeThread.NeededValueIn;
+    conn2 : port PaidValueIn -> changeThread.PaidValueIn;
+    conn3 : port changeThread.ChangeCoinsOut -> ChangeCoinsOut;
+    conn4 : port changeThread.ChangeBillsOut -> ChangeBillsOut;
+end ChangeReturner.impl;
+
+
+-- The process for reading the temperature
+-- from a sensor.
+process TemperatureReading
   features
     SensorIn  : in data port TemperatureType;
     SensorOut : out data port TemperatureType;
-end Reader;
+end TemperatureReading;
 
-process implementation Reader.impl
+process implementation TemperatureReading.impl
   subcomponents
-    TempReader : thread TempReader.impl;
+    TempReader : thread ReadTemperature.impl;
   connections
     conn1 : port SensorIn -> TempReader.TempIn;
     conn2 : port TempReader.Temp -> SensorOut;
-end Reader.impl;
+end TemperatureReading.impl;
 
-process Controller
+
+-- The process for turning the heater on or off
+-- depending on the temperature.
+process HeaterControl
   features
     ControlIn  : in data port TemperatureType;
     ControlOut : out data port HeaterControlType;
-end Controller;
+end HeaterControl;
 
-process implementation Controller.impl
+process implementation HeaterControl.impl
   subcomponents
-    Control : thread ControlLogic.impl;
+    Control : thread ToggleHeater.impl;
   connections
     conn3 : port ControlIn -> Control.Temp;
     conn4 : port Control.HeatCmd -> ControlOut;
-end Controller.impl;
+end HeaterControl.impl;
 
-process Heat
+
+-- The process for heating liquids. Applies to
+-- the preparation of hot drinks.
+process Heating
   features
     HeaterIn  : in data port HeaterControlType;
     HeaterOut : out data port HeaterControlType;
-end Heat;
+end Heating;
 
-process implementation Heat.impl
+process implementation Heating.impl
   subcomponents
     HeaterCtrl : thread HeaterDriver.impl;
   connections
     conn5 : port HeaterIn -> HeaterCtrl.PowerIn;
     conn6 : port HeaterCtrl.PowerOut -> HeaterOut;
-end Heat.impl;
+end Heating.impl;
 
-process CoolingController
+
+-- The process for turning the refrigerator on or off
+-- depending on the temperature.
+process RefrigeratorControl
   features
     ControlIn  : in data port TemperatureType;
     ControlOut : out data port CoolerControlType;
-end CoolingController;
+end RefrigeratorControl;
 
-process implementation CoolingController.impl
+process implementation RefrigeratorControl.impl
   subcomponents
-    Cooling : thread CoolingLogic.impl;
+    Cooling : thread ToggleCooler.impl;
   connections
     connCool1 : port ControlIn -> Cooling.Temp;
     connCool2 : port Cooling.CoolCmd -> ControlOut;
-end CoolingController.impl;
+end RefrigeratorControl.impl;
 
-process CoolingProcess
+
+-- The process for cooling liquids. Applies to
+-- the preparation of cold drinks.
+process Cooling
   features
     CoolerIn  : in data port CoolerControlType;
     CoolerOut : out data port CoolerControlType;
-end CoolingProcess;
+end Cooling;
 
-process implementation CoolingProcess.impl
+process implementation Cooling.impl
   subcomponents
     CoolerCtrl : thread RefrigerationDriver.impl;
   connections
     connCool3 : port CoolerIn -> CoolerCtrl.PowerIn;
     connCool4 : port CoolerCtrl.PowerOut -> CoolerOut;
-end CoolingProcess.impl;
+end Cooling.impl;
 
-process TeaProcess
+
+-- The process for full tea preparation.
+process TeaPreparation
   features
     StartSignal : in data port StartSignal;
     TeaOut      : out data port LiquidTea;
-end TeaProcess;
+    TeaDone     : out event port; -- ending
+end TeaPreparation;
 
-process implementation TeaProcess.impl
+process implementation TeaPreparation.impl
   subcomponents
-    teaLogic : thread TeaController.impl;
+    teaLogic : thread PrepareTea.impl;
   connections
     conn9  : port StartSignal -> teaLogic.StartCmd;
-    conn10 : port teaLogic.TeaOut -> TeaOut;
-end TeaProcess.impl;
+    conn10 : port teaLogic.TeaPoured -> TeaOut;
+    conn11 : port teaLogic.Done -> TeaDone;
+end TeaPreparation.impl;
 
-process CoffeeProcess
+
+-- The process for full coffee preparation.
+process CoffeePreparation
   features
     StartSignal : in data port StartSignal;
     CoffeeOut   : out data port LiquidCoffee;
-end CoffeeProcess;
+    CoffeeDone  : out event port;  -- ending
+end CoffeePreparation;
 
-process implementation CoffeeProcess.impl
+process implementation CoffeePreparation.impl
   subcomponents
-    coffeeLogic : thread CoffeeController.impl;
+    coffeeLogic : thread PrepareCoffee.impl;
   connections
     conn7 : port StartSignal -> coffeeLogic.StartCmd;
-    conn8 : port coffeeLogic.LiquidSend -> CoffeeOut;
-end CoffeeProcess.impl;
+    conn8 : port coffeeLogic.CoffeePoured -> CoffeeOut;
+    conn9  : port coffeeLogic.Done -> CoffeeDone;
+end CoffeePreparation.impl;
 
+
+-- The process for the entire use case of the
+-- vending machine.
+process MainProcessor
+  features
+    PaymentIn     : in data port PaymentReady;
+    UserAction	  : in data port UserCommand;
+    RecipeIn : in data port RecipeInfo;
+    RecipeOut : out data port RecipeInfo;
+    IngredientIn : in data port IngredientInfo;
+    IngredientOut : out data port IngredientInfo;
+    IsAvailable : in data port IsAvailable;
+    CupOut : out data port StartSignal;
+    CupIn : in data port FinishSignal;
+    BeansAmountOut : out data port BeanAmount;
+    TeaLeavesAmountOut : out data port TeaLeavesAmount;
+    WaterAmountOut : out data port WaterAmount;
+    WaterTemperatureOut : out data port WaterTemperature;
+    MilkAmountOut : out data port MilkAmount;
+    MilkTemperatureOut : out data port MilkTemperature;
+    
+    TeaDone    : in event port;
+    CoffeeDone : in event port;
+end MainProcessor;
+
+process implementation MainProcessor.impl
+  subcomponents
+    logic : thread MainController.impl;
+  connections
+    conn1 : port PaymentIn -> logic.PaymentIn;
+    conn2 : port RecipeIn -> logic.RecipeIn;
+    conn3 : port logic.BeansAmountOut -> BeansAmountOut;
+    conn4 : port logic.TeaLeavesAmountOut -> TeaLeavesAmountOut;
+    conn5 : port logic.WaterAmountOut -> WaterAmountOut;
+    conn6 : port logic.WaterTemperatureOut -> WaterTemperatureOut;
+    conn7 : port logic.MilkAmountOut -> MilkAmountOut;
+    conn8 : port logic.MilkTemperatureOut -> MilkTemperatureOut;
+end MainProcessor.impl;
+
+
+
+
+
+-- BUS -----------------------------------------
+------------------------------------------------
+
+-- The main bus that accounts for the communication
+-- within the system.
 bus ethernet
 end ethernet;
 
+
+
+
+
+-- PROCESSORS ----------------------------------
+------------------------------------------------
+
+
+-- The main processor that deals with the core components
+-- of the vending machine.
 processor corei5
   features
     eth: requires bus access ethernet;
@@ -792,6 +1286,8 @@ processor corei5
     Timing_Properties::Processor_Capacity => 1.0 MIPS;
 end corei5;
 
+
+-- The processor dedicated to the coffee preparation mechanism.
 processor CoffeeCPU
   features
     net : requires bus access ethernet;
@@ -801,6 +1297,8 @@ processor CoffeeCPU
     Timing_Properties::Processor_Capacity => 1.0 MIPS;
 end CoffeeCPU;
 
+
+-- The processor dedicated to the tea preparation mechanism.
 processor TeaCPU
   features
     net : requires bus access ethernet;
@@ -810,63 +1308,15 @@ processor TeaCPU
     Timing_Properties::Processor_Capacity => 1.0 MIPS;
 end TeaCPU;
 
-  thread MainController
-	  features
---	    PaymentIn     : in data port ReadyOut;
-	    RecipeIn : in data port RecipeInfo;
-	    RecipeOut : in data port RecipeInfo;
-      IngredientIn : in data port IngredientInfo;
-      IngredientOut : out data port IngredientInfo;
-      IsAvailable : in data port IsAvailable;
-      CupOut : out data port StartSignal;
-      CupIn : in data port FinishSignal;
-	    BeansAmountOut : out data port BeanAmount;
-	    TeaLeavesAmountOut : out data port TeaLeavesAmount;
-      WaterAmountOut : out data port WaterAmount;
-      WaterTemperatureOut : out data port WaterTemperature;
-      MilkAmountOut : out data port MilkAmount;
-      MilkTemperatureOut : out data port MilkTemperature;
-	  properties
-	    Dispatch_Protocol => Periodic;
-	    Period => 200ms;
-	    Compute_Execution_Time => 15ms..20ms;
-	end MainController;
-	
-	thread implementation MainController.impl
-	end MainController.impl;
-	
-	process MainProcessor
-	  features
---	    PaymentIn     : in data port ReadyOut;
-	    RecipeIn : in data port RecipeInfo;
-	    RecipeOut : out data port RecipeInfo;
-      IngredientIn : in data port IngredientInfo;
-      IngredientOut : out data port IngredientInfo;
-      IsAvailable : in data port IsAvailable;
-      CupOut : out data port StartSignal;
-      CupIn : in data port FinishSignal;
-	    BeansAmountOut : out data port BeanAmount;
-	    TeaLeavesAmountOut : out data port TeaLeavesAmount;
-      WaterAmountOut : out data port WaterAmount;
-      WaterTemperatureOut : out data port WaterTemperature;
-      MilkAmountOut : out data port MilkAmount;
-      MilkTemperatureOut : out data port MilkTemperature;
-	end MainProcessor;
 
-	process implementation MainProcessor.impl
-	  subcomponents
-	    logic : thread MainController.impl;
-	  connections
---      c1 : port PaymentIn -> logic.PaymentIn;
-        c2 : port RecipeIn -> logic.RecipeIn;
-        c3 : port logic.BeansAmountOut -> BeansAmountOut;
-        c4 : port logic.TeaLeavesAmountOut -> TeaLeavesAmountOut;
-	      c5 : port logic.WaterAmountOut -> WaterAmountOut;
-	      c6 : port logic.WaterTemperatureOut -> WaterTemperatureOut;
-	      c7 : port logic.MilkAmountOut -> MilkAmountOut;
-	      c8 : port logic.MilkTemperatureOut -> MilkTemperatureOut;
-	end MainProcessor.impl;
 
+
+
+-- SYSTEM --------------------------------------
+------------------------------------------------
+
+-- The full system that combines all other components
+-- and accounts for all supported use cases of the vending machine.
 system CoffeeTeaMachineSystem
 end CoffeeTeaMachineSystem;
 
@@ -885,30 +1335,31 @@ system implementation CoffeeTeaMachineSystem.impl
     CardScan      : device CardScanner.impl;
     TouchPanel    : device TouchablePanel.impl;
     RecipeStorage : device RecipeStorage.impl;
-    IngredientSelector : device IngredientSelector.impl;
-    TemperatureSelector : device TemperatureSelector.impl;
-    AvailabilityChecker : device AvailabilityChecker.impl;
+--    IngredientSelector : device IngredientSelector.impl;   =====> Replaced by thread+process.
+--    TemperatureSelector : device TemperatureSelector.impl; =====> Replaced by thread+process.
+--    AvailabilityChecker : device AvailabilityChecker.impl; =====> Replaced by thread+process.
     CupDispenser : device CupDispenser.impl;
     CupLifter : device CupLifter.impl;
-    ChangeReturner : device ChangeReturner.impl;
 
-    Read_pr       : process Reader.impl;
-    Cont_pr       : process Controller.impl;
-    Heat_pr       : process Heat.impl;
-    CoolCont_pr   : process CoolingController.impl;
-    CoolHeat_pr   : process CoolingProcess.impl;
-    TeaProc       : process TeaProcess.impl;
-    CoffeeProc    : process CoffeeProcess.impl;
-    Counter       : process MoneyCounterProcess.impl;
+    Read_pr       : process TemperatureReading.impl;
+    Cont_pr       : process HeaterControl.impl;
+    Heat_pr       : process Heating.impl;
+    CoolCont_pr   : process RefrigeratorControl.impl;
+    CoolHeat_pr   : process Cooling.impl;
+    TeaProc       : process TeaPreparation.impl;
+    CoffeeProc    : process CoffeePreparation.impl;
+    CoinCounterProc   : process CoinCounter.impl;
+    BillCounterProc   : process BillCounter.impl;
+    TotalCounterProc   : process TotalMoneyCounter.impl;
     ActionsProc   : process UserActionsInterpreterProcess.impl;
-    PaymentProc   : process PaymentProcessor.impl;  -- payment integration
+    PaymentProc   : process Payment.impl;  -- payment integration
     MainProcessor : process MainProcessor.impl;
-    Change        : process Change.impl;
-    Recipe        : process Recipe.impl;
-    Ingredient    : process Ingredient.impl;
-    Availability  : process Availability.impl;
-    Temperature   : process Temperature.impl;
-    Cup           : process Cup.impl;
+    Change        : process ChangeReturner.impl;
+    Recipe        : process RecipeSelector.impl;
+    Ingredient    : process IngredientForRecipeSelector.impl;
+    Availability  : process IngredientAvailabilityChecker.impl;
+    Temperature   : process TemperatureForRecipeSelector.impl;
+    Cup           : process CupControl.impl;
 
     Read_cpu      : processor corei5;
     Cont_cpu      : processor corei5;
@@ -922,6 +1373,8 @@ system implementation CoffeeTeaMachineSystem.impl
     eth1     : bus access Read_cpu.eth -> Net;
     eth2     : bus access Net -> Cont_cpu.eth;
     eth3     : bus access Net -> Heat_cpu.eth;
+    
+    -- TEMPERATURE CONTROL (heating and cooling)
     s_to_r   : port Sensor.Temp -> Read_pr.SensorIn;
     r_to_c   : port Read_pr.SensorOut -> Cont_pr.ControlIn;
     c_to_h   : port Cont_pr.ControlOut -> Heat_pr.HeaterIn;
@@ -930,20 +1383,44 @@ system implementation CoffeeTeaMachineSystem.impl
     r_to_cool: port Read_pr.SensorOut -> CoolCont_pr.ControlIn;
     cool_to_r: port CoolCont_pr.ControlOut -> CoolHeat_pr.CoolerIn;
     r_to_ref : port CoolHeat_pr.CoolerOut -> Refrigerator.Power;
+	
+	-- INGREDIENT FLOWS - linear physical flows
 
-    conn1 : port BeanStorage.BeansOut -> Grinder.BeansIn;
-    conn2 : port Grinder.GroundOut    -> Brewer.GroundIn;
-    conn3 : port TeaDispense.LeavesOut -> Cooker.LeavesIn;
-    conn4 : port CoinMech.ValueOut -> Counter.CoinValueIn;
-    conn5 : port TouchPanel.TouchEvent -> ActionsProc.TouchInput;
+	-- Dispense the beans from the storage
+	-- and put them into the grinder.
+    conn1  : port BeanStorage.BeansOut -> Grinder.BeansIn;
+    
+    -- Move the ground beans from the grinder
+    -- to the brewer,
+    conn2  : port Grinder.GroundOut    -> Brewer.GroundIn;
+    
+    -- Dispense the tea leaves from the Tea Dispenser
+    -- and put them into the Cooker.
+    conn3  : port TeaDispense.LeavesOut -> Cooker.LeavesIn;
+    
+    -- Add the value of the inserted coin
+    -- to the counter.
+    conn4  : port CoinMech.ValueOut -> CoinCounterProc.NewCoinValue;
+    
+    -- PAYMENT + TOUCH PANEL
+    
+    -- Add the value of the inserted note / bill
+    -- to the counter.
+    conn21 : port BillAcceptor.ValueOut -> BillCounterProc.NewBillValue;
+    conn5  : port TouchPanel.TouchEvent -> ActionsProc.TouchInput;
     conn11 : port TouchPanel.TouchEvent -> Recipe.TouchEvent;
+    
+    -- RECIPE SELECTION
+    
     conn12 : port Recipe.RecipeOut -> MainProcessor.RecipeIn;
     conn13 : port MainProcessor.RecipeOut -> Ingredient.RecipeIn;
     conn14 : port Ingredient.IngredientOut -> MainProcessor.IngredientIn;
     conn15 : port MainProcessor.IngredientOut -> Availability.IngredientIn;
     conn16 : port Availability.AvailabilityOut -> MainProcessor.IsAvailable;
     conn17 : port MainProcessor.RecipeOut -> Temperature.RecipeIn;
-    conn18 : port Temperature.TemperatureOut -> MainProcessor.IngredientIn;
+    
+	-- CUP HANDLING
+
     conn19 : port MainProcessor.CupOut -> Cup.StartSignal;
     conn20 : port Cup.FinishSignal -> MainProcessor.CupIn;
     
@@ -951,9 +1428,24 @@ system implementation CoffeeTeaMachineSystem.impl
     -- payment integration
     conn6 : port CoinMech.ValueOut -> PaymentProc.CoinIn;
     conn7 : port BillAcceptor.ValueOut -> PaymentProc.BillIn;
-    conn10 : port BillAcceptor.ValueOut -> Change.NeededValueIn;
+    
     conn8 : port CardScan.Auth -> PaymentProc.CardIn;
-    conn9 : port PaymentProc.ChangeOut -> Change.PaidValueIn;
+
+	-- CHANGE RETURN
+	
+	conn9  : port PaymentProc.ChangeOut -> Change.PaidValueIn;
+	conn10 : port PaymentProc.AmountOut -> Change.NeededValueIn;
+    
+    -- User Actions <-> MainProcessor
+    -- (so user events like "select drink", "cancel", etc.
+    -- are processed)
+    conn18 : port ActionsProc.CommandOut -> MainProcessor.UserAction;
+    
+	
+	-- Tea/Coffee preparation - we're wiring MainProcessor to either.
+	conn25 : port TeaProc.TeaDone -> MainProcessor.TeaDone;
+	conn26 : port CoffeeProc.CoffeeDone -> MainProcessor.CoffeeDone;	
+    
   properties
     Actual_Connection_Binding => (reference(Net)) applies to r_to_c;
     Actual_Connection_Binding => (reference(Net)) applies to c_to_h;
