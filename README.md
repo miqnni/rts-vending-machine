@@ -1,12 +1,13 @@
-# RTS vending machine
+# Real-Time-System: A vending machine for hot and cold beverages
 
 <img width="674" alt="image" src="https://github.com/user-attachments/assets/ffdc9fdb-d75c-47b4-964c-c763aba00893" />
 
-## Authors' data
+## Authors
 
-Konrad Armatys, karmatys@student.agh.edu.pl
-
-Mikołaj Nietupski, mnietupski@student.agh.edu.pl
+|Name|E-mail|GitHub|
+|---|---|---|
+|Konrad Armatys|karmatys@student.agh.edu.pl|[miqnni](https://github.com/miqnni)|
+|Mikołaj Nietupski|mnietupski@student.agh.edu.pl|[karmatys8](https://github.com/karmatys8)|
 
 ## Description
 
