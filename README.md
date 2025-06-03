@@ -6,8 +6,8 @@
 
 |Name|E-mail|GitHub|
 |---|---|---|
-|Konrad Armatys|karmatys@student.agh.edu.pl|[miqnni](https://github.com/miqnni)|
-|Mikołaj Nietupski|mnietupski@student.agh.edu.pl|[karmatys8](https://github.com/karmatys8)|
+|Konrad Armatys|karmatys@student.agh.edu.pl|[karmatys8](https://github.com/karmatys8)|
+|Mikołaj Nietupski|mnietupski@student.agh.edu.pl|[miqnni](https://github.com/miqnni)|
 
 ## Description
 
