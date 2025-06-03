@@ -1,6 +1,9 @@
 package lab5_6_pak
 public
-with Data_Model;
+with Data_Model, SEI;
+
+
+
 
 
 -- DATA ---------------------------------------------
@@ -235,6 +238,8 @@ end PaymentAmount;
 device TempSensor
   features
     Temp : out data port TemperatureType;
+  properties
+	SEI::GrossWeight => 0.050kg;
 end TempSensor;
 
 device implementation TempSensor.impl
@@ -246,6 +251,8 @@ end TempSensor.impl;
 device Heater
   features
     Power : in data port HeaterControlType;
+  properties
+	SEI::GrossWeight => 0.800kg;
 end Heater;
 
 device implementation Heater.impl
@@ -257,6 +264,8 @@ end Heater.impl;
 device Refrigerator
   features
     Power : in data port CoolerControlType;
+  properties
+	SEI::GrossWeight => 1.500kg;
 end Refrigerator;
 
 device implementation Refrigerator.impl
@@ -269,6 +278,8 @@ end Refrigerator.impl;
 device TeaLeavesDispenser
   features
     LeavesOut : out data port TeaLeavesAmount;
+  properties
+	SEI::GrossWeight => 0.400kg;
 end TeaLeavesDispenser;
 
 device implementation TeaLeavesDispenser.impl
@@ -283,6 +294,8 @@ device TeaCooker
     LeavesIn : in data port TeaLeavesAmount;
     WaterIn  : in data port WaterAmount;
     TeaOut   : out data port LiquidTea;
+  properties
+	SEI::GrossWeight => 1.200kg;
 end TeaCooker;
 
 device implementation TeaCooker.impl
@@ -293,6 +306,8 @@ end TeaCooker.impl;
 device CoffeeBeansStorage
   features
     BeansOut : out data port BeanAmount;
+  properties
+	SEI::GrossWeight => 0.500kg;
 end CoffeeBeansStorage;
 
 device implementation CoffeeBeansStorage.impl
@@ -306,6 +321,8 @@ device CoffeeGrinder
   features
     BeansIn   : in data port BeanAmount;
     GroundOut : out data port GroundCoffee;
+  properties
+	SEI::GrossWeight => 1.000kg;
 end CoffeeGrinder;
 
 device implementation CoffeeGrinder.impl
@@ -318,6 +335,8 @@ device CoffeeBrewer
   features
     GroundIn  : in data port GroundCoffee;
     CoffeeOut : out data port LiquidCoffee;
+  properties
+	SEI::GrossWeight => 1.300kg;
 end CoffeeBrewer;
 
 device implementation CoffeeBrewer.impl
@@ -334,6 +353,8 @@ device RecipeStorage
   features
     TouchEvent    : in data port TouchInput;
     RecipeOut  : out data port RecipeInfo;
+  properties
+	SEI::GrossWeight => 0.200kg;
 end RecipeStorage;
 
 device implementation RecipeStorage.impl
@@ -390,6 +411,8 @@ device CupDispenser
   features
     StartSignal  : in data port StartSignal;
     FinishSignal : out data port FinishSignal;
+  properties
+	SEI::GrossWeight => 0.700kg;
 end CupDispenser;
 
 device implementation CupDispenser.impl
@@ -403,6 +426,8 @@ device CupLifter
   features
     StartSignal  : in data port StartSignal;
     FinishSignal : out data port FinishSignal;
+  properties
+	SEI::GrossWeight => 0.900kg;
 end CupLifter;
 
 device implementation CupLifter.impl
@@ -419,6 +444,8 @@ device CoinMechanism
       
     -- The value of the inserted coin.
 	ValueOut : out data port CoinValue;
+  properties
+	SEI::GrossWeight => 0.600kg;
 end CoinMechanism;
 	
 device implementation CoinMechanism.impl
@@ -431,6 +458,8 @@ device BillAcceptor
   features
     BillInserted : in data port BillSignal;
     ValueOut     : out data port BillValue;
+  properties
+	SEI::GrossWeight => 0.650kg;
 end BillAcceptor;
 
 device implementation BillAcceptor.impl
@@ -443,6 +472,8 @@ device CardScanner
   features
     ScanSignal : in data port CardSignal;
     Auth       : out data port CardAuthSignal;
+  properties
+	SEI::GrossWeight => 0.350kg;
 end CardScanner;
 
 device implementation CardScanner.impl
@@ -498,6 +529,8 @@ end CardScanner.impl;
 device TouchablePanel
   features
     TouchEvent : out data port TouchInput;
+  properties
+	SEI::GrossWeight => 0.500kg;
 end TouchablePanel;
 
 device implementation TouchablePanel.impl
@@ -1265,6 +1298,8 @@ end MainProcessor.impl;
 -- The main bus that accounts for the communication
 -- within the system.
 bus ethernet
+  properties
+    SEI::GrossWeight => 0.200kg;
 end ethernet;
 
 
@@ -1284,6 +1319,7 @@ processor corei5
     Scheduling_Protocol => (Round_Robin_Protocol);
     Clock_Period => 1 ms;
     Timing_Properties::Processor_Capacity => 1.0 MIPS;
+	SEI::GrossWeight => 0.100kg;
 end corei5;
 
 
@@ -1295,6 +1331,7 @@ processor CoffeeCPU
     Scheduling_Protocol => (Round_Robin_Protocol);
     Clock_Period => 1ms;
     Timing_Properties::Processor_Capacity => 1.0 MIPS;
+    SEI::GrossWeight => 0.070kg;
 end CoffeeCPU;
 
 
@@ -1306,6 +1343,7 @@ processor TeaCPU
     Scheduling_Protocol => (Round_Robin_Protocol);
     Clock_Period => 1ms;
     Timing_Properties::Processor_Capacity => 1.0 MIPS;
+    SEI::GrossWeight => 0.070kg;
 end TeaCPU;
 
 

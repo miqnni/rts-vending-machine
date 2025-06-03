@@ -144,6 +144,58 @@ This project is an AADL (Architecture Analysis & Design Language) model of a ven
 
 ![AADL diagram of the vending machine system](./img/vending_machine_aadl_diagram.svg)
 
+## Weight analysis
+
+The following weights have been assigned to the system's hardware components:
+
+| Component            | Type      | Weight (g) |
+| -------------------- | --------- | ---------- |
+| `TempSensor`         | device    | 50         |
+| `Heater`             | device    | 800        |
+| `Refrigerator`       | device    | 1500       |
+| `TeaLeavesDispenser` | device    | 400        |
+| `TeaCooker`          | device    | 1200       |
+| `CoffeeBeansStorage` | device    | 500        |
+| `CoffeeGrinder`      | device    | 1000       |
+| `CoffeeBrewer`       | device    | 1300       |
+| `RecipeStorage`      | device    | 200        |
+| `CupDispenser`       | device    | 700        |
+| `CupLifter`          | device    | 900        |
+| `CoinMechanism`      | device    | 600        |
+| `BillAcceptor`       | device    | 650        |
+| `CardScanner`        | device    | 350        |
+| `TouchablePanel`     | device    | 500        |
+| `corei5`             | processor | 100        |
+| `CoffeeCPU`          | processor | 70         |
+| `TeaCPU`             | processor | 70         |
+| `ethernet`           | bus       | 200        |
+
+### Report
+
+> Net: [L] Sum of weights / gross weight is 0.200 kg (no limit specified)
+> Sensor: [L] Sum of weights / gross weight is 0.050 kg (no limit specified)
+> Heater: [L] Sum of weights / gross weight is 0.800 kg (no limit specified)
+> Refrigerator: [L] Sum of weights / gross weight is 1.500 kg (no limit specified)
+> TeaDispense: [L] Sum of weights / gross weight is 0.400 kg (no limit specified)
+> Cooker: [L] Sum of weights / gross weight is 1.200 kg (no limit specified)
+> BeanStorage: [L] Sum of weights / gross weight is 0.500 kg (no limit specified)
+> Grinder: [L] Sum of weights / gross weight is 1.000 kg (no limit specified)
+> Brewer: [L] Sum of weights / gross weight is 1.300 kg (no limit specified)
+> CoinMech: [L] Sum of weights / gross weight is 0.600 kg (no limit specified)
+> BillAcceptor: [L] Sum of weights / gross weight is 0.650 kg (no limit specified)
+> CardScan: [L] Sum of weights / gross weight is 0.350 kg (no limit specified)
+> TouchPanel: [L] Sum of weights / gross weight is 0.500 kg (no limit specified)
+> RecipeStorage: [L] Sum of weights / gross weight is 0.200 kg (no limit specified)
+> CupDispenser: [L] Sum of weights / gross weight is 0.700 kg (no limit specified)
+> CupLifter: [L] Sum of weights / gross weight is 0.900 kg (no limit specified)
+> Read_cpu: [L] Sum of weights / gross weight is 0.100 kg (no limit specified)
+> Cont_cpu: [L] Sum of weights / gross weight is 0.100 kg (no limit specified)
+> Heat_cpu: [L] Sum of weights / gross weight is 0.100 kg (no limit specified)
+> Cool_cpu: [L] Sum of weights / gross weight is 0.100 kg (no limit specified)
+> CPU_Coffee: [L] Sum of weights / gross weight is 0.070 kg (no limit specified)
+> CPU_Tea: [L] Sum of weights / gross weight is 0.070 kg (no limit specified)
+> CoffeeTeaMachineSystem_impl_Instance: [L] Sum of weights / gross weight is 11.390 kg (no limit specified)
+
 # Sources
 
 -   [CASE AADL Tutorial](https://github.com/GaloisInc/CASE-AADL-Tutorial/tree/main/aadl_book) - the main source of information on AADL components used in this project
