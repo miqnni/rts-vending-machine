@@ -144,7 +144,9 @@ This project is an AADL (Architecture Analysis & Design Language) model of a ven
 
 ![AADL diagram of the vending machine system](./img/vending_machine_aadl_diagram.svg)
 
-## Weight analysis
+## Analyses
+
+### Weight analysis
 
 The following weights have been assigned to the system's hardware components:
 
@@ -170,31 +172,109 @@ The following weights have been assigned to the system's hardware components:
 | `TeaCPU`             | processor | 70         |
 | `ethernet`           | bus       | 200        |
 
-### Report
+**Report**
 
-> Net: [L] Sum of weights / gross weight is 0.200 kg (no limit specified)
-> Sensor: [L] Sum of weights / gross weight is 0.050 kg (no limit specified)
-> Heater: [L] Sum of weights / gross weight is 0.800 kg (no limit specified)
-> Refrigerator: [L] Sum of weights / gross weight is 1.500 kg (no limit specified)
-> TeaDispense: [L] Sum of weights / gross weight is 0.400 kg (no limit specified)
-> Cooker: [L] Sum of weights / gross weight is 1.200 kg (no limit specified)
-> BeanStorage: [L] Sum of weights / gross weight is 0.500 kg (no limit specified)
-> Grinder: [L] Sum of weights / gross weight is 1.000 kg (no limit specified)
-> Brewer: [L] Sum of weights / gross weight is 1.300 kg (no limit specified)
-> CoinMech: [L] Sum of weights / gross weight is 0.600 kg (no limit specified)
-> BillAcceptor: [L] Sum of weights / gross weight is 0.650 kg (no limit specified)
-> CardScan: [L] Sum of weights / gross weight is 0.350 kg (no limit specified)
-> TouchPanel: [L] Sum of weights / gross weight is 0.500 kg (no limit specified)
-> RecipeStorage: [L] Sum of weights / gross weight is 0.200 kg (no limit specified)
-> CupDispenser: [L] Sum of weights / gross weight is 0.700 kg (no limit specified)
-> CupLifter: [L] Sum of weights / gross weight is 0.900 kg (no limit specified)
-> Read_cpu: [L] Sum of weights / gross weight is 0.100 kg (no limit specified)
-> Cont_cpu: [L] Sum of weights / gross weight is 0.100 kg (no limit specified)
-> Heat_cpu: [L] Sum of weights / gross weight is 0.100 kg (no limit specified)
-> Cool_cpu: [L] Sum of weights / gross weight is 0.100 kg (no limit specified)
-> CPU_Coffee: [L] Sum of weights / gross weight is 0.070 kg (no limit specified)
-> CPU_Tea: [L] Sum of weights / gross weight is 0.070 kg (no limit specified)
-> CoffeeTeaMachineSystem_impl_Instance: [L] Sum of weights / gross weight is 11.390 kg (no limit specified)
+> Weight totals Report
+>
+> -   Net: [L] Sum of weights / gross weight is 0.200 kg (no limit specified)
+> -   Sensor: [L] Sum of weights / gross weight is 0.050 kg (no limit specified)
+> -   Heater: [L] Sum of weights / gross weight is 0.800 kg (no limit specified)
+> -   Refrigerator: [L] Sum of weights / gross weight is 1.500 kg (no limit specified)
+> -   TeaDispense: [L] Sum of weights / gross weight is 0.400 kg (no limit specified)
+> -   Cooker: [L] Sum of weights / gross weight is 1.200 kg (no limit specified)
+> -   BeanStorage: [L] Sum of weights / gross weight is 0.500 kg (no limit specified)
+> -   Grinder: [L] Sum of weights / gross weight is 1.000 kg (no limit specified)
+> -   Brewer: [L] Sum of weights / gross weight is 1.300 kg (no limit specified)
+> -   CoinMech: [L] Sum of weights / gross weight is 0.600 kg (no limit specified)
+> -   BillAcceptor: [L] Sum of weights / gross weight is 0.650 kg (no limit specified)
+> -   CardScan: [L] Sum of weights / gross weight is 0.350 kg (no limit specified)
+> -   TouchPanel: [L] Sum of weights / gross weight is 0.500 kg (no limit specified)
+> -   RecipeStorage: [L] Sum of weights / gross weight is 0.200 kg (no limit specified)
+> -   CupDispenser: [L] Sum of weights / gross weight is 0.700 kg (no limit specified)
+> -   CupLifter: [L] Sum of weights / gross weight is 0.900 kg (no limit specified)
+> -   Read_cpu: [L] Sum of weights / gross weight is 0.100 kg (no limit specified)
+> -   Cont_cpu: [L] Sum of weights / gross weight is 0.100 kg (no limit specified)
+> -   Heat_cpu: [L] Sum of weights / gross weight is 0.100 kg (no limit specified)
+> -   Cool_cpu: [L] Sum of weights / gross weight is 0.100 kg (no limit specified)
+> -   CPU_Coffee: [L] Sum of weights / gross weight is 0.070 kg (no limit specified)
+> -   CPU_Tea: [L] Sum of weights / gross weight is 0.070 kg (no limit specified)
+> -   CoffeeTeaMachineSystem_impl_Instance: [A] Sum of weights (11.390 kg) is below weight limit of 12.000 kg (5.1 % Weight slack)
+
+### Resource budgets analysis: not bound resource budgets
+
+**Resource Summary**
+
+-   MIPS capacity 1732.800 MIPS : MIPS budget 139.049 MIPS
+-   6 out of 6 with MIPS capacity
+-   39 out of 39 with MIPS budget
+
+**Detailed Processor MIPS Capacity Report**
+
+| Component            | Capacity      |
+| -------------------- | ------------- |
+| processor Read_cpu   | 288.800 MIPS  |
+| processor Cont_cpu   | 288.800 MIPS  |
+| processor Heat_cpu   | 288.800 MIPS  |
+| processor Cool_cpu   | 288.800 MIPS  |
+| processor CPU_Coffee | 288.800 MIPS  |
+| processor CPU_Tea    | 288.800 MIPS  |
+| Total                | 1732.800 MIPS |
+
+**Detailed MIPS Budget Report**
+
+| Component                             | Budget      | Actual       | Notes                                                                                                                                |
+| ------------------------------------- | ----------- | ------------ | ------------------------------------------------------------------------------------------------------------------------------------ |
+| thread Read_pr.TempReader             | 10.000 MIPS | 0.722 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.Read_pr.TempReader total 0.722 MIPS below budget 10.000 MIPS (92.8 % slack)              |
+| process Read_pr                       | 0.000 MIPS  | 0.722 MIPS   |                                                                                                                                      |
+| thread Cont_pr.Control                | 10.000 MIPS | 0.722 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.Cont_pr.Control total 0.722 MIPS below budget 10.000 MIPS (92.8 % slack)                 |
+| process Cont_pr                       | 0.000 MIPS  | 0.722 MIPS   |                                                                                                                                      |
+| thread Heat_pr.HeaterCtrl             | 10.000 MIPS | 0.722 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.Heat_pr.HeaterCtrl total 0.722 MIPS below budget 10.000 MIPS (92.8 % slack)              |
+| process Heat_pr                       | 0.000 MIPS  | 0.722 MIPS   |                                                                                                                                      |
+| thread CoolCont_pr.Cooling            | 10.000 MIPS | 0.722 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.CoolCont_pr.Cooling total 0.722 MIPS below budget 10.000 MIPS (92.8 % slack)             |
+| process CoolCont_pr                   | 0.000 MIPS  | 0.722 MIPS   |                                                                                                                                      |
+| thread CoolHeat_pr.CoolerCtrl         | 10.000 MIPS | 0.722 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.CoolHeat_pr.CoolerCtrl total 0.722 MIPS below budget 10.000 MIPS (92.8 % slack)          |
+| process CoolHeat_pr                   | 0.000 MIPS  | 0.722 MIPS   |                                                                                                                                      |
+| thread TeaProc.teaLogic               | 10.000 MIPS | 1.083 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.TeaProc.teaLogic total 1.083 MIPS below budget 10.000 MIPS (89.2 % slack)                |
+| process TeaProc                       | 0.000 MIPS  | 1.083 MIPS   |                                                                                                                                      |
+| thread CoffeeProc.coffeeLogic         | 10.000 MIPS | 1.083 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.CoffeeProc.coffeeLogic total 1.083 MIPS below budget 10.000 MIPS (89.2 % slack)          |
+| process CoffeeProc                    | 0.000 MIPS  | 1.083 MIPS   |                                                                                                                                      |
+| thread CoinCounterProc.counterThread  | 10.000 MIPS | 0.000 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.CoinCounterProc.counterThread total 0.000 MIPS below budget 10.000 MIPS (100.0 % slack)  |
+| process CoinCounterProc               | 0.000 MIPS  | 10.000 MIPS  |                                                                                                                                      |
+| thread BillCounterProc.counterThread  | 10.000 MIPS | 0.000 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.BillCounterProc.counterThread total 0.000 MIPS below budget 10.000 MIPS (100.0 % slack)  |
+| process BillCounterProc               | 0.000 MIPS  | 10.000 MIPS  |                                                                                                                                      |
+| thread TotalCounterProc.counterThread | 10.000 MIPS | 0.000 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.TotalCounterProc.counterThread total 0.000 MIPS below budget 10.000 MIPS (100.0 % slack) |
+| process TotalCounterProc              | 0.000 MIPS  | 10.000 MIPS  |                                                                                                                                      |
+| thread ActionsProc.interpreter        | 10.000 MIPS | 0.963 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.ActionsProc.interpreter total 0.963 MIPS below budget 10.000 MIPS (90.4 % slack)         |
+| process ActionsProc                   | 0.000 MIPS  | 0.963 MIPS   |                                                                                                                                      |
+| thread PaymentProc.logic              | 10.000 MIPS | 2.310 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.PaymentProc.logic total 2.310 MIPS below budget 10.000 MIPS (76.9 % slack)               |
+| process PaymentProc                   | 0.000 MIPS  | 2.310 MIPS   |                                                                                                                                      |
+| thread MainProcessor.logic            | 30.000 MIPS | 0.000 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.MainProcessor.logic total 0.000 MIPS below budget 30.000 MIPS (100.0 % slack)            |
+| process MainProcessor                 | 0.000 MIPS  | 30.000 MIPS  |                                                                                                                                      |
+| thread Change.changeThread            | 10.000 MIPS | 0.000 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.Change.changeThread total 0.000 MIPS below budget 10.000 MIPS (100.0 % slack)            |
+| process Change                        | 0.000 MIPS  | 10.000 MIPS  |                                                                                                                                      |
+| thread Recipe.GetRecipe               | 10.000 MIPS | 0.000 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.Recipe.GetRecipe total 0.000 MIPS below budget 10.000 MIPS (100.0 % slack)               |
+| process Recipe                        | 0.000 MIPS  | 10.000 MIPS  |                                                                                                                                      |
+| thread Ingredient.SelectIngredient    | 10.000 MIPS | 0.000 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.Ingredient.SelectIngredient total 0.000 MIPS below budget 10.000 MIPS (100.0 % slack)    |
+| process Ingredient                    | 0.000 MIPS  | 10.000 MIPS  |                                                                                                                                      |
+| thread Availability.CheckAvailability | 10.000 MIPS | 0.000 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.Availability.CheckAvailability total 0.000 MIPS below budget 10.000 MIPS (100.0 % slack) |
+| process Availability                  | 0.000 MIPS  | 10.000 MIPS  |                                                                                                                                      |
+| thread Temperature.SelectTemperature  | 10.000 MIPS | 0.000 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.Temperature.SelectTemperature total 0.000 MIPS below budget 10.000 MIPS (100.0 % slack)  |
+| process Temperature                   | 0.000 MIPS  | 10.000 MIPS  |                                                                                                                                      |
+| thread Cup.DispenseCup                | 10.000 MIPS | 0.000 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.Cup.DispenseCup total 0.000 MIPS below budget 10.000 MIPS (100.0 % slack)                |
+| thread Cup.LiftCup                    | 10.000 MIPS | 0.000 MIPS   | thread CoffeeTeaMachineSystem_impl_Instance.Cup.LiftCup total 0.000 MIPS below budget 10.000 MIPS (100.0 % slack)                    |
+| process Cup                           | 0.000 MIPS  | 20.000 MIPS  |                                                                                                                                      |
+| Total                                 |             | 139.049 MIPS |                                                                                                                                      |
+
+### Resource budget analysis: bound resource budgets
+
+Processor Summary Report:
+
+-   Processor Read_cpu: Total MIPS 0.722 MIPS of bound tasks within MIPS capacity 288.800 MIPS of Read_cpu
+-   Processor Cont_cpu: Total MIPS 0.722 MIPS of bound tasks within MIPS capacity 288.800 MIPS of Cont_cpu
+-   Processor Heat_cpu: Total MIPS 0.722 MIPS of bound tasks within MIPS capacity 288.800 MIPS of Heat_cpu
+-   Processor Cool_cpu: Total MIPS 1.444 MIPS of bound tasks within MIPS capacity 288.800 MIPS of Cool_cpu
+-   Processor CPU_Coffee: Total MIPS 1.083 MIPS of bound tasks within MIPS capacity 288.800 MIPS of CPU_Coffee
+-   Processor CPU_Tea: Total MIPS 4.356 MIPS of bound tasks within MIPS capacity 288.800 MIPS of CPU_Tea
 
 # Sources
 

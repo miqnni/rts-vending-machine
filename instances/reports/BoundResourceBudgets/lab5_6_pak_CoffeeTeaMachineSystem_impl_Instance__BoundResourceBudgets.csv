@@ -1,0 +1,67 @@
+Bound Resource Budget Analysis Report
+
+
+Processor Summary Report: 
+  Processor Read_cpu: Total MIPS 0.722 MIPS of bound tasks within MIPS capacity 288.800 MIPS of Read_cpu
+  Processor Cont_cpu: Total MIPS 0.722 MIPS of bound tasks within MIPS capacity 288.800 MIPS of Cont_cpu
+  Processor Heat_cpu: Total MIPS 0.722 MIPS of bound tasks within MIPS capacity 288.800 MIPS of Heat_cpu
+  Processor Cool_cpu: Total MIPS 1.444 MIPS of bound tasks within MIPS capacity 288.800 MIPS of Cool_cpu
+  Processor CPU_Coffee: Total MIPS 1.083 MIPS of bound tasks within MIPS capacity 288.800 MIPS of CPU_Coffee
+  Processor CPU_Tea: Total MIPS 4.356 MIPS of bound tasks within MIPS capacity 288.800 MIPS of CPU_Tea
+
+Memory Summary Report: 
+  No Memory with Memory_Size or RAMCapacity or ROMCapacity
+
+
+Detailed Workload Report:  for Processor Read_cpu with Capacity 288.800 MIPS
+
+Component,Budget,Actual
+  thread Read_pr.TempReader,   10.000 MIPS,  0.722 MIPS,thread CoffeeTeaMachineSystem_impl_Instance.Read_pr.TempReader total 0.722 MIPS below budget 10.000 MIPS (92.8 % slack)
+process Read_pr, 0.000 MIPS,0.722 MIPS,
+Total,,0.722 MIPS
+
+
+Detailed Workload Report:  for Processor Cont_cpu with Capacity 288.800 MIPS
+
+Component,Budget,Actual
+  thread Cont_pr.Control,   10.000 MIPS,  0.722 MIPS,thread CoffeeTeaMachineSystem_impl_Instance.Cont_pr.Control total 0.722 MIPS below budget 10.000 MIPS (92.8 % slack)
+process Cont_pr, 0.000 MIPS,0.722 MIPS,
+Total,,0.722 MIPS
+
+
+Detailed Workload Report:  for Processor Heat_cpu with Capacity 288.800 MIPS
+
+Component,Budget,Actual
+  thread Heat_pr.HeaterCtrl,   10.000 MIPS,  0.722 MIPS,thread CoffeeTeaMachineSystem_impl_Instance.Heat_pr.HeaterCtrl total 0.722 MIPS below budget 10.000 MIPS (92.8 % slack)
+process Heat_pr, 0.000 MIPS,0.722 MIPS,
+Total,,0.722 MIPS
+
+
+Detailed Workload Report:  for Processor Cool_cpu with Capacity 288.800 MIPS
+
+Component,Budget,Actual
+  thread CoolCont_pr.Cooling,   10.000 MIPS,  0.722 MIPS,thread CoffeeTeaMachineSystem_impl_Instance.CoolCont_pr.Cooling total 0.722 MIPS below budget 10.000 MIPS (92.8 % slack)
+process CoolCont_pr, 0.000 MIPS,0.722 MIPS,
+  thread CoolHeat_pr.CoolerCtrl,   10.000 MIPS,  0.722 MIPS,thread CoffeeTeaMachineSystem_impl_Instance.CoolHeat_pr.CoolerCtrl total 0.722 MIPS below budget 10.000 MIPS (92.8 % slack)
+process CoolHeat_pr, 0.000 MIPS,0.722 MIPS,
+Total,,1.444 MIPS
+
+
+Detailed Workload Report:  for Processor CPU_Coffee with Capacity 288.800 MIPS
+
+Component,Budget,Actual
+  thread CoffeeProc.coffeeLogic,   10.000 MIPS,  1.083 MIPS,thread CoffeeTeaMachineSystem_impl_Instance.CoffeeProc.coffeeLogic total 1.083 MIPS below budget 10.000 MIPS (89.2 % slack)
+process CoffeeProc, 0.000 MIPS,1.083 MIPS,
+Total,,1.083 MIPS
+
+
+Detailed Workload Report:  for Processor CPU_Tea with Capacity 288.800 MIPS
+
+Component,Budget,Actual
+  thread TeaProc.teaLogic,   10.000 MIPS,  1.083 MIPS,thread CoffeeTeaMachineSystem_impl_Instance.TeaProc.teaLogic total 1.083 MIPS below budget 10.000 MIPS (89.2 % slack)
+process TeaProc, 0.000 MIPS,1.083 MIPS,
+  thread ActionsProc.interpreter,   10.000 MIPS,  0.963 MIPS,thread CoffeeTeaMachineSystem_impl_Instance.ActionsProc.interpreter total 0.963 MIPS below budget 10.000 MIPS (90.4 % slack)
+process ActionsProc, 0.000 MIPS,0.963 MIPS,
+  thread PaymentProc.logic,   10.000 MIPS,  2.310 MIPS,thread CoffeeTeaMachineSystem_impl_Instance.PaymentProc.logic total 2.310 MIPS below budget 10.000 MIPS (76.9 % slack)
+process PaymentProc, 0.000 MIPS,2.310 MIPS,
+Total,,4.356 MIPS
