@@ -1,5 +1,7 @@
 # RTS vending machine
 
+<img width="674" alt="image" src="https://github.com/user-attachments/assets/ffdc9fdb-d75c-47b4-964c-c763aba00893" />
+
 ## Authors' data
 
 Konrad Armatys, karmatys@student.agh.edu.pl
