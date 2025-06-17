@@ -8,13 +8,13 @@
           <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
         </ownedValue>
       </ownedValue>
-      <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.18"/>
+      <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.19"/>
     </ownedPropertyAssociation>
-    <componentInstance name="Net" category="bus">
+    <componentInstance name="CANbus" category="bus">
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.GrossWeight"/>
         <ownedValue>
-          <ownedValue xsi:type="aadl2:RealLiteral" value="0.2">
+          <ownedValue xsi:type="aadl2:RealLiteral" value="0.3">
             <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
           </ownedValue>
         </ownedValue>
@@ -23,24 +23,84 @@
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.BandWidthCapacity"/>
         <ownedValue>
-          <ownedValue xsi:type="aadl2:RealLiteral" value="100.0">
+          <ownedValue xsi:type="aadl2:RealLiteral" value="1.0">
             <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.17/@ownedLiteral.2"/>
           </ownedValue>
         </ownedValue>
         <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.136/@ownedPropertyAssociation.1"/>
       </ownedPropertyAssociation>
+      <subcomponent xsi:type="aadl2:BusSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedBusSubcomponent.0"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:BusType" href="../lab5_6_pak.aadl#lab5_6_pak.CAN"/>
+    </componentInstance>
+    <componentInstance name="I2Cbus" category="bus">
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-        <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.BandWidthBudget"/>
+        <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.GrossWeight"/>
         <ownedValue>
-          <ownedValue xsi:type="aadl2:RealLiteral" value="200.0">
-            <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.17/@ownedLiteral.5"/>
+          <ownedValue xsi:type="aadl2:RealLiteral" value="0.15">
+            <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.136/@ownedPropertyAssociation.2"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.0"/>
       </ownedPropertyAssociation>
-      <subcomponent xsi:type="aadl2:BusSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedBusSubcomponent.0"/>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.BandWidthCapacity"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RealLiteral" value="0.4">
+            <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.17/@ownedLiteral.2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <subcomponent xsi:type="aadl2:BusSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedBusSubcomponent.1"/>
       <index>0</index>
-      <classifier xsi:type="aadl2:BusType" href="../lab5_6_pak.aadl#lab5_6_pak.ethernet"/>
+      <classifier xsi:type="aadl2:BusType" href="../lab5_6_pak.aadl#lab5_6_pak.I2C"/>
+    </componentInstance>
+    <componentInstance name="SPIbus" category="bus">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.GrossWeight"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RealLiteral" value="0.2">
+            <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.138/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.BandWidthCapacity"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RealLiteral" value="8.0">
+            <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.17/@ownedLiteral.2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.138/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <subcomponent xsi:type="aadl2:BusSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedBusSubcomponent.2"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:BusType" href="../lab5_6_pak.aadl#lab5_6_pak.SPI"/>
+    </componentInstance>
+    <componentInstance name="UARTbus" category="bus">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.GrossWeight"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RealLiteral" value="0.25">
+            <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.139/@ownedPropertyAssociation.0"/>
+      </ownedPropertyAssociation>
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.BandWidthCapacity"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:RealLiteral" value="0.115">
+            <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.17/@ownedLiteral.2"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.139/@ownedPropertyAssociation.1"/>
+      </ownedPropertyAssociation>
+      <subcomponent xsi:type="aadl2:BusSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedBusSubcomponent.3"/>
+      <index>0</index>
+      <classifier xsi:type="aadl2:BusType" href="../lab5_6_pak.aadl#lab5_6_pak.UART"/>
     </componentInstance>
     <componentInstance name="Sensor" category="device">
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
@@ -64,7 +124,7 @@
         </ownedPropertyAssociation>
         <feature xsi:type="aadl2:DataPort" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.28/@ownedDataPort.0"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedDeviceSubcomponent.0"/>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedDeviceSubcomponent.0"/>
       <index>0</index>
       <classifier xsi:type="aadl2:DeviceImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.TempSensor.impl"/>
     </componentInstance>
@@ -90,7 +150,7 @@
         </ownedPropertyAssociation>
         <feature xsi:type="aadl2:DataPort" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.30/@ownedDataPort.0"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedDeviceSubcomponent.1"/>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedDeviceSubcomponent.1"/>
       <index>0</index>
       <classifier xsi:type="aadl2:DeviceImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.Heater.impl"/>
     </componentInstance>
@@ -116,7 +176,7 @@
         </ownedPropertyAssociation>
         <feature xsi:type="aadl2:DataPort" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.32/@ownedDataPort.0"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedDeviceSubcomponent.2"/>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedDeviceSubcomponent.2"/>
       <index>0</index>
       <classifier xsi:type="aadl2:DeviceImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.Refrigerator.impl"/>
     </componentInstance>
@@ -142,7 +202,7 @@
         </ownedPropertyAssociation>
         <feature xsi:type="aadl2:DataPort" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.34/@ownedDataPort.0"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedDeviceSubcomponent.3"/>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedDeviceSubcomponent.3"/>
       <index>0</index>
       <classifier xsi:type="aadl2:DeviceImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.TeaLeavesDispenser.impl"/>
     </componentInstance>
@@ -192,7 +252,7 @@
         </ownedPropertyAssociation>
         <feature xsi:type="aadl2:DataPort" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.36/@ownedDataPort.2"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedDeviceSubcomponent.4"/>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedDeviceSubcomponent.4"/>
       <index>0</index>
       <classifier xsi:type="aadl2:DeviceImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.TeaCooker.impl"/>
     </componentInstance>
@@ -218,7 +278,7 @@
         </ownedPropertyAssociation>
         <feature xsi:type="aadl2:DataPort" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.38/@ownedDataPort.0"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedDeviceSubcomponent.5"/>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedDeviceSubcomponent.5"/>
       <index>0</index>
       <classifier xsi:type="aadl2:DeviceImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.CoffeeBeansStorage.impl"/>
     </componentInstance>
@@ -256,7 +316,7 @@
         </ownedPropertyAssociation>
         <feature xsi:type="aadl2:DataPort" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.40/@ownedDataPort.1"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedDeviceSubcomponent.6"/>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedDeviceSubcomponent.6"/>
       <index>0</index>
       <classifier xsi:type="aadl2:DeviceImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.CoffeeGrinder.impl"/>
     </componentInstance>
@@ -294,7 +354,7 @@
         </ownedPropertyAssociation>
         <feature xsi:type="aadl2:DataPort" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.42/@ownedDataPort.1"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedDeviceSubcomponent.7"/>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedDeviceSubcomponent.7"/>
       <index>0</index>
       <classifier xsi:type="aadl2:DeviceImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.CoffeeBrewer.impl"/>
     </componentInstance>
@@ -332,7 +392,7 @@
         </ownedPropertyAssociation>
         <feature xsi:type="aadl2:DataPort" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.50/@ownedDataPort.1"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedDeviceSubcomponent.8"/>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedDeviceSubcomponent.8"/>
       <index>0</index>
       <classifier xsi:type="aadl2:DeviceImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.CoinMechanism.impl"/>
     </componentInstance>
@@ -370,7 +430,7 @@
         </ownedPropertyAssociation>
         <feature xsi:type="aadl2:DataPort" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.52/@ownedDataPort.1"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedDeviceSubcomponent.9"/>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedDeviceSubcomponent.9"/>
       <index>0</index>
       <classifier xsi:type="aadl2:DeviceImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.BillAcceptor.impl"/>
     </componentInstance>
@@ -408,7 +468,7 @@
         </ownedPropertyAssociation>
         <feature xsi:type="aadl2:DataPort" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.54/@ownedDataPort.1"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedDeviceSubcomponent.10"/>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedDeviceSubcomponent.10"/>
       <index>0</index>
       <classifier xsi:type="aadl2:DeviceImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.CardScanner.impl"/>
     </componentInstance>
@@ -434,7 +494,7 @@
         </ownedPropertyAssociation>
         <feature xsi:type="aadl2:DataPort" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.56/@ownedDataPort.0"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedDeviceSubcomponent.11"/>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedDeviceSubcomponent.11"/>
       <index>0</index>
       <classifier xsi:type="aadl2:DeviceImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.TouchablePanel.impl"/>
     </componentInstance>
@@ -472,7 +532,7 @@
         </ownedPropertyAssociation>
         <feature xsi:type="aadl2:DataPort" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.44/@ownedDataPort.1"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedDeviceSubcomponent.12"/>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedDeviceSubcomponent.12"/>
       <index>0</index>
       <classifier xsi:type="aadl2:DeviceImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.RecipeStorage.impl"/>
     </componentInstance>
@@ -510,7 +570,7 @@
         </ownedPropertyAssociation>
         <feature xsi:type="aadl2:DataPort" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.46/@ownedDataPort.1"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedDeviceSubcomponent.13"/>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedDeviceSubcomponent.13"/>
       <index>0</index>
       <classifier xsi:type="aadl2:DeviceImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.CupDispenser.impl"/>
     </componentInstance>
@@ -548,7 +608,7 @@
         </ownedPropertyAssociation>
         <feature xsi:type="aadl2:DataPort" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.48/@ownedDataPort.1"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedDeviceSubcomponent.14"/>
+      <subcomponent xsi:type="aadl2:DeviceSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedDeviceSubcomponent.14"/>
       <index>0</index>
       <classifier xsi:type="aadl2:DeviceImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.CupLifter.impl"/>
     </componentInstance>
@@ -557,10 +617,10 @@
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:ListValue">
-            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.35"/>
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.38"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.9"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.10"/>
       </ownedPropertyAssociation>
       <featureInstance name="SensorIn" type="/1">
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
@@ -591,10 +651,10 @@
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
           <ownedValue>
             <ownedValue xsi:type="aadl2:ListValue">
-              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.35"/>
+              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.38"/>
             </ownedValue>
           </ownedValue>
-          <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.9"/>
+          <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.10"/>
         </ownedPropertyAssociation>
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Thread_Properties.aadl#Thread_Properties.Dispatch_Protocol"/>
@@ -665,7 +725,7 @@
         <index>0</index>
         <classifier xsi:type="aadl2:ThreadImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.ReadTemperature.impl"/>
       </componentInstance>
-      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessSubcomponent.0"/>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessSubcomponent.0"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.TemperatureReading.impl"/>
     </componentInstance>
@@ -674,10 +734,10 @@
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:ListValue">
-            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.36"/>
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.39"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.10"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.11"/>
       </ownedPropertyAssociation>
       <featureInstance name="ControlIn" type="/1">
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
@@ -708,10 +768,10 @@
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
           <ownedValue>
             <ownedValue xsi:type="aadl2:ListValue">
-              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.36"/>
+              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.39"/>
             </ownedValue>
           </ownedValue>
-          <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.10"/>
+          <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.11"/>
         </ownedPropertyAssociation>
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Thread_Properties.aadl#Thread_Properties.Dispatch_Protocol"/>
@@ -782,7 +842,7 @@
         <index>0</index>
         <classifier xsi:type="aadl2:ThreadImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.ToggleHeater.impl"/>
       </componentInstance>
-      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessSubcomponent.1"/>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessSubcomponent.1"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.HeaterControl.impl"/>
     </componentInstance>
@@ -791,10 +851,10 @@
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:ListValue">
-            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.37"/>
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.40"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.11"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.12"/>
       </ownedPropertyAssociation>
       <featureInstance name="HeaterIn" type="/2">
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
@@ -825,10 +885,10 @@
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
           <ownedValue>
             <ownedValue xsi:type="aadl2:ListValue">
-              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.37"/>
+              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.40"/>
             </ownedValue>
           </ownedValue>
-          <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.11"/>
+          <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.12"/>
         </ownedPropertyAssociation>
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Thread_Properties.aadl#Thread_Properties.Dispatch_Protocol"/>
@@ -899,7 +959,7 @@
         <index>0</index>
         <classifier xsi:type="aadl2:ThreadImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.HeaterDriver.impl"/>
       </componentInstance>
-      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessSubcomponent.2"/>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessSubcomponent.2"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.Heating.impl"/>
     </componentInstance>
@@ -908,10 +968,10 @@
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:ListValue">
-            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.38"/>
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.41"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.12"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.13"/>
       </ownedPropertyAssociation>
       <featureInstance name="ControlIn" type="/1">
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
@@ -942,10 +1002,10 @@
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
           <ownedValue>
             <ownedValue xsi:type="aadl2:ListValue">
-              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.38"/>
+              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.41"/>
             </ownedValue>
           </ownedValue>
-          <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.12"/>
+          <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.13"/>
         </ownedPropertyAssociation>
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Thread_Properties.aadl#Thread_Properties.Dispatch_Protocol"/>
@@ -1016,7 +1076,7 @@
         <index>0</index>
         <classifier xsi:type="aadl2:ThreadImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.ToggleCooler.impl"/>
       </componentInstance>
-      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessSubcomponent.3"/>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessSubcomponent.3"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.RefrigeratorControl.impl"/>
     </componentInstance>
@@ -1025,10 +1085,10 @@
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:ListValue">
-            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.38"/>
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.41"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.13"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.14"/>
       </ownedPropertyAssociation>
       <featureInstance name="CoolerIn" type="/3">
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
@@ -1059,10 +1119,10 @@
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
           <ownedValue>
             <ownedValue xsi:type="aadl2:ListValue">
-              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.38"/>
+              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.41"/>
             </ownedValue>
           </ownedValue>
-          <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.13"/>
+          <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.14"/>
         </ownedPropertyAssociation>
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Thread_Properties.aadl#Thread_Properties.Dispatch_Protocol"/>
@@ -1133,7 +1193,7 @@
         <index>0</index>
         <classifier xsi:type="aadl2:ThreadImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.RefrigerationDriver.impl"/>
       </componentInstance>
-      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessSubcomponent.4"/>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessSubcomponent.4"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.Cooling.impl"/>
     </componentInstance>
@@ -1142,10 +1202,10 @@
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:ListValue">
-            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.40"/>
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.43"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.14"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.15"/>
       </ownedPropertyAssociation>
       <featureInstance name="StartSignal" type="/18">
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
@@ -1179,10 +1239,10 @@
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
           <ownedValue>
             <ownedValue xsi:type="aadl2:ListValue">
-              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.40"/>
+              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.43"/>
             </ownedValue>
           </ownedValue>
-          <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.14"/>
+          <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.15"/>
         </ownedPropertyAssociation>
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Thread_Properties.aadl#Thread_Properties.Dispatch_Protocol"/>
@@ -1256,7 +1316,7 @@
         <index>0</index>
         <classifier xsi:type="aadl2:ThreadImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.PrepareTea.impl"/>
       </componentInstance>
-      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessSubcomponent.5"/>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessSubcomponent.5"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.TeaPreparation.impl"/>
     </componentInstance>
@@ -1265,10 +1325,10 @@
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:ListValue">
-            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.39"/>
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.42"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.15"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.16"/>
       </ownedPropertyAssociation>
       <featureInstance name="StartSignal" type="/18">
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
@@ -1302,10 +1362,10 @@
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
           <ownedValue>
             <ownedValue xsi:type="aadl2:ListValue">
-              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.39"/>
+              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.42"/>
             </ownedValue>
           </ownedValue>
-          <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.15"/>
+          <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.16"/>
         </ownedPropertyAssociation>
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Thread_Properties.aadl#Thread_Properties.Dispatch_Protocol"/>
@@ -1379,7 +1439,7 @@
         <index>0</index>
         <classifier xsi:type="aadl2:ThreadImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.PrepareCoffee.impl"/>
       </componentInstance>
-      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessSubcomponent.6"/>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessSubcomponent.6"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.CoffeePreparation.impl"/>
     </componentInstance>
@@ -1478,7 +1538,7 @@
         <index>0</index>
         <classifier xsi:type="aadl2:ThreadImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.AddCoinValue.impl"/>
       </componentInstance>
-      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessSubcomponent.7"/>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessSubcomponent.7"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.CoinCounter.impl"/>
     </componentInstance>
@@ -1577,7 +1637,7 @@
         <index>0</index>
         <classifier xsi:type="aadl2:ThreadImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.AddBillValue.impl"/>
       </componentInstance>
-      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessSubcomponent.8"/>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessSubcomponent.8"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.BillCounter.impl"/>
     </componentInstance>
@@ -1700,7 +1760,7 @@
         <index>0</index>
         <classifier xsi:type="aadl2:ThreadImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.MoneyCounterThread.impl"/>
       </componentInstance>
-      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessSubcomponent.9"/>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessSubcomponent.9"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.TotalMoneyCounter.impl"/>
     </componentInstance>
@@ -1709,10 +1769,10 @@
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:ListValue">
-            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.40"/>
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.43"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.16"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.17"/>
       </ownedPropertyAssociation>
       <featureInstance name="TouchInput" type="/16">
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
@@ -1743,10 +1803,10 @@
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
           <ownedValue>
             <ownedValue xsi:type="aadl2:ListValue">
-              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.40"/>
+              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.43"/>
             </ownedValue>
           </ownedValue>
-          <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.16"/>
+          <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.17"/>
         </ownedPropertyAssociation>
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Thread_Properties.aadl#Thread_Properties.Dispatch_Protocol"/>
@@ -1817,7 +1877,7 @@
         <index>0</index>
         <classifier xsi:type="aadl2:ThreadImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.InterpretUserAction.impl"/>
       </componentInstance>
-      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessSubcomponent.10"/>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessSubcomponent.10"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.UserActionsInterpreterProcess.impl"/>
     </componentInstance>
@@ -1826,10 +1886,10 @@
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:ListValue">
-            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.40"/>
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.43"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.17"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.18"/>
       </ownedPropertyAssociation>
       <featureInstance name="CoinIn" type="/11">
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
@@ -1908,10 +1968,10 @@
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Processor_Binding"/>
           <ownedValue>
             <ownedValue xsi:type="aadl2:ListValue">
-              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.40"/>
+              <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.43"/>
             </ownedValue>
           </ownedValue>
-          <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.17"/>
+          <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.18"/>
         </ownedPropertyAssociation>
         <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
           <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Thread_Properties.aadl#Thread_Properties.Dispatch_Protocol"/>
@@ -2030,7 +2090,7 @@
         <index>0</index>
         <classifier xsi:type="aadl2:ThreadImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.ResolvePaymentAttempt.impl"/>
       </componentInstance>
-      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessSubcomponent.11"/>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessSubcomponent.11"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.Payment.impl"/>
     </componentInstance>
@@ -2435,7 +2495,7 @@
         <index>0</index>
         <classifier xsi:type="aadl2:ThreadImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.MainController.impl"/>
       </componentInstance>
-      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessSubcomponent.12"/>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessSubcomponent.12"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.MainProcessor.impl"/>
     </componentInstance>
@@ -2582,7 +2642,7 @@
         <index>0</index>
         <classifier xsi:type="aadl2:ThreadImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.ReturnChange.impl"/>
       </componentInstance>
-      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessSubcomponent.13"/>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessSubcomponent.13"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.ChangeReturner.impl"/>
     </componentInstance>
@@ -2681,7 +2741,7 @@
         <index>0</index>
         <classifier xsi:type="aadl2:ThreadImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.GetRecipe.impl"/>
       </componentInstance>
-      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessSubcomponent.14"/>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessSubcomponent.14"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.RecipeSelector.impl"/>
     </componentInstance>
@@ -2780,7 +2840,7 @@
         <index>0</index>
         <classifier xsi:type="aadl2:ThreadImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.SelectIngredient.impl"/>
       </componentInstance>
-      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessSubcomponent.15"/>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessSubcomponent.15"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.IngredientForRecipeSelector.impl"/>
     </componentInstance>
@@ -2879,7 +2939,7 @@
         <index>0</index>
         <classifier xsi:type="aadl2:ThreadImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.CheckAvailability.impl"/>
       </componentInstance>
-      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessSubcomponent.16"/>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessSubcomponent.16"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.IngredientAvailabilityChecker.impl"/>
     </componentInstance>
@@ -2978,7 +3038,7 @@
         <index>0</index>
         <classifier xsi:type="aadl2:ThreadImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.SelectTemperature.impl"/>
       </componentInstance>
-      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessSubcomponent.17"/>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessSubcomponent.17"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.TemperatureForRecipeSelector.impl"/>
     </componentInstance>
@@ -3147,12 +3207,12 @@
         <index>0</index>
         <classifier xsi:type="aadl2:ThreadImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.LiftCup.impl"/>
       </componentInstance>
-      <connectionInstance name="DispenseCup.FinishSignal -> LiftCup.StartSignal" complete="true" kind="portConnection" destination="/0/@componentInstance.34/@componentInstance.1/@featureInstance.0" source="/0/@componentInstance.34/@componentInstance.0/@featureInstance.1">
-        <connectionReference context="/0/@componentInstance.34" source="/0/@componentInstance.34/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.34/@componentInstance.1/@featureInstance.0">
+      <connectionInstance name="DispenseCup.FinishSignal -> LiftCup.StartSignal" complete="true" kind="portConnection" destination="/0/@componentInstance.37/@componentInstance.1/@featureInstance.0" source="/0/@componentInstance.37/@componentInstance.0/@featureInstance.1">
+        <connectionReference context="/0/@componentInstance.37" source="/0/@componentInstance.37/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.37/@componentInstance.1/@featureInstance.0">
           <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.107/@ownedPortConnection.1"/>
         </connectionReference>
       </connectionInstance>
-      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessSubcomponent.18"/>
+      <subcomponent xsi:type="aadl2:ProcessSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessSubcomponent.18"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.CupControl.impl"/>
     </componentInstance>
@@ -3164,7 +3224,7 @@
             <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.3"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedPropertyAssociation.3"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Scheduling_Protocol"/>
@@ -3175,7 +3235,7 @@
             </ownedListElement>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.0"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedPropertyAssociation.0"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Clock_Period"/>
@@ -3184,7 +3244,7 @@
             <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.1"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedPropertyAssociation.1"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.MIPSCapacity"/>
@@ -3193,12 +3253,12 @@
             <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.4/@ownedLiteral.1"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.2"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedPropertyAssociation.2"/>
       </ownedPropertyAssociation>
       <featureInstance name="eth" category="busAccess" type="/28">
-        <feature xsi:type="aadl2:BusAccess" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedBusAccess.0"/>
+        <feature xsi:type="aadl2:BusAccess" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedBusAccess.0"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessorSubcomponent.0"/>
+      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessorSubcomponent.0"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessorType" href="../lab5_6_pak.aadl#lab5_6_pak.corei5"/>
     </componentInstance>
@@ -3210,7 +3270,7 @@
             <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.3"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedPropertyAssociation.3"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Scheduling_Protocol"/>
@@ -3221,7 +3281,7 @@
             </ownedListElement>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.0"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedPropertyAssociation.0"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Clock_Period"/>
@@ -3230,7 +3290,7 @@
             <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.1"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedPropertyAssociation.1"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.MIPSCapacity"/>
@@ -3239,12 +3299,12 @@
             <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.4/@ownedLiteral.1"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.2"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedPropertyAssociation.2"/>
       </ownedPropertyAssociation>
       <featureInstance name="eth" category="busAccess" type="/28">
-        <feature xsi:type="aadl2:BusAccess" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedBusAccess.0"/>
+        <feature xsi:type="aadl2:BusAccess" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedBusAccess.0"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessorSubcomponent.1"/>
+      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessorSubcomponent.1"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessorType" href="../lab5_6_pak.aadl#lab5_6_pak.corei5"/>
     </componentInstance>
@@ -3256,7 +3316,7 @@
             <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.3"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedPropertyAssociation.3"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Scheduling_Protocol"/>
@@ -3267,7 +3327,7 @@
             </ownedListElement>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.0"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedPropertyAssociation.0"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Clock_Period"/>
@@ -3276,7 +3336,7 @@
             <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.1"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedPropertyAssociation.1"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.MIPSCapacity"/>
@@ -3285,12 +3345,12 @@
             <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.4/@ownedLiteral.1"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.2"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedPropertyAssociation.2"/>
       </ownedPropertyAssociation>
       <featureInstance name="eth" category="busAccess" type="/28">
-        <feature xsi:type="aadl2:BusAccess" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedBusAccess.0"/>
+        <feature xsi:type="aadl2:BusAccess" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedBusAccess.0"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessorSubcomponent.2"/>
+      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessorSubcomponent.2"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessorType" href="../lab5_6_pak.aadl#lab5_6_pak.corei5"/>
     </componentInstance>
@@ -3302,7 +3362,7 @@
             <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.3"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedPropertyAssociation.3"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Scheduling_Protocol"/>
@@ -3313,7 +3373,7 @@
             </ownedListElement>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.0"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedPropertyAssociation.0"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Clock_Period"/>
@@ -3322,7 +3382,7 @@
             <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.1"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedPropertyAssociation.1"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.MIPSCapacity"/>
@@ -3331,12 +3391,12 @@
             <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.4/@ownedLiteral.1"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.2"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedPropertyAssociation.2"/>
       </ownedPropertyAssociation>
       <featureInstance name="eth" category="busAccess" type="/28">
-        <feature xsi:type="aadl2:BusAccess" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedBusAccess.0"/>
+        <feature xsi:type="aadl2:BusAccess" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.140/@ownedBusAccess.0"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessorSubcomponent.3"/>
+      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessorSubcomponent.3"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessorType" href="../lab5_6_pak.aadl#lab5_6_pak.corei5"/>
     </componentInstance>
@@ -3348,7 +3408,7 @@
             <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.138/@ownedPropertyAssociation.3"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.3"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Scheduling_Protocol"/>
@@ -3359,7 +3419,7 @@
             </ownedListElement>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.138/@ownedPropertyAssociation.0"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.0"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Clock_Period"/>
@@ -3368,7 +3428,7 @@
             <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.138/@ownedPropertyAssociation.1"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.1"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.MIPSCapacity"/>
@@ -3377,12 +3437,12 @@
             <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.4/@ownedLiteral.1"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.138/@ownedPropertyAssociation.2"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.2"/>
       </ownedPropertyAssociation>
-      <featureInstance name="net" category="busAccess" type="/28">
-        <feature xsi:type="aadl2:BusAccess" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.138/@ownedBusAccess.0"/>
+      <featureInstance name="net" category="busAccess" type="/29">
+        <feature xsi:type="aadl2:BusAccess" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedBusAccess.0"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessorSubcomponent.4"/>
+      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessorSubcomponent.4"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessorType" href="../lab5_6_pak.aadl#lab5_6_pak.CoffeeCPU"/>
     </componentInstance>
@@ -3394,7 +3454,7 @@
             <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.139/@ownedPropertyAssociation.3"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.142/@ownedPropertyAssociation.3"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Scheduling_Protocol"/>
@@ -3405,7 +3465,7 @@
             </ownedListElement>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.139/@ownedPropertyAssociation.0"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.142/@ownedPropertyAssociation.0"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Timing_Properties.aadl#Timing_Properties.Clock_Period"/>
@@ -3414,7 +3474,7 @@
             <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.16/@ownedLiteral.3"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.139/@ownedPropertyAssociation.1"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.142/@ownedPropertyAssociation.1"/>
       </ownedPropertyAssociation>
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.MIPSCapacity"/>
@@ -3423,162 +3483,171 @@
             <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.4/@ownedLiteral.1"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.139/@ownedPropertyAssociation.2"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.142/@ownedPropertyAssociation.2"/>
       </ownedPropertyAssociation>
-      <featureInstance name="net" category="busAccess" type="/28">
-        <feature xsi:type="aadl2:BusAccess" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.139/@ownedBusAccess.0"/>
+      <featureInstance name="net" category="busAccess" type="/30">
+        <feature xsi:type="aadl2:BusAccess" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.142/@ownedBusAccess.0"/>
       </featureInstance>
-      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedProcessorSubcomponent.5"/>
+      <subcomponent xsi:type="aadl2:ProcessorSubcomponent" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedProcessorSubcomponent.5"/>
       <index>0</index>
       <classifier xsi:type="aadl2:ProcessorType" href="../lab5_6_pak.aadl#lab5_6_pak.TeaCPU"/>
     </componentInstance>
-    <connectionInstance name="Net -> Cont_cpu.eth" complete="true" kind="accessConnection" destination="/0/@componentInstance.36/@featureInstance.0" source="/0/@componentInstance.0">
-      <connectionReference context="/0" source="/0/@componentInstance.0" destination="/0/@componentInstance.36/@featureInstance.0">
-        <connection xsi:type="aadl2:AccessConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedAccessConnection.1"/>
+    <connectionInstance name="CANbus -> Cont_cpu.eth" complete="true" kind="accessConnection" destination="/0/@componentInstance.39/@featureInstance.0" source="/0/@componentInstance.0">
+      <connectionReference context="/0" source="/0/@componentInstance.0" destination="/0/@componentInstance.39/@featureInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedAccessConnection.1"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="Net -> Heat_cpu.eth" complete="true" kind="accessConnection" destination="/0/@componentInstance.37/@featureInstance.0" source="/0/@componentInstance.0">
-      <connectionReference context="/0" source="/0/@componentInstance.0" destination="/0/@componentInstance.37/@featureInstance.0">
-        <connection xsi:type="aadl2:AccessConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedAccessConnection.2"/>
+    <connectionInstance name="CANbus -> Heat_cpu.eth" complete="true" kind="accessConnection" destination="/0/@componentInstance.40/@featureInstance.0" source="/0/@componentInstance.0">
+      <connectionReference context="/0" source="/0/@componentInstance.0" destination="/0/@componentInstance.40/@featureInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedAccessConnection.2"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="Sensor.Temp -> Read_pr.TempReader.TempIn" complete="true" kind="portConnection" destination="/0/@componentInstance.16/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.1/@featureInstance.0">
-      <connectionReference context="/0" source="/0/@componentInstance.1/@featureInstance.0" destination="/0/@componentInstance.16/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.0"/>
+    <connectionInstance name="Sensor.Temp -> Read_pr.TempReader.TempIn" complete="true" kind="portConnection" destination="/0/@componentInstance.19/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.4/@featureInstance.0">
+      <connectionReference context="/0" source="/0/@componentInstance.4/@featureInstance.0" destination="/0/@componentInstance.19/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.0"/>
       </connectionReference>
-      <connectionReference context="/0/@componentInstance.16" source="/0/@componentInstance.16/@featureInstance.0" destination="/0/@componentInstance.16/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="/0/@componentInstance.19" source="/0/@componentInstance.19/@featureInstance.0" destination="/0/@componentInstance.19/@componentInstance.0/@featureInstance.0">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.121/@ownedPortConnection.0"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="TeaDispense.LeavesOut -> Cooker.LeavesIn" complete="true" kind="portConnection" destination="/0/@componentInstance.5/@featureInstance.0" source="/0/@componentInstance.4/@featureInstance.0">
+    <connectionInstance name="TeaDispense.LeavesOut -> Cooker.LeavesIn" complete="true" kind="portConnection" destination="/0/@componentInstance.8/@featureInstance.0" source="/0/@componentInstance.7/@featureInstance.0">
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Connection_Binding"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:ListValue">
-            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.0"/>
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.2"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.6"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.6"/>
       </ownedPropertyAssociation>
-      <connectionReference context="/0" source="/0/@componentInstance.4/@featureInstance.0" destination="/0/@componentInstance.5/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.9"/>
+      <connectionReference context="/0" source="/0/@componentInstance.7/@featureInstance.0" destination="/0/@componentInstance.8/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.9"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="BeanStorage.BeansOut -> Grinder.BeansIn" complete="true" kind="portConnection" destination="/0/@componentInstance.7/@featureInstance.0" source="/0/@componentInstance.6/@featureInstance.0">
+    <connectionInstance name="BeanStorage.BeansOut -> Grinder.BeansIn" complete="true" kind="portConnection" destination="/0/@componentInstance.10/@featureInstance.0" source="/0/@componentInstance.9/@featureInstance.0">
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Connection_Binding"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:ListValue">
-            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.0"/>
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.2"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.4"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.4"/>
       </ownedPropertyAssociation>
-      <connectionReference context="/0" source="/0/@componentInstance.6/@featureInstance.0" destination="/0/@componentInstance.7/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.7"/>
+      <connectionReference context="/0" source="/0/@componentInstance.9/@featureInstance.0" destination="/0/@componentInstance.10/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.7"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="Grinder.GroundOut -> Brewer.GroundIn" complete="true" kind="portConnection" destination="/0/@componentInstance.8/@featureInstance.0" source="/0/@componentInstance.7/@featureInstance.1">
+    <connectionInstance name="Grinder.GroundOut -> Brewer.GroundIn" complete="true" kind="portConnection" destination="/0/@componentInstance.11/@featureInstance.0" source="/0/@componentInstance.10/@featureInstance.1">
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Connection_Binding"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:ListValue">
-            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.0"/>
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.2"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.5"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.5"/>
       </ownedPropertyAssociation>
-      <connectionReference context="/0" source="/0/@componentInstance.7/@featureInstance.1" destination="/0/@componentInstance.8/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.8"/>
+      <connectionReference context="/0" source="/0/@componentInstance.10/@featureInstance.1" destination="/0/@componentInstance.11/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.8"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="CoinMech.ValueOut -> CoinCounterProc.NewCoinValue" complete="true" kind="portConnection" destination="/0/@componentInstance.23/@featureInstance.0" source="/0/@componentInstance.9/@featureInstance.1">
-      <connectionReference context="/0" source="/0/@componentInstance.9/@featureInstance.1" destination="/0/@componentInstance.23/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.10"/>
+    <connectionInstance name="CoinMech.ValueOut -> CoinCounterProc.NewCoinValue" complete="true" kind="portConnection" destination="/0/@componentInstance.26/@featureInstance.0" source="/0/@componentInstance.12/@featureInstance.1">
+      <connectionReference context="/0" source="/0/@componentInstance.12/@featureInstance.1" destination="/0/@componentInstance.26/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.10"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="CoinMech.ValueOut -> PaymentProc.logic.CoinIn" complete="true" kind="portConnection" destination="/0/@componentInstance.27/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.9/@featureInstance.1">
+    <connectionInstance name="CoinMech.ValueOut -> PaymentProc.logic.CoinIn" complete="true" kind="portConnection" destination="/0/@componentInstance.30/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.12/@featureInstance.1">
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Connection_Binding"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:ListValue">
-            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.0"/>
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.3"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.8"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.9"/>
       </ownedPropertyAssociation>
-      <connectionReference context="/0" source="/0/@componentInstance.9/@featureInstance.1" destination="/0/@componentInstance.27/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.22"/>
+      <connectionReference context="/0" source="/0/@componentInstance.12/@featureInstance.1" destination="/0/@componentInstance.30/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.22"/>
       </connectionReference>
-      <connectionReference context="/0/@componentInstance.27" source="/0/@componentInstance.27/@featureInstance.0" destination="/0/@componentInstance.27/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="/0/@componentInstance.30" source="/0/@componentInstance.30/@featureInstance.0" destination="/0/@componentInstance.30/@componentInstance.0/@featureInstance.0">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.117/@ownedPortConnection.0"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="BillAcceptor.ValueOut -> BillCounterProc.NewBillValue" complete="true" kind="portConnection" destination="/0/@componentInstance.24/@featureInstance.0" source="/0/@componentInstance.10/@featureInstance.1">
-      <connectionReference context="/0" source="/0/@componentInstance.10/@featureInstance.1" destination="/0/@componentInstance.24/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.11"/>
+    <connectionInstance name="BillAcceptor.ValueOut -> BillCounterProc.NewBillValue" complete="true" kind="portConnection" destination="/0/@componentInstance.27/@featureInstance.0" source="/0/@componentInstance.13/@featureInstance.1">
+      <connectionReference context="/0" source="/0/@componentInstance.13/@featureInstance.1" destination="/0/@componentInstance.27/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.11"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="BillAcceptor.ValueOut -> PaymentProc.logic.BillIn" complete="true" kind="portConnection" destination="/0/@componentInstance.27/@componentInstance.0/@featureInstance.1" source="/0/@componentInstance.10/@featureInstance.1">
+    <connectionInstance name="BillAcceptor.ValueOut -> PaymentProc.logic.BillIn" complete="true" kind="portConnection" destination="/0/@componentInstance.30/@componentInstance.0/@featureInstance.1" source="/0/@componentInstance.13/@featureInstance.1">
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Connection_Binding"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:ListValue">
-            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.0"/>
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.3"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.8"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.9"/>
       </ownedPropertyAssociation>
-      <connectionReference context="/0" source="/0/@componentInstance.10/@featureInstance.1" destination="/0/@componentInstance.27/@featureInstance.1">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.23"/>
+      <connectionReference context="/0" source="/0/@componentInstance.13/@featureInstance.1" destination="/0/@componentInstance.30/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.23"/>
       </connectionReference>
-      <connectionReference context="/0/@componentInstance.27" source="/0/@componentInstance.27/@featureInstance.1" destination="/0/@componentInstance.27/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="/0/@componentInstance.30" source="/0/@componentInstance.30/@featureInstance.1" destination="/0/@componentInstance.30/@componentInstance.0/@featureInstance.1">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.117/@ownedPortConnection.1"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="CardScan.Auth -> PaymentProc.logic.CardIn" complete="true" kind="portConnection" destination="/0/@componentInstance.27/@componentInstance.0/@featureInstance.2" source="/0/@componentInstance.11/@featureInstance.1">
+    <connectionInstance name="CardScan.Auth -> PaymentProc.logic.CardIn" complete="true" kind="portConnection" destination="/0/@componentInstance.30/@componentInstance.0/@featureInstance.2" source="/0/@componentInstance.14/@featureInstance.1">
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Connection_Binding"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:ListValue">
-            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.0"/>
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.3"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.8"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.9"/>
       </ownedPropertyAssociation>
-      <connectionReference context="/0" source="/0/@componentInstance.11/@featureInstance.1" destination="/0/@componentInstance.27/@featureInstance.2">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.24"/>
+      <connectionReference context="/0" source="/0/@componentInstance.14/@featureInstance.1" destination="/0/@componentInstance.30/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.24"/>
       </connectionReference>
-      <connectionReference context="/0/@componentInstance.27" source="/0/@componentInstance.27/@featureInstance.2" destination="/0/@componentInstance.27/@componentInstance.0/@featureInstance.2">
+      <connectionReference context="/0/@componentInstance.30" source="/0/@componentInstance.30/@featureInstance.2" destination="/0/@componentInstance.30/@componentInstance.0/@featureInstance.2">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.117/@ownedPortConnection.2"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="TouchPanel.TouchEvent -> ActionsProc.interpreter.TouchIn" complete="true" kind="portConnection" destination="/0/@componentInstance.26/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.12/@featureInstance.0">
+    <connectionInstance name="TouchPanel.TouchEvent -> ActionsProc.interpreter.TouchIn" complete="true" kind="portConnection" destination="/0/@componentInstance.29/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.15/@featureInstance.0">
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Connection_Binding"/>
         <ownedValue>
           <ownedValue xsi:type="aadl2:ListValue">
-            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.0"/>
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.1"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.7"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.7"/>
       </ownedPropertyAssociation>
-      <connectionReference context="/0" source="/0/@componentInstance.12/@featureInstance.0" destination="/0/@componentInstance.26/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.12"/>
+      <connectionReference context="/0" source="/0/@componentInstance.15/@featureInstance.0" destination="/0/@componentInstance.29/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.12"/>
       </connectionReference>
-      <connectionReference context="/0/@componentInstance.26" source="/0/@componentInstance.26/@featureInstance.0" destination="/0/@componentInstance.26/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="/0/@componentInstance.29" source="/0/@componentInstance.29/@featureInstance.0" destination="/0/@componentInstance.29/@componentInstance.0/@featureInstance.0">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.109/@ownedPortConnection.0"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="TouchPanel.TouchEvent -> Recipe.GetRecipe.TouchEvent" complete="true" kind="portConnection" destination="/0/@componentInstance.30/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.12/@featureInstance.0">
-      <connectionReference context="/0" source="/0/@componentInstance.12/@featureInstance.0" destination="/0/@componentInstance.30/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.13"/>
+    <connectionInstance name="TouchPanel.TouchEvent -> Recipe.GetRecipe.TouchEvent" complete="true" kind="portConnection" destination="/0/@componentInstance.33/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.15/@featureInstance.0">
+      <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+        <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Connection_Binding"/>
+        <ownedValue>
+          <ownedValue xsi:type="aadl2:ListValue">
+            <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.1"/>
+          </ownedValue>
+        </ownedValue>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.8"/>
+      </ownedPropertyAssociation>
+      <connectionReference context="/0" source="/0/@componentInstance.15/@featureInstance.0" destination="/0/@componentInstance.33/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.13"/>
       </connectionReference>
-      <connectionReference context="/0/@componentInstance.30" source="/0/@componentInstance.30/@featureInstance.0" destination="/0/@componentInstance.30/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="/0/@componentInstance.33" source="/0/@componentInstance.33/@featureInstance.0" destination="/0/@componentInstance.33/@componentInstance.0/@featureInstance.0">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.99/@ownedPortConnection.0"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="Read_pr.TempReader.Temp -> Cont_pr.Control.Temp" complete="true" kind="portConnection" destination="/0/@componentInstance.17/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.16/@componentInstance.0/@featureInstance.1">
+    <connectionInstance name="Read_pr.TempReader.Temp -> Cont_pr.Control.Temp" complete="true" kind="portConnection" destination="/0/@componentInstance.20/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.19/@componentInstance.0/@featureInstance.1">
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Connection_Binding"/>
         <ownedValue>
@@ -3586,19 +3655,19 @@
             <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.0"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.0"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.0"/>
       </ownedPropertyAssociation>
-      <connectionReference context="/0/@componentInstance.16" source="/0/@componentInstance.16/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.16/@featureInstance.1">
+      <connectionReference context="/0/@componentInstance.19" source="/0/@componentInstance.19/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.19/@featureInstance.1">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.121/@ownedPortConnection.1"/>
       </connectionReference>
-      <connectionReference context="/0" source="/0/@componentInstance.16/@featureInstance.1" destination="/0/@componentInstance.17/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.1"/>
+      <connectionReference context="/0" source="/0/@componentInstance.19/@featureInstance.1" destination="/0/@componentInstance.20/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.1"/>
       </connectionReference>
-      <connectionReference context="/0/@componentInstance.17" source="/0/@componentInstance.17/@featureInstance.0" destination="/0/@componentInstance.17/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="/0/@componentInstance.20" source="/0/@componentInstance.20/@featureInstance.0" destination="/0/@componentInstance.20/@componentInstance.0/@featureInstance.0">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.123/@ownedPortConnection.0"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="Read_pr.TempReader.Temp -> CoolCont_pr.Cooling.Temp" complete="true" kind="portConnection" destination="/0/@componentInstance.19/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.16/@componentInstance.0/@featureInstance.1">
+    <connectionInstance name="Read_pr.TempReader.Temp -> CoolCont_pr.Cooling.Temp" complete="true" kind="portConnection" destination="/0/@componentInstance.22/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.19/@componentInstance.0/@featureInstance.1">
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Connection_Binding"/>
         <ownedValue>
@@ -3606,19 +3675,19 @@
             <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.0"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.2"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.2"/>
       </ownedPropertyAssociation>
-      <connectionReference context="/0/@componentInstance.16" source="/0/@componentInstance.16/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.16/@featureInstance.1">
+      <connectionReference context="/0/@componentInstance.19" source="/0/@componentInstance.19/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.19/@featureInstance.1">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.121/@ownedPortConnection.1"/>
       </connectionReference>
-      <connectionReference context="/0" source="/0/@componentInstance.16/@featureInstance.1" destination="/0/@componentInstance.19/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.4"/>
+      <connectionReference context="/0" source="/0/@componentInstance.19/@featureInstance.1" destination="/0/@componentInstance.22/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.4"/>
       </connectionReference>
-      <connectionReference context="/0/@componentInstance.19" source="/0/@componentInstance.19/@featureInstance.0" destination="/0/@componentInstance.19/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="/0/@componentInstance.22" source="/0/@componentInstance.22/@featureInstance.0" destination="/0/@componentInstance.22/@componentInstance.0/@featureInstance.0">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.127/@ownedPortConnection.0"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="Cont_pr.Control.HeatCmd -> Heat_pr.HeaterCtrl.PowerIn" complete="true" kind="portConnection" destination="/0/@componentInstance.18/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.17/@componentInstance.0/@featureInstance.1">
+    <connectionInstance name="Cont_pr.Control.HeatCmd -> Heat_pr.HeaterCtrl.PowerIn" complete="true" kind="portConnection" destination="/0/@componentInstance.21/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.20/@componentInstance.0/@featureInstance.1">
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Connection_Binding"/>
         <ownedValue>
@@ -3626,27 +3695,27 @@
             <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.0"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.1"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.1"/>
       </ownedPropertyAssociation>
-      <connectionReference context="/0/@componentInstance.17" source="/0/@componentInstance.17/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.17/@featureInstance.1">
+      <connectionReference context="/0/@componentInstance.20" source="/0/@componentInstance.20/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.20/@featureInstance.1">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.123/@ownedPortConnection.1"/>
       </connectionReference>
-      <connectionReference context="/0" source="/0/@componentInstance.17/@featureInstance.1" destination="/0/@componentInstance.18/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.2"/>
+      <connectionReference context="/0" source="/0/@componentInstance.20/@featureInstance.1" destination="/0/@componentInstance.21/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.2"/>
       </connectionReference>
-      <connectionReference context="/0/@componentInstance.18" source="/0/@componentInstance.18/@featureInstance.0" destination="/0/@componentInstance.18/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="/0/@componentInstance.21" source="/0/@componentInstance.21/@featureInstance.0" destination="/0/@componentInstance.21/@componentInstance.0/@featureInstance.0">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.125/@ownedPortConnection.0"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="Heat_pr.HeaterCtrl.PowerOut -> Heater.Power" complete="true" kind="portConnection" destination="/0/@componentInstance.2/@featureInstance.0" source="/0/@componentInstance.18/@componentInstance.0/@featureInstance.1">
-      <connectionReference context="/0/@componentInstance.18" source="/0/@componentInstance.18/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.18/@featureInstance.1">
+    <connectionInstance name="Heat_pr.HeaterCtrl.PowerOut -> Heater.Power" complete="true" kind="portConnection" destination="/0/@componentInstance.5/@featureInstance.0" source="/0/@componentInstance.21/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="/0/@componentInstance.21" source="/0/@componentInstance.21/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.21/@featureInstance.1">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.125/@ownedPortConnection.1"/>
       </connectionReference>
-      <connectionReference context="/0" source="/0/@componentInstance.18/@featureInstance.1" destination="/0/@componentInstance.2/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.3"/>
+      <connectionReference context="/0" source="/0/@componentInstance.21/@featureInstance.1" destination="/0/@componentInstance.5/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.3"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="CoolCont_pr.Cooling.CoolCmd -> CoolHeat_pr.CoolerCtrl.PowerIn" complete="true" kind="portConnection" destination="/0/@componentInstance.20/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.19/@componentInstance.0/@featureInstance.1">
+    <connectionInstance name="CoolCont_pr.Cooling.CoolCmd -> CoolHeat_pr.CoolerCtrl.PowerIn" complete="true" kind="portConnection" destination="/0/@componentInstance.23/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.22/@componentInstance.0/@featureInstance.1">
       <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
         <property href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/Deployment_Properties.aadl#Deployment_Properties.Actual_Connection_Binding"/>
         <ownedValue>
@@ -3654,142 +3723,142 @@
             <ownedListElement xsi:type="instance:InstanceReferenceValue" referencedInstanceObject="/0/@componentInstance.0"/>
           </ownedValue>
         </ownedValue>
-        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPropertyAssociation.3"/>
+        <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPropertyAssociation.3"/>
       </ownedPropertyAssociation>
-      <connectionReference context="/0/@componentInstance.19" source="/0/@componentInstance.19/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.19/@featureInstance.1">
+      <connectionReference context="/0/@componentInstance.22" source="/0/@componentInstance.22/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.22/@featureInstance.1">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.127/@ownedPortConnection.1"/>
       </connectionReference>
-      <connectionReference context="/0" source="/0/@componentInstance.19/@featureInstance.1" destination="/0/@componentInstance.20/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.5"/>
+      <connectionReference context="/0" source="/0/@componentInstance.22/@featureInstance.1" destination="/0/@componentInstance.23/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.5"/>
       </connectionReference>
-      <connectionReference context="/0/@componentInstance.20" source="/0/@componentInstance.20/@featureInstance.0" destination="/0/@componentInstance.20/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="/0/@componentInstance.23" source="/0/@componentInstance.23/@featureInstance.0" destination="/0/@componentInstance.23/@componentInstance.0/@featureInstance.0">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.129/@ownedPortConnection.0"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="CoolHeat_pr.CoolerCtrl.PowerOut -> Refrigerator.Power" complete="true" kind="portConnection" destination="/0/@componentInstance.3/@featureInstance.0" source="/0/@componentInstance.20/@componentInstance.0/@featureInstance.1">
-      <connectionReference context="/0/@componentInstance.20" source="/0/@componentInstance.20/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.20/@featureInstance.1">
+    <connectionInstance name="CoolHeat_pr.CoolerCtrl.PowerOut -> Refrigerator.Power" complete="true" kind="portConnection" destination="/0/@componentInstance.6/@featureInstance.0" source="/0/@componentInstance.23/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="/0/@componentInstance.23" source="/0/@componentInstance.23/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.23/@featureInstance.1">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.129/@ownedPortConnection.1"/>
       </connectionReference>
-      <connectionReference context="/0" source="/0/@componentInstance.20/@featureInstance.1" destination="/0/@componentInstance.3/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.6"/>
+      <connectionReference context="/0" source="/0/@componentInstance.23/@featureInstance.1" destination="/0/@componentInstance.6/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.6"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="TeaProc.teaLogic.Done -> MainProcessor.TeaDone" complete="true" kind="portConnection" destination="/0/@componentInstance.28/@featureInstance.15" source="/0/@componentInstance.21/@componentInstance.0/@featureInstance.2">
-      <connectionReference context="/0/@componentInstance.21" source="/0/@componentInstance.21/@componentInstance.0/@featureInstance.2" destination="/0/@componentInstance.21/@featureInstance.2">
+    <connectionInstance name="TeaProc.teaLogic.Done -> MainProcessor.TeaDone" complete="true" kind="portConnection" destination="/0/@componentInstance.31/@featureInstance.15" source="/0/@componentInstance.24/@componentInstance.0/@featureInstance.2">
+      <connectionReference context="/0/@componentInstance.24" source="/0/@componentInstance.24/@componentInstance.0/@featureInstance.2" destination="/0/@componentInstance.24/@featureInstance.2">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.131/@ownedPortConnection.2"/>
       </connectionReference>
-      <connectionReference context="/0" source="/0/@componentInstance.21/@featureInstance.2" destination="/0/@componentInstance.28/@featureInstance.15">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.28"/>
+      <connectionReference context="/0" source="/0/@componentInstance.24/@featureInstance.2" destination="/0/@componentInstance.31/@featureInstance.15">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.28"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="CoffeeProc.coffeeLogic.Done -> MainProcessor.CoffeeDone" complete="true" kind="portConnection" destination="/0/@componentInstance.28/@featureInstance.16" source="/0/@componentInstance.22/@componentInstance.0/@featureInstance.2">
-      <connectionReference context="/0/@componentInstance.22" source="/0/@componentInstance.22/@componentInstance.0/@featureInstance.2" destination="/0/@componentInstance.22/@featureInstance.2">
+    <connectionInstance name="CoffeeProc.coffeeLogic.Done -> MainProcessor.CoffeeDone" complete="true" kind="portConnection" destination="/0/@componentInstance.31/@featureInstance.16" source="/0/@componentInstance.25/@componentInstance.0/@featureInstance.2">
+      <connectionReference context="/0/@componentInstance.25" source="/0/@componentInstance.25/@componentInstance.0/@featureInstance.2" destination="/0/@componentInstance.25/@featureInstance.2">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.133/@ownedPortConnection.2"/>
       </connectionReference>
-      <connectionReference context="/0" source="/0/@componentInstance.22/@featureInstance.2" destination="/0/@componentInstance.28/@featureInstance.16">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.29"/>
+      <connectionReference context="/0" source="/0/@componentInstance.25/@featureInstance.2" destination="/0/@componentInstance.31/@featureInstance.16">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.29"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="ActionsProc.interpreter.CommandOut -> MainProcessor.UserAction" complete="true" kind="portConnection" destination="/0/@componentInstance.28/@featureInstance.1" source="/0/@componentInstance.26/@componentInstance.0/@featureInstance.1">
-      <connectionReference context="/0/@componentInstance.26" source="/0/@componentInstance.26/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.26/@featureInstance.1">
+    <connectionInstance name="ActionsProc.interpreter.CommandOut -> MainProcessor.UserAction" complete="true" kind="portConnection" destination="/0/@componentInstance.31/@featureInstance.1" source="/0/@componentInstance.29/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="/0/@componentInstance.29" source="/0/@componentInstance.29/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.29/@featureInstance.1">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.109/@ownedPortConnection.1"/>
       </connectionReference>
-      <connectionReference context="/0" source="/0/@componentInstance.26/@featureInstance.1" destination="/0/@componentInstance.28/@featureInstance.1">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.27"/>
+      <connectionReference context="/0" source="/0/@componentInstance.29/@featureInstance.1" destination="/0/@componentInstance.31/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.27"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="PaymentProc.logic.AmountOut -> Change.changeThread.NeededValueIn" complete="true" kind="portConnection" destination="/0/@componentInstance.29/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.27/@componentInstance.0/@featureInstance.3">
-      <connectionReference context="/0/@componentInstance.27" source="/0/@componentInstance.27/@componentInstance.0/@featureInstance.3" destination="/0/@componentInstance.27/@featureInstance.3">
+    <connectionInstance name="PaymentProc.logic.AmountOut -> Change.changeThread.NeededValueIn" complete="true" kind="portConnection" destination="/0/@componentInstance.32/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.30/@componentInstance.0/@featureInstance.3">
+      <connectionReference context="/0/@componentInstance.30" source="/0/@componentInstance.30/@componentInstance.0/@featureInstance.3" destination="/0/@componentInstance.30/@featureInstance.3">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.117/@ownedPortConnection.3"/>
       </connectionReference>
-      <connectionReference context="/0" source="/0/@componentInstance.27/@featureInstance.3" destination="/0/@componentInstance.29/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.26"/>
+      <connectionReference context="/0" source="/0/@componentInstance.30/@featureInstance.3" destination="/0/@componentInstance.32/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.26"/>
       </connectionReference>
-      <connectionReference context="/0/@componentInstance.29" source="/0/@componentInstance.29/@featureInstance.0" destination="/0/@componentInstance.29/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="/0/@componentInstance.32" source="/0/@componentInstance.32/@featureInstance.0" destination="/0/@componentInstance.32/@componentInstance.0/@featureInstance.0">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.119/@ownedPortConnection.0"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="PaymentProc.logic.ChangeOut -> Change.changeThread.PaidValueIn" complete="true" kind="portConnection" destination="/0/@componentInstance.29/@componentInstance.0/@featureInstance.1" source="/0/@componentInstance.27/@componentInstance.0/@featureInstance.4">
-      <connectionReference context="/0/@componentInstance.27" source="/0/@componentInstance.27/@componentInstance.0/@featureInstance.4" destination="/0/@componentInstance.27/@featureInstance.4">
+    <connectionInstance name="PaymentProc.logic.ChangeOut -> Change.changeThread.PaidValueIn" complete="true" kind="portConnection" destination="/0/@componentInstance.32/@componentInstance.0/@featureInstance.1" source="/0/@componentInstance.30/@componentInstance.0/@featureInstance.4">
+      <connectionReference context="/0/@componentInstance.30" source="/0/@componentInstance.30/@componentInstance.0/@featureInstance.4" destination="/0/@componentInstance.30/@featureInstance.4">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.117/@ownedPortConnection.4"/>
       </connectionReference>
-      <connectionReference context="/0" source="/0/@componentInstance.27/@featureInstance.4" destination="/0/@componentInstance.29/@featureInstance.1">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.25"/>
+      <connectionReference context="/0" source="/0/@componentInstance.30/@featureInstance.4" destination="/0/@componentInstance.32/@featureInstance.1">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.25"/>
       </connectionReference>
-      <connectionReference context="/0/@componentInstance.29" source="/0/@componentInstance.29/@featureInstance.1" destination="/0/@componentInstance.29/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="/0/@componentInstance.32" source="/0/@componentInstance.32/@featureInstance.1" destination="/0/@componentInstance.32/@componentInstance.0/@featureInstance.1">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.119/@ownedPortConnection.1"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="MainProcessor.RecipeOut -> Ingredient.SelectIngredient.RecipeIn" complete="true" kind="portConnection" destination="/0/@componentInstance.31/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.28/@featureInstance.3">
-      <connectionReference context="/0" source="/0/@componentInstance.28/@featureInstance.3" destination="/0/@componentInstance.31/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.15"/>
+    <connectionInstance name="MainProcessor.RecipeOut -> Ingredient.SelectIngredient.RecipeIn" complete="true" kind="portConnection" destination="/0/@componentInstance.34/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.31/@featureInstance.3">
+      <connectionReference context="/0" source="/0/@componentInstance.31/@featureInstance.3" destination="/0/@componentInstance.34/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.15"/>
       </connectionReference>
-      <connectionReference context="/0/@componentInstance.31" source="/0/@componentInstance.31/@featureInstance.0" destination="/0/@componentInstance.31/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="/0/@componentInstance.34" source="/0/@componentInstance.34/@featureInstance.0" destination="/0/@componentInstance.34/@componentInstance.0/@featureInstance.0">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.101/@ownedPortConnection.0"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="MainProcessor.RecipeOut -> Temperature.SelectTemperature.RecipeIn" complete="true" kind="portConnection" destination="/0/@componentInstance.33/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.28/@featureInstance.3">
-      <connectionReference context="/0" source="/0/@componentInstance.28/@featureInstance.3" destination="/0/@componentInstance.33/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.19"/>
+    <connectionInstance name="MainProcessor.RecipeOut -> Temperature.SelectTemperature.RecipeIn" complete="true" kind="portConnection" destination="/0/@componentInstance.36/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.31/@featureInstance.3">
+      <connectionReference context="/0" source="/0/@componentInstance.31/@featureInstance.3" destination="/0/@componentInstance.36/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.19"/>
       </connectionReference>
-      <connectionReference context="/0/@componentInstance.33" source="/0/@componentInstance.33/@featureInstance.0" destination="/0/@componentInstance.33/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="/0/@componentInstance.36" source="/0/@componentInstance.36/@featureInstance.0" destination="/0/@componentInstance.36/@componentInstance.0/@featureInstance.0">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.103/@ownedPortConnection.0"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="MainProcessor.IngredientOut -> Availability.CheckAvailability.IngredientIn" complete="true" kind="portConnection" destination="/0/@componentInstance.32/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.28/@featureInstance.5">
-      <connectionReference context="/0" source="/0/@componentInstance.28/@featureInstance.5" destination="/0/@componentInstance.32/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.17"/>
+    <connectionInstance name="MainProcessor.IngredientOut -> Availability.CheckAvailability.IngredientIn" complete="true" kind="portConnection" destination="/0/@componentInstance.35/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.31/@featureInstance.5">
+      <connectionReference context="/0" source="/0/@componentInstance.31/@featureInstance.5" destination="/0/@componentInstance.35/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.17"/>
       </connectionReference>
-      <connectionReference context="/0/@componentInstance.32" source="/0/@componentInstance.32/@featureInstance.0" destination="/0/@componentInstance.32/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="/0/@componentInstance.35" source="/0/@componentInstance.35/@featureInstance.0" destination="/0/@componentInstance.35/@componentInstance.0/@featureInstance.0">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.105/@ownedPortConnection.0"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="MainProcessor.CupOut -> Cup.DispenseCup.StartSignal" complete="true" kind="portConnection" destination="/0/@componentInstance.34/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.28/@featureInstance.7">
-      <connectionReference context="/0" source="/0/@componentInstance.28/@featureInstance.7" destination="/0/@componentInstance.34/@featureInstance.0">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.20"/>
+    <connectionInstance name="MainProcessor.CupOut -> Cup.DispenseCup.StartSignal" complete="true" kind="portConnection" destination="/0/@componentInstance.37/@componentInstance.0/@featureInstance.0" source="/0/@componentInstance.31/@featureInstance.7">
+      <connectionReference context="/0" source="/0/@componentInstance.31/@featureInstance.7" destination="/0/@componentInstance.37/@featureInstance.0">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.20"/>
       </connectionReference>
-      <connectionReference context="/0/@componentInstance.34" source="/0/@componentInstance.34/@featureInstance.0" destination="/0/@componentInstance.34/@componentInstance.0/@featureInstance.0">
+      <connectionReference context="/0/@componentInstance.37" source="/0/@componentInstance.37/@featureInstance.0" destination="/0/@componentInstance.37/@componentInstance.0/@featureInstance.0">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.107/@ownedPortConnection.0"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="Recipe.GetRecipe.RecipeOut -> MainProcessor.logic.RecipeIn" complete="true" kind="portConnection" destination="/0/@componentInstance.28/@componentInstance.0/@featureInstance.1" source="/0/@componentInstance.30/@componentInstance.0/@featureInstance.1">
-      <connectionReference context="/0/@componentInstance.30" source="/0/@componentInstance.30/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.30/@featureInstance.1">
+    <connectionInstance name="Recipe.GetRecipe.RecipeOut -> MainProcessor.logic.RecipeIn" complete="true" kind="portConnection" destination="/0/@componentInstance.31/@componentInstance.0/@featureInstance.1" source="/0/@componentInstance.33/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="/0/@componentInstance.33" source="/0/@componentInstance.33/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.33/@featureInstance.1">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.99/@ownedPortConnection.1"/>
       </connectionReference>
-      <connectionReference context="/0" source="/0/@componentInstance.30/@featureInstance.1" destination="/0/@componentInstance.28/@featureInstance.2">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.14"/>
+      <connectionReference context="/0" source="/0/@componentInstance.33/@featureInstance.1" destination="/0/@componentInstance.31/@featureInstance.2">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.14"/>
       </connectionReference>
-      <connectionReference context="/0/@componentInstance.28" source="/0/@componentInstance.28/@featureInstance.2" destination="/0/@componentInstance.28/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="/0/@componentInstance.31" source="/0/@componentInstance.31/@featureInstance.2" destination="/0/@componentInstance.31/@componentInstance.0/@featureInstance.1">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.135/@ownedPortConnection.1"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="Ingredient.SelectIngredient.IngredientOut -> MainProcessor.IngredientIn" complete="true" kind="portConnection" destination="/0/@componentInstance.28/@featureInstance.4" source="/0/@componentInstance.31/@componentInstance.0/@featureInstance.1">
-      <connectionReference context="/0/@componentInstance.31" source="/0/@componentInstance.31/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.31/@featureInstance.1">
+    <connectionInstance name="Ingredient.SelectIngredient.IngredientOut -> MainProcessor.IngredientIn" complete="true" kind="portConnection" destination="/0/@componentInstance.31/@featureInstance.4" source="/0/@componentInstance.34/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="/0/@componentInstance.34" source="/0/@componentInstance.34/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.34/@featureInstance.1">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.101/@ownedPortConnection.1"/>
       </connectionReference>
-      <connectionReference context="/0" source="/0/@componentInstance.31/@featureInstance.1" destination="/0/@componentInstance.28/@featureInstance.4">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.16"/>
+      <connectionReference context="/0" source="/0/@componentInstance.34/@featureInstance.1" destination="/0/@componentInstance.31/@featureInstance.4">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.16"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="Availability.CheckAvailability.AvailabilityOut -> MainProcessor.IsAvailable" complete="true" kind="portConnection" destination="/0/@componentInstance.28/@featureInstance.6" source="/0/@componentInstance.32/@componentInstance.0/@featureInstance.1">
-      <connectionReference context="/0/@componentInstance.32" source="/0/@componentInstance.32/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.32/@featureInstance.1">
+    <connectionInstance name="Availability.CheckAvailability.AvailabilityOut -> MainProcessor.IsAvailable" complete="true" kind="portConnection" destination="/0/@componentInstance.31/@featureInstance.6" source="/0/@componentInstance.35/@componentInstance.0/@featureInstance.1">
+      <connectionReference context="/0/@componentInstance.35" source="/0/@componentInstance.35/@componentInstance.0/@featureInstance.1" destination="/0/@componentInstance.35/@featureInstance.1">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.105/@ownedPortConnection.1"/>
       </connectionReference>
-      <connectionReference context="/0" source="/0/@componentInstance.32/@featureInstance.1" destination="/0/@componentInstance.28/@featureInstance.6">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.18"/>
+      <connectionReference context="/0" source="/0/@componentInstance.35/@featureInstance.1" destination="/0/@componentInstance.31/@featureInstance.6">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.18"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="Cup.LiftCup.FinishSignal -> MainProcessor.CupIn" complete="true" kind="portConnection" destination="/0/@componentInstance.28/@featureInstance.8" source="/0/@componentInstance.34/@componentInstance.1/@featureInstance.1">
-      <connectionReference context="/0/@componentInstance.34" source="/0/@componentInstance.34/@componentInstance.1/@featureInstance.1" destination="/0/@componentInstance.34/@featureInstance.1">
+    <connectionInstance name="Cup.LiftCup.FinishSignal -> MainProcessor.CupIn" complete="true" kind="portConnection" destination="/0/@componentInstance.31/@featureInstance.8" source="/0/@componentInstance.37/@componentInstance.1/@featureInstance.1">
+      <connectionReference context="/0/@componentInstance.37" source="/0/@componentInstance.37/@componentInstance.1/@featureInstance.1" destination="/0/@componentInstance.37/@featureInstance.1">
         <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.107/@ownedPortConnection.2"/>
       </connectionReference>
-      <connectionReference context="/0" source="/0/@componentInstance.34/@featureInstance.1" destination="/0/@componentInstance.28/@featureInstance.8">
-        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedPortConnection.21"/>
+      <connectionReference context="/0" source="/0/@componentInstance.37/@featureInstance.1" destination="/0/@componentInstance.31/@featureInstance.8">
+        <connection xsi:type="aadl2:PortConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedPortConnection.21"/>
       </connectionReference>
     </connectionInstance>
-    <connectionInstance name="Read_cpu.eth -> Net" complete="true" kind="accessConnection" destination="/0/@componentInstance.0" source="/0/@componentInstance.35/@featureInstance.0">
-      <connectionReference context="/0" source="/0/@componentInstance.35/@featureInstance.0" destination="/0/@componentInstance.0">
-        <connection xsi:type="aadl2:AccessConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.141/@ownedAccessConnection.0"/>
+    <connectionInstance name="Read_cpu.eth -> CANbus" complete="true" kind="accessConnection" destination="/0/@componentInstance.0" source="/0/@componentInstance.38/@featureInstance.0">
+      <connectionReference context="/0" source="/0/@componentInstance.38/@featureInstance.0" destination="/0/@componentInstance.0">
+        <connection xsi:type="aadl2:AccessConnection" href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.144/@ownedAccessConnection.0"/>
       </connectionReference>
     </connectionInstance>
     <classifier xsi:type="aadl2:SystemImplementation" href="../lab5_6_pak.aadl#lab5_6_pak.CoffeeTeaMachineSystem.impl"/>
@@ -4120,11 +4189,11 @@
     </ownedPropertyAssociation>
     <classifier xsi:type="aadl2:DataType" href="../lab5_6_pak.aadl#lab5_6_pak.MilkTemperature"/>
   </instance:ComponentInstance>
-  <instance:ComponentInstance name="lab5_6_pak::ethernet" category="bus">
+  <instance:ComponentInstance name="lab5_6_pak::CAN" category="bus">
     <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
       <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.GrossWeight"/>
       <ownedValue>
-        <ownedValue xsi:type="aadl2:RealLiteral" value="0.2">
+        <ownedValue xsi:type="aadl2:RealLiteral" value="0.3">
           <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
         </ownedValue>
       </ownedValue>
@@ -4133,21 +4202,54 @@
     <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
       <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.BandWidthCapacity"/>
       <ownedValue>
-        <ownedValue xsi:type="aadl2:RealLiteral" value="100.0">
+        <ownedValue xsi:type="aadl2:RealLiteral" value="1.0">
           <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.17/@ownedLiteral.2"/>
         </ownedValue>
       </ownedValue>
       <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.136/@ownedPropertyAssociation.1"/>
     </ownedPropertyAssociation>
+    <classifier xsi:type="aadl2:BusType" href="../lab5_6_pak.aadl#lab5_6_pak.CAN"/>
+  </instance:ComponentInstance>
+  <instance:ComponentInstance name="lab5_6_pak::UART" category="bus">
     <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
-      <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.BandWidthBudget"/>
+      <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.GrossWeight"/>
       <ownedValue>
-        <ownedValue xsi:type="aadl2:RealLiteral" value="200.0">
-          <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.17/@ownedLiteral.5"/>
+        <ownedValue xsi:type="aadl2:RealLiteral" value="0.25">
+          <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
         </ownedValue>
       </ownedValue>
-      <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.136/@ownedPropertyAssociation.2"/>
+      <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.139/@ownedPropertyAssociation.0"/>
     </ownedPropertyAssociation>
-    <classifier xsi:type="aadl2:BusType" href="../lab5_6_pak.aadl#lab5_6_pak.ethernet"/>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.BandWidthCapacity"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:RealLiteral" value="0.115">
+          <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.17/@ownedLiteral.2"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.139/@ownedPropertyAssociation.1"/>
+    </ownedPropertyAssociation>
+    <classifier xsi:type="aadl2:BusType" href="../lab5_6_pak.aadl#lab5_6_pak.UART"/>
+  </instance:ComponentInstance>
+  <instance:ComponentInstance name="lab5_6_pak::I2C" category="bus">
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.GrossWeight"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:RealLiteral" value="0.15">
+          <unit href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#/0/@ownedPropertyType.0/@ownedLiteral.0"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.0"/>
+    </ownedPropertyAssociation>
+    <ownedPropertyAssociation xsi:type="instance:PropertyAssociationInstance">
+      <property href="platform:/plugin/org.osate.contribution.sei/resources/properties/SEI.aadl#SEI.BandWidthCapacity"/>
+      <ownedValue>
+        <ownedValue xsi:type="aadl2:RealLiteral" value="0.4">
+          <unit href="platform:/plugin/org.osate.aadl2.contrib/resources/properties/Predeclared_Property_Sets/AADL_Project.aadl#/0/@ownedPropertyType.17/@ownedLiteral.2"/>
+        </ownedValue>
+      </ownedValue>
+      <propertyAssociation href="../lab5_6_pak.aadl#/0/@ownedPublicSection/@ownedClassifier.137/@ownedPropertyAssociation.1"/>
+    </ownedPropertyAssociation>
+    <classifier xsi:type="aadl2:BusType" href="../lab5_6_pak.aadl#lab5_6_pak.I2C"/>
   </instance:ComponentInstance>
 </xmi:XMI>
