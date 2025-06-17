@@ -129,9 +129,13 @@ This project is an AADL (Architecture Analysis & Design Language) model of a ven
 -   `CoffeePreparation` - The process for full coffee preparation.
 -   `MainProcessor` - The process for the entire use case of the vending machine.
 
-### Bus
+### Buses
 
--   `ethernet` - The main bus that accounts for the communication within the system.
+-   `CAN` - Controller Area Network (CAN) bus - The bus for communication between the main processor and the medium-bandwidth devices
+-   `I2C` - Inter-Integrated Circuit (I2C) bus - The bus for cheap and simple devices, such as sensors and the touch panel
+-   `SPI` - Serial Peripheral Interface (SPI) bus - The bus for quicker communication with memory components, quick sensors etc.
+-   `UART` - Universal Asynchronous Receiver-Transmitter (UART) bus - The bus for serial communication with devices such as the credit card scanner or payment modules
+
 
 ### Processors
 
