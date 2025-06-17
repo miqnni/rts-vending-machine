@@ -1407,175 +1407,197 @@ end TeaCPU;
 
 
 
--- SYSTEM --------------------------------------
+-- SYSTEMS --------------------------------------
 ------------------------------------------------
 
--- The full system that combines all other components
--- and accounts for all supported use cases of the vending machine.
-system CoffeeTeaMachineSystem
-end CoffeeTeaMachineSystem;
 
-system implementation CoffeeTeaMachineSystem.impl
+-- The subsystem for all temperature-related
+-- actions, such as measuring, heating and cooling.
+system TemperatureSubsystem
+  features
+    RecipeIn  : in data port RecipeInfo;
+    TempOut   : out data port TemperatureType;
+end TemperatureSubsystem;
+
+system implementation TemperatureSubsystem.impl
   subcomponents
-    Sensor        : device TempSensor.impl;
-    Heater        : device Heater.impl;
-    Refrigerator  : device Refrigerator.impl;
-    TeaDispense   : device TeaLeavesDispenser.impl;
-    Cooker        : device TeaCooker.impl;
-    BeanStorage   : device CoffeeBeansStorage.impl;
-    Grinder       : device CoffeeGrinder.impl;
-    Brewer        : device CoffeeBrewer.impl;
-    CoinMech      : device CoinMechanism.impl;
-    BillAcceptor  : device BillAcceptor.impl;
-    CardScan      : device CardScanner.impl;
-    TouchPanel    : device TouchablePanel.impl;
-    RecipeStorage : device RecipeStorage.impl;
---    IngredientSelector : device IngredientSelector.impl;   =====> Replaced by thread+process.
---    TemperatureSelector : device TemperatureSelector.impl; =====> Replaced by thread+process.
---    AvailabilityChecker : device AvailabilityChecker.impl; =====> Replaced by thread+process.
-    CupDispenser : device CupDispenser.impl;
-    CupLifter : device CupLifter.impl;
-
-    Read_pr       : process TemperatureReading.impl;
-    Cont_pr       : process HeaterControl.impl;
-    Heat_pr       : process Heating.impl;
-    CoolCont_pr   : process RefrigeratorControl.impl;
-    CoolHeat_pr   : process Cooling.impl;
-    TeaProc       : process TeaPreparation.impl;
-    CoffeeProc    : process CoffeePreparation.impl;
-    CoinCounterProc   : process CoinCounter.impl;
-    BillCounterProc   : process BillCounter.impl;
-    TotalCounterProc   : process TotalMoneyCounter.impl;
-    ActionsProc   : process UserActionsInterpreterProcess.impl;
-    PaymentProc   : process Payment.impl;  -- payment integration
-    MainProcessor : process MainProcessor.impl;
-    Change        : process ChangeReturner.impl;
-    Recipe        : process RecipeSelector.impl;
-    Ingredient    : process IngredientForRecipeSelector.impl;
-    Availability  : process IngredientAvailabilityChecker.impl;
-    Temperature   : process TemperatureForRecipeSelector.impl;
-    Cup           : process CupControl.impl;
-
-    Read_cpu      : processor corei5;
-    Cont_cpu      : processor corei5;
-    Heat_cpu      : processor corei5;
-    Cool_cpu      : processor corei5;
-    CPU_Coffee    : processor CoffeeCPU;
-    CPU_Tea       : processor TeaCPU;
-
-    CANbus  : bus CAN;
-	I2Cbus  : bus I2C;
-	SPIbus  : bus SPI;
-	UARTbus : bus UART;
+    Sensor      : device TempSensor.impl;
+    Heater      : device Heater.impl;
+    Refrigerator: device Refrigerator.impl;
+    Read_pr     : process TemperatureReading.impl;
+    Cont_pr     : process HeaterControl.impl;
+    Heat_pr     : process Heating.impl;
+    CoolCont_pr : process RefrigeratorControl.impl;
+    CoolHeat_pr : process Cooling.impl;
+    Read_cpu    : processor corei5;
+    Cont_cpu    : processor corei5;
+    Heat_cpu    : processor corei5;
+    Cool_cpu    : processor corei5;
+    CANbus      : bus CAN;
   connections
-    can1     : bus access Read_cpu.eth -> CANbus;
-	can2     : bus access CANbus -> Cont_cpu.eth;
-	can3     : bus access CANbus -> Heat_cpu.eth;
-    
-    -- TEMPERATURE CONTROL (heating and cooling)
-    s_to_r   : port Sensor.Temp -> Read_pr.SensorIn;
-    r_to_c   : port Read_pr.SensorOut -> Cont_pr.ControlIn;
-    c_to_h   : port Cont_pr.ControlOut -> Heat_pr.HeaterIn;
-    h_to_he  : port Heat_pr.HeaterOut -> Heater.Power;
+    s_to_r     : port Sensor.Temp -> Read_pr.SensorIn;
+    r_to_c     : port Read_pr.SensorOut -> Cont_pr.ControlIn;
+    c_to_h     : port Cont_pr.ControlOut -> Heat_pr.HeaterIn;
+    h_to_he    : port Heat_pr.HeaterOut -> Heater.Power;
+    r_to_cool  : port Read_pr.SensorOut -> CoolCont_pr.ControlIn;
+    cool_to_r  : port CoolCont_pr.ControlOut -> CoolHeat_pr.CoolerIn;
+    r_to_ref   : port CoolHeat_pr.CoolerOut -> Refrigerator.Power;
+  properties
+    Actual_Connection_Binding => (reference(CANbus)) applies to r_to_c, c_to_h, r_to_cool, cool_to_r;
+    Actual_Processor_Binding => (reference(Read_cpu)) applies to Read_pr;
+    Actual_Processor_Binding => (reference(Cont_cpu)) applies to Cont_pr;
+    Actual_Processor_Binding => (reference(Heat_cpu)) applies to Heat_pr;
+    Actual_Processor_Binding => (reference(Cool_cpu)) applies to CoolCont_pr, CoolHeat_pr;
+end TemperatureSubsystem.impl;
 
-    r_to_cool: port Read_pr.SensorOut -> CoolCont_pr.ControlIn;
-    cool_to_r: port CoolCont_pr.ControlOut -> CoolHeat_pr.CoolerIn;
-    r_to_ref : port CoolHeat_pr.CoolerOut -> Refrigerator.Power;
-	
-	-- INGREDIENT FLOWS - linear physical flows
 
-	-- Dispense the beans from the storage
-	-- and put them into the grinder.
-    conn1  : port BeanStorage.BeansOut -> Grinder.BeansIn;
-    
-    -- Move the ground beans from the grinder
-    -- to the brewer,
-    conn2  : port Grinder.GroundOut    -> Brewer.GroundIn;
-    
-    -- Dispense the tea leaves from the Tea Dispenser
-    -- and put them into the Cooker.
-    conn3  : port TeaDispense.LeavesOut -> Cooker.LeavesIn;
-    
-    -- Add the value of the inserted coin
-    -- to the counter.
+-- The subsystem that encompasses all components
+-- related solely to beverage preparation.
+system BeveragePreparationSubsystem
+  features
+    BrewCmd     : in data port UserCommand;
+    CoffeeReady : out event port;
+    TeaReady    : out event port;
+end BeveragePreparationSubsystem;
+
+system implementation BeveragePreparationSubsystem.impl
+  subcomponents
+    BeanStorage : device CoffeeBeansStorage.impl;
+    Grinder     : device CoffeeGrinder.impl;
+    Brewer      : device CoffeeBrewer.impl;
+    TeaDispense : device TeaLeavesDispenser.impl;
+    Cooker      : device TeaCooker.impl;
+    CupDispenser: device CupDispenser.impl;
+    CupLifter   : device CupLifter.impl;
+    TeaProc     : process TeaPreparation.impl;
+    CoffeeProc  : process CoffeePreparation.impl;
+    Cup         : process CupControl.impl;
+    CPU_Tea     : processor TeaCPU;
+    CPU_Coffee  : processor CoffeeCPU;
+    SPIbus      : bus SPI;
+  connections
+    conn1 : port BeanStorage.BeansOut -> Grinder.BeansIn;
+    conn2 : port Grinder.GroundOut    -> Brewer.GroundIn;
+    conn3 : port TeaDispense.LeavesOut -> Cooker.LeavesIn;
+  properties
+    Actual_Connection_Binding => (reference(SPIbus)) applies to conn1, conn2, conn3;
+    Actual_Processor_Binding => (reference(CPU_Tea)) applies to TeaProc;
+    Actual_Processor_Binding => (reference(CPU_Coffee)) applies to CoffeeProc;
+end BeveragePreparationSubsystem.impl;
+
+
+-- The subsystem that integrates all mechanisms related
+-- to payment.
+system PaymentSubsystem
+  features
+    PaymentInfo : in data port PaymentAmount;
+    PaymentOK   : out data port PaymentReady;
+end PaymentSubsystem;
+
+system implementation PaymentSubsystem.impl
+  subcomponents
+    CoinMech       : device CoinMechanism.impl;
+    BillAcceptor   : device BillAcceptor.impl;
+    CardScan       : device CardScanner.impl;
+    CoinCounterProc: process CoinCounter.impl;
+    BillCounterProc: process BillCounter.impl;
+    TotalCounterProc: process TotalMoneyCounter.impl;
+    PaymentProc    : process Payment.impl;
+    Change         : process ChangeReturner.impl;
+    CPU_Tea        : processor TeaCPU;
+    UARTbus        : bus UART;
+  connections
     conn4  : port CoinMech.ValueOut -> CoinCounterProc.NewCoinValue;
-    
-    -- PAYMENT + TOUCH PANEL
-    
-    -- Add the value of the inserted note / bill
-    -- to the counter.
     conn21 : port BillAcceptor.ValueOut -> BillCounterProc.NewBillValue;
+    conn6  : port CoinMech.ValueOut -> PaymentProc.CoinIn;
+    conn7  : port BillAcceptor.ValueOut -> PaymentProc.BillIn;
+    conn8  : port CardScan.Auth -> PaymentProc.CardIn;
+    conn9  : port PaymentProc.ChangeOut -> Change.PaidValueIn;
+    conn10 : port PaymentProc.AmountOut -> Change.NeededValueIn;
+  properties
+    Actual_Connection_Binding => (reference(UARTbus)) applies to conn6, conn7, conn8;
+    Actual_Processor_Binding => (reference(CPU_Tea)) applies to PaymentProc;
+end PaymentSubsystem.impl;
+
+
+-- The subsystem that accounts for all aspects of user
+-- interaction with the machine, such as choosing the
+-- beverage via the touch panel.
+system UserInteractionSubsystem
+  features
+    SelectedRecipe : out data port RecipeInfo;
+    BrewRequest    : out data port UserCommand;
+    PaymentRequest : out data port PaymentAmount;
+
+    TempFeedback   : in data port TemperatureType;
+    PaymentSuccess : in data port PaymentReady;
+    TeaDone        : in event port;
+    CoffeeDone     : in event port;
+end UserInteractionSubsystem;
+
+system implementation UserInteractionSubsystem.impl
+  subcomponents
+    TouchPanel  : device TouchablePanel.impl;
+    RecipeStorage: device RecipeStorage.impl;
+    ActionsProc : process UserActionsInterpreterProcess.impl;
+    MainProcessor: process MainProcessor.impl;
+    Recipe      : process RecipeSelector.impl;
+    Ingredient  : process IngredientForRecipeSelector.impl;
+    Availability: process IngredientAvailabilityChecker.impl;
+    Temperature : process TemperatureForRecipeSelector.impl;
+    Cup			: process CupControl;
+    TeaProc		: process TeaPreparation;
+    CoffeeProc	: process CoffeePreparation;
+    CPU_Tea     : processor TeaCPU;
+    I2Cbus      : bus I2C;
+  connections
     conn5  : port TouchPanel.TouchEvent -> ActionsProc.TouchInput;
     conn11 : port TouchPanel.TouchEvent -> Recipe.TouchEvent;
-    
-    -- RECIPE SELECTION
-    
     conn12 : port Recipe.RecipeOut -> MainProcessor.RecipeIn;
     conn13 : port MainProcessor.RecipeOut -> Ingredient.RecipeIn;
     conn14 : port Ingredient.IngredientOut -> MainProcessor.IngredientIn;
     conn15 : port MainProcessor.IngredientOut -> Availability.IngredientIn;
     conn16 : port Availability.AvailabilityOut -> MainProcessor.IsAvailable;
     conn17 : port MainProcessor.RecipeOut -> Temperature.RecipeIn;
-    
-	-- CUP HANDLING
-
+    conn18 : port ActionsProc.CommandOut -> MainProcessor.UserAction;
     conn19 : port MainProcessor.CupOut -> Cup.StartSignal;
     conn20 : port Cup.FinishSignal -> MainProcessor.CupIn;
-    
-    
-    -- payment integration
-    conn6 : port CoinMech.ValueOut -> PaymentProc.CoinIn;
-    conn7 : port BillAcceptor.ValueOut -> PaymentProc.BillIn;
-    
-    conn8 : port CardScan.Auth -> PaymentProc.CardIn;
+    conn25 : port TeaProc.TeaDone -> MainProcessor.TeaDone;
+    conn26 : port CoffeeProc.CoffeeDone -> MainProcessor.CoffeeDone;
+  properties
+    Actual_Connection_Binding => (reference(I2Cbus)) applies to conn5, conn11;
+    Actual_Processor_Binding => (reference(CPU_Tea)) applies to ActionsProc;
+end UserInteractionSubsystem.impl;
 
-	-- CHANGE RETURN
-	
-	conn9  : port PaymentProc.ChangeOut -> Change.PaidValueIn;
-	conn10 : port PaymentProc.AmountOut -> Change.NeededValueIn;
+
+-- The full system (split into subsystems) that combines all other components
+-- and accounts for all supported use cases of the vending machine.
+system CoffeeTeaMachineSystem
+end CoffeeTeaMachineSystem;
+
+system implementation CoffeeTeaMachineSystem.impl
+  subcomponents
+    TemperatureSub : system TemperatureSubsystem.impl;
+    BeverageSub    : system BeveragePreparationSubsystem.impl;
+    PaymentSub     : system PaymentSubsystem.impl;
+    UI             : system UserInteractionSubsystem.impl;
     
-    -- User Actions <-> MainProcessor
-    -- (so user events like "select drink", "cancel", etc.
-    -- are processed)
-    conn18 : port ActionsProc.CommandOut -> MainProcessor.UserAction;
-    
-	
-	-- Tea/Coffee preparation - we're wiring MainProcessor to either.
-	conn25 : port TeaProc.TeaDone -> MainProcessor.TeaDone;
-	conn26 : port CoffeeProc.CoffeeDone -> MainProcessor.CoffeeDone;	
+  connections
+    -- UI <--> Temperature
+    conn1 : port UI.SelectedRecipe -> TemperatureSub.RecipeIn;
+    conn2 : port TemperatureSub.TempOut -> UI.TempFeedback;
+
+    -- UI <--> BeveragePreparation
+    conn3 : port UI.BrewRequest -> BeverageSub.BrewCmd;
+    conn4 : port BeverageSub.CoffeeReady -> UI.CoffeeDone;
+    conn5 : port BeverageSub.TeaReady -> UI.TeaDone;
+
+    -- UI <--> Payment
+    conn6 : port UI.PaymentRequest -> PaymentSub.PaymentInfo;
+    conn7 : port PaymentSub.PaymentOK -> UI.PaymentSuccess;
     
   properties
-	-- CAN: temperature-related connections, handling heating and cooling
-	Actual_Connection_Binding => (reference(CANbus)) applies to r_to_c;
-	Actual_Connection_Binding => (reference(CANbus)) applies to c_to_h;
-	Actual_Connection_Binding => (reference(CANbus)) applies to r_to_cool;
-	Actual_Connection_Binding => (reference(CANbus)) applies to cool_to_r;
-	
-	-- SPI: connections related to processing the ingredients
-	Actual_Connection_Binding => (reference(SPIbus)) applies to conn1;
-	Actual_Connection_Binding => (reference(SPIbus)) applies to conn2;
-	Actual_Connection_Binding => (reference(SPIbus)) applies to conn3;
-	
-	-- I2C: touch panel, recipe selection
-	Actual_Connection_Binding => (reference(I2Cbus)) applies to conn5;
-	Actual_Connection_Binding => (reference(I2Cbus)) applies to conn11;
-	
-	-- UART: payment system integration
-	Actual_Connection_Binding => (reference(UARTbus)) applies to conn6, conn7, conn8;
-
-    Actual_Processor_Binding => (reference(Read_cpu)) applies to Read_pr;
-    Actual_Processor_Binding => (reference(Cont_cpu)) applies to Cont_pr;
-    Actual_Processor_Binding => (reference(Heat_cpu)) applies to Heat_pr;
-    Actual_Processor_Binding => (reference(Cool_cpu)) applies to CoolCont_pr;
-    Actual_Processor_Binding => (reference(Cool_cpu)) applies to CoolHeat_pr;
-    Actual_Processor_Binding => (reference(CPU_Tea))    applies to TeaProc;
-    Actual_Processor_Binding => (reference(CPU_Coffee)) applies to CoffeeProc;
-    Actual_Processor_Binding => (reference(CPU_Tea)) applies to ActionsProc;
-	    -- payment integration
-    Actual_Processor_Binding => (reference(CPU_Tea)) applies to PaymentProc;
-
-		-- WEIGHT LIMIT
-	SEI::WeightLimit => 12.000kg;
+    SEI::WeightLimit => 12.000kg;
 end CoffeeTeaMachineSystem.impl;
 
 end lab5_6_pak;
