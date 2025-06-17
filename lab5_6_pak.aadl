@@ -1324,14 +1324,40 @@ end MainProcessor.impl;
 -- BUS -----------------------------------------
 ------------------------------------------------
 
--- The main bus that accounts for the communication
--- within the system.
-bus ethernet
+-- Controller Area Network (CAN) bus.
+-- The bus for communication between the main processor and the medium-bandwidth devices
+bus CAN
   properties
-    SEI::GrossWeight => 0.200kg;
-    SEI::BandWidthCapacity => 100.0 Mbps;
-    SEI::BandWidthBudget => 200.0 KBytesps;
-end ethernet;
+    SEI::GrossWeight => 0.300 kg;
+    SEI::BandWidthCapacity => 1.0 Mbps;
+end CAN;
+
+
+-- Inter-Integrated Circuit (I2C) bus
+-- The bus for cheap and simple devices, such as sensors and the touch panel
+bus I2C
+  properties
+    SEI::GrossWeight => 0.150 kg;
+    SEI::BandWidthCapacity => 0.4 Mbps;
+end I2C;
+
+
+-- Serial Peripheral Interface (SPI) bus
+-- The bus for quicker communication with memory components, quick sensors etc.
+bus SPI
+  properties
+    SEI::GrossWeight => 0.200 kg;
+    SEI::BandWidthCapacity => 8.0 Mbps;
+end SPI;
+
+
+-- Universal Asynchronous Receiver-Transmitter (UART) bus
+-- The bus for serial communication with devices such as the credit card scanner or payment modules
+bus UART
+  properties
+    SEI::GrossWeight => 0.250 kg;
+    SEI::BandWidthCapacity => 0.115 Mbps;
+end UART;
 
 
 
@@ -1345,19 +1371,19 @@ end ethernet;
 -- of the vending machine.
 processor corei5
   features
-    eth: requires bus access ethernet;
+    eth: requires bus access CAN;
   properties
     Scheduling_Protocol => (Round_Robin_Protocol);
     Clock_Period => 1 ms;
     SEI::MIPSCapacity => 288.8 mips;
-	SEI::GrossWeight => 0.100kg;
+    SEI::GrossWeight => 0.100kg;
 end corei5;
 
 
 -- The processor dedicated to the coffee preparation mechanism.
 processor CoffeeCPU
   features
-    net : requires bus access ethernet;
+    net : requires bus access UART;
   properties
     Scheduling_Protocol => (Round_Robin_Protocol);
     Clock_Period => 1ms;
@@ -1369,7 +1395,7 @@ end CoffeeCPU;
 -- The processor dedicated to the tea preparation mechanism.
 processor TeaCPU
   features
-    net : requires bus access ethernet;
+    net : requires bus access I2C;
   properties
     Scheduling_Protocol => (Round_Robin_Protocol);
     Clock_Period => 1ms;
@@ -1437,11 +1463,14 @@ system implementation CoffeeTeaMachineSystem.impl
     CPU_Coffee    : processor CoffeeCPU;
     CPU_Tea       : processor TeaCPU;
 
-    Net           : bus ethernet;
+    CANbus  : bus CAN;
+	I2Cbus  : bus I2C;
+	SPIbus  : bus SPI;
+	UARTbus : bus UART;
   connections
-    eth1     : bus access Read_cpu.eth -> Net;
-    eth2     : bus access Net -> Cont_cpu.eth;
-    eth3     : bus access Net -> Heat_cpu.eth;
+    can1     : bus access Read_cpu.eth -> CANbus;
+	can2     : bus access CANbus -> Cont_cpu.eth;
+	can3     : bus access CANbus -> Heat_cpu.eth;
     
     -- TEMPERATURE CONTROL (heating and cooling)
     s_to_r   : port Sensor.Temp -> Read_pr.SensorIn;
@@ -1516,17 +1545,23 @@ system implementation CoffeeTeaMachineSystem.impl
 	conn26 : port CoffeeProc.CoffeeDone -> MainProcessor.CoffeeDone;	
     
   properties
-    Actual_Connection_Binding => (reference(Net)) applies to r_to_c;
-    Actual_Connection_Binding => (reference(Net)) applies to c_to_h;
-    Actual_Connection_Binding => (reference(Net)) applies to r_to_cool;
-    Actual_Connection_Binding => (reference(Net)) applies to cool_to_r;
-
-    Actual_Connection_Binding => (reference(Net)) applies to conn1;
-    Actual_Connection_Binding => (reference(Net)) applies to conn2;
-    Actual_Connection_Binding => (reference(Net)) applies to conn3;
-    Actual_Connection_Binding => (reference(Net)) applies to conn5;
-		-- payment integration
-    Actual_Connection_Binding => (reference(Net)) applies to conn6, conn7, conn8;
+	-- CAN: temperature-related connections, handling heating and cooling
+	Actual_Connection_Binding => (reference(CANbus)) applies to r_to_c;
+	Actual_Connection_Binding => (reference(CANbus)) applies to c_to_h;
+	Actual_Connection_Binding => (reference(CANbus)) applies to r_to_cool;
+	Actual_Connection_Binding => (reference(CANbus)) applies to cool_to_r;
+	
+	-- SPI: connections related to processing the ingredients
+	Actual_Connection_Binding => (reference(SPIbus)) applies to conn1;
+	Actual_Connection_Binding => (reference(SPIbus)) applies to conn2;
+	Actual_Connection_Binding => (reference(SPIbus)) applies to conn3;
+	
+	-- I2C: touch panel, recipe selection
+	Actual_Connection_Binding => (reference(I2Cbus)) applies to conn5;
+	Actual_Connection_Binding => (reference(I2Cbus)) applies to conn11;
+	
+	-- UART: payment system integration
+	Actual_Connection_Binding => (reference(UARTbus)) applies to conn6, conn7, conn8;
 
     Actual_Processor_Binding => (reference(Read_cpu)) applies to Read_pr;
     Actual_Processor_Binding => (reference(Cont_cpu)) applies to Cont_pr;
