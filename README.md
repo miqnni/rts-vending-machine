@@ -4,10 +4,10 @@
 
 ## Authors
 
-|Name|E-mail|GitHub|
-|---|---|---|
-|Konrad Armatys|karmatys@student.agh.edu.pl|[karmatys8](https://github.com/karmatys8)|
-|Mikołaj Nietupski|mnietupski@student.agh.edu.pl|[miqnni](https://github.com/miqnni)|
+| Name              | E-mail                        | GitHub                                    |
+| ----------------- | ----------------------------- | ----------------------------------------- |
+| Konrad Armatys    | karmatys@student.agh.edu.pl   | [karmatys8](https://github.com/karmatys8) |
+| Mikołaj Nietupski | mnietupski@student.agh.edu.pl | [miqnni](https://github.com/miqnni)       |
 
 ## Description
 
@@ -136,20 +136,43 @@ This project is an AADL (Architecture Analysis & Design Language) model of a ven
 -   `SPI` - Serial Peripheral Interface (SPI) bus - The bus for quicker communication with memory components, quick sensors etc.
 -   `UART` - Universal Asynchronous Receiver-Transmitter (UART) bus - The bus for serial communication with devices such as the credit card scanner or payment modules
 
-
 ### Processors
 
 -   `corei5` - The main processor that deals with the core components of the vending machine.
 -   `CoffeeCPU` - The processor dedicated to the coffee preparation mechanism.
 -   `TeaCPU` - The processor dedicated to the tea preparation mechanism.
 
-### System
+### (Sub)Systems
 
+-   `TemperatureSubsystem` - The subsystem for all temperature-related actions, such as measuring, heating and cooling.
+-   `BeveragePreparationSubsystem` - The subsystem that encompasses all components related solely to beverage preparation.
+-   `PaymentSubsystem` - The subsystem that integrates all mechanisms related to payment.
+-   `UserInteractionSubsystem` - The subsystem that accounts for all aspects of user interaction with the machine, such as choosing the beverage via the touch panel.
 -   `CoffeeTeaMachineSystem` - The full system that combines all other components and accounts for all supported use cases of the vending machine.
 
-## System diagram
+## Diagrams
 
-![AADL diagram of the vending machine system](./img/vending_machine_aadl_diagram.svg)
+### Beverage Preparation Subsystem
+
+![AADL diagram of the beverage preparation subsystem](./img/beverage_preparation_subsystem_diagram.svg)
+
+### Payment Subsystem
+
+![AADL diagram of the payment subsystem](./img/payment_subsystem_diagram.svg)
+
+### Temperature Subsystem
+
+![AADL diagram of the temperature subsystem](./img/temperature_subsystem_diagram.svg)
+
+### User Interaction Subsystem
+
+![AADL diagram of the user interaction subsystem](./img/ui_subsystem_diagram.svg)
+
+### Coffee-Tea Machine System (full system)
+
+![AADL diagram of the full vending machine system](./img/coffee_tea_machine_system_diagram.svg)
+
+<!-- ![AADL diagram of the vending machine system](./img/vending_machine_aadl_diagram.svg) -->
 
 ## Analyses
 

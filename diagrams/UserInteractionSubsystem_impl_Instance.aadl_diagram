@@ -1,0 +1,999 @@
+<?xml version="1.0" encoding="ASCII"?>
+<diagram:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:diagram="http://osate.org/diagram" formatVersion="7">
+  <element uuid="40f11364-ba54-46ff-b0a6-e0f9163129ee" manual="true">
+    <element uuid="7a881c33-1c70-4534-bf12-03316a941ad5" manual="true">
+      <element uuid="655c5134-5c96-4c4a-85f8-ad33f228c7f1" manual="true">
+        <element uuid="791d304b-dd80-45c3-bacc-d86fdff5b406" manual="true" dockArea="right">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>CommandOut</seg>
+          </bo>
+          <position x="113.48001098632812" y="25.0"/>
+        </element>
+        <element uuid="4f00401c-483c-4dad-909d-de427b5a047e" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>TouchIn</seg>
+          </bo>
+          <position/>
+        </element>
+        <element uuid="f373e7dd-ae67-41f2-aebd-18c091083099" manual="true">
+          <bo>
+            <seg>pvg</seg>
+            <seg>Deployment_Properties::Actual_Processor_Binding</seg>
+            <seg>f251e934-84c6-4ac0-9bcb-3908383aed0f</seg>
+          </bo>
+          <bendpoints>
+            <point x="197.0" y="-55.0"/>
+          </bendpoints>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>component_instance</seg>
+          <seg>interpreter</seg>
+        </bo>
+        <position x="80.0" y="25.0"/>
+        <size width="214.2933349609375" height="93.0"/>
+      </element>
+      <element uuid="4b34ec6c-fab0-475a-8b30-e4156eb18ce9" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>CommandOut</seg>
+        </bo>
+        <position x="234.06665802001953" y="10.0"/>
+      </element>
+      <element uuid="1fe57bad-5c50-4a05-806b-805bfdea917c" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>TouchInput</seg>
+        </bo>
+        <position y="50.0"/>
+      </element>
+      <element uuid="194fd234-db3c-4391-827b-54719812cd3e" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Processor_Binding</seg>
+          <seg>f251e934-84c6-4ac0-9bcb-3908383aed0f</seg>
+        </bo>
+        <bendpoints>
+          <point x="181.0" y="-29.0"/>
+        </bendpoints>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>ActionsProc</seg>
+      </bo>
+      <position x="450.0" y="570.0"/>
+      <size width="334.8799819946289" height="130.0"/>
+    </element>
+    <element uuid="c6808989-e1b8-4a43-ba87-b8a1f4f4e2b2" manual="true">
+      <element uuid="c9fb3c0b-3f63-4d44-9b25-d461ff247699" manual="true">
+        <element uuid="e6f4314f-4d9c-46ee-9620-29a306eaffdc" manual="true" dockArea="right">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>AvailabilityOut</seg>
+          </bo>
+          <position x="147.2666778564453" y="40.0"/>
+        </element>
+        <element uuid="47fdfcd8-94c1-4ac7-92c9-9d67a4e49884" manual="true" dockArea="right">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>IngredientIn</seg>
+          </bo>
+          <position x="159.04000854492188" y="90.0"/>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>component_instance</seg>
+          <seg>CheckAvailability</seg>
+        </bo>
+        <position x="21.493324279785156" y="30.0"/>
+        <size width="250.0" height="148.0"/>
+      </element>
+      <element uuid="54c4cc09-4dad-4201-bc9e-fe437d22bba3" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>AvailabilityOut</seg>
+        </bo>
+        <position x="259.7066650390626" y="100.0"/>
+      </element>
+      <element uuid="c5a62853-ea17-4fca-a116-42e35f489c1a" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>IngredientIn</seg>
+        </bo>
+        <position x="271.4799957275392" y="154.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>Availability</seg>
+      </bo>
+      <position x="448.50667572021484" y="50.0"/>
+      <size width="362.4399871826173" height="208.0"/>
+    </element>
+    <element uuid="3a43f710-4657-49c4-82a4-4385bdd8f63d" manual="true">
+      <element uuid="8215c351-213d-4291-ba32-a2f72f153c30" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>CoffeeDone</seg>
+        </bo>
+        <position x="207.0133285522461" y="37.0"/>
+      </element>
+      <element uuid="b7d48d67-92c5-4123-8644-2ca727b1ef83" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>CoffeeOut</seg>
+        </bo>
+        <position y="64.0"/>
+      </element>
+      <element uuid="63801437-c8ef-4d5b-91e0-32c56848cc88" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>StartSignal</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>CoffeeProc</seg>
+      </bo>
+      <position x="490.0" y="710.0"/>
+      <size width="293.27999114990234" height="118.0"/>
+    </element>
+    <element uuid="f251e934-84c6-4ac0-9bcb-3908383aed0f" manual="true">
+      <element uuid="abb12cd1-fe7e-4369-abef-b9041f0a6d50" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>net</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>CPU_Tea</seg>
+      </bo>
+      <position x="240.0" y="250.0"/>
+      <size width="171.71999740600586" height="64.0"/>
+    </element>
+    <element uuid="9221476e-21eb-4218-8139-b069023e7317" manual="true">
+      <element uuid="b5bf4aa6-e18a-4c21-8895-402acfcd1bbd" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>FinishSignal</seg>
+        </bo>
+        <position x="113.79998016357433" y="10.0"/>
+      </element>
+      <element uuid="fc0f64d2-29f2-47e7-9166-567045fe8a78" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>StartSignal</seg>
+        </bo>
+        <position x="120.53330993652355" y="64.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>Cup</seg>
+      </bo>
+      <position x="580.0" y="278.0"/>
+      <size width="200.58664703369152" height="118.0"/>
+    </element>
+    <element uuid="1f1e56ca-c990-4656-9081-ddf35e4d694a" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>I2Cbus</seg>
+      </bo>
+      <position x="310.0" y="590.0"/>
+      <size width="95.4000015258789" height="35.0"/>
+    </element>
+    <element uuid="3f14ada6-aaf6-4e4f-889d-6b358cc22886" manual="true">
+      <element uuid="d23f1c70-eca0-4796-8285-8d15b1416cc2" manual="true">
+        <element uuid="51aa72c1-6980-451a-8e5c-2856c3cb51e5" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>IngredientOut</seg>
+          </bo>
+          <position y="64.0"/>
+        </element>
+        <element uuid="76430584-e246-4ae7-b810-4a6048a80852" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>RecipeIn</seg>
+          </bo>
+          <position y="10.0"/>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>component_instance</seg>
+          <seg>SelectIngredient</seg>
+        </bo>
+        <position/>
+        <size width="358.54663848876953" height="118.0"/>
+      </element>
+      <element uuid="0022d559-6795-4d93-adab-80b14b8abdb2" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>IngredientOut</seg>
+        </bo>
+        <position y="64.0"/>
+      </element>
+      <element uuid="439afc86-a6cd-4575-9a5f-1eff19e27896" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>RecipeIn</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>Ingredient</seg>
+      </bo>
+      <position x="1313.8399658203125" y="608.0"/>
+      <size width="358.54663848876953" height="118.0"/>
+    </element>
+    <element uuid="2daa0ba6-0409-465b-b062-43ed9e0a0c11" manual="true">
+      <element uuid="d4dfceb5-da92-4612-9a82-7066905aa0d2" manual="true">
+        <element uuid="72117e07-0ec7-40ef-98f1-7cb0b0d6b14a" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>BeansAmountOut</seg>
+          </bo>
+          <position y="162.0"/>
+        </element>
+        <element uuid="ab22814c-d9e0-414d-ab6c-b6377ae894fe" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>CupIn</seg>
+          </bo>
+          <position y="648.0"/>
+        </element>
+        <element uuid="499ce3b4-e261-4f45-acec-053369585afd" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>CupOut</seg>
+          </bo>
+          <position y="216.0"/>
+        </element>
+        <element uuid="9bd78972-1066-4b23-8ea6-04f0f2f27545" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>IngredientIn</seg>
+          </bo>
+          <position/>
+        </element>
+        <element uuid="b5e2d7fb-5005-4f80-a831-c6ffd4fa5986" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>IngredientOut</seg>
+          </bo>
+          <position y="108.0"/>
+        </element>
+        <element uuid="5efa4b7d-74ee-4df4-b3f4-392d44130a89" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>IsAvailable</seg>
+          </bo>
+          <position y="594.0"/>
+        </element>
+        <element uuid="3b987be1-72cc-491b-bb2e-918c98f7e0da" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>MilkAmountOut</seg>
+          </bo>
+          <position y="270.0"/>
+        </element>
+        <element uuid="cafe7bd6-b283-460f-991e-029035110c90" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>MilkTemperatureOut</seg>
+          </bo>
+          <position y="378.0"/>
+        </element>
+        <element uuid="5520b54e-cd71-41f3-b76f-a16453da3682" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>PaymentIn</seg>
+          </bo>
+          <position y="540.0"/>
+        </element>
+        <element uuid="15710073-182d-407a-a525-0f4aac211ccf" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>RecipeIn</seg>
+          </bo>
+          <position y="486.0"/>
+        </element>
+        <element uuid="9a8b95dc-a830-46f5-b4e1-d5891514194c" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>RecipeOut</seg>
+          </bo>
+          <position y="702.0"/>
+        </element>
+        <element uuid="e3029fab-6460-46fd-a6d1-f0eb7753b0a7" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>TeaLeavesAmountOut</seg>
+          </bo>
+          <position y="54.0"/>
+        </element>
+        <element uuid="31b34564-0299-4b0f-a5c0-823deeed96a8" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>WaterAmountOut</seg>
+          </bo>
+          <position y="432.0"/>
+        </element>
+        <element uuid="f347daeb-a21b-4bf8-a578-8f2793158a82" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>WaterTemperatureOut</seg>
+          </bo>
+          <position y="324.0"/>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>component_instance</seg>
+          <seg>logic</seg>
+        </bo>
+        <position x="179.4133300781249" y="30.0"/>
+        <size width="232.88000869750977" height="756.0"/>
+      </element>
+      <element uuid="147d0b49-3f32-40af-b6ac-e064bf789dac" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>BeansAmountOut</seg>
+        </bo>
+        <position y="496.0"/>
+      </element>
+      <element uuid="d0535e4a-31fe-4835-9fe1-34615ebaf0be" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>CoffeeDone</seg>
+        </bo>
+        <position y="334.0"/>
+      </element>
+      <element uuid="c4c176d0-1763-4b78-bc6e-f920f7e46eb0" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>CupIn</seg>
+        </bo>
+        <position y="118.0"/>
+      </element>
+      <element uuid="a80f2ab4-5f46-4d20-bc3d-9ea68ce2bade" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>CupOut</seg>
+        </bo>
+        <position y="172.0"/>
+      </element>
+      <element uuid="b4976930-7f41-4510-839b-31bc8b4183d2" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>IngredientIn</seg>
+        </bo>
+        <position x="372.29334259033203" y="532.0"/>
+      </element>
+      <element uuid="ef16b658-1b83-4671-a840-279c5087e642" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>IngredientOut</seg>
+        </bo>
+        <position y="64.0"/>
+      </element>
+      <element uuid="0e5754f4-d96c-4192-a5e1-d05f9e1eb5b1" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>IsAvailable</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="e8a817a1-0ef9-443d-8e54-da3680cab0ab" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>MilkAmountOut</seg>
+        </bo>
+        <position y="550.0"/>
+      </element>
+      <element uuid="993f3871-95df-4496-9589-2b727f162612" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>MilkTemperatureOut</seg>
+        </bo>
+        <position y="658.0"/>
+      </element>
+      <element uuid="4a3a8eea-1b4c-48b7-ab52-c6385001e681" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>PaymentIn</seg>
+        </bo>
+        <position y="766.0"/>
+      </element>
+      <element uuid="70955a43-8978-460c-87e2-eaa4d42e228f" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>RecipeIn</seg>
+        </bo>
+        <position y="226.0"/>
+      </element>
+      <element uuid="c9337392-2775-4b70-a2a0-779342952403" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>RecipeOut</seg>
+        </bo>
+        <position x="386.41333770751953" y="244.0"/>
+      </element>
+      <element uuid="45ef0c6a-1f5c-4cab-bbe8-b9b661b42654" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>TeaDone</seg>
+        </bo>
+        <position y="388.0"/>
+      </element>
+      <element uuid="d76c36dc-89c0-4a68-900a-e5d1f7ae716e" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>TeaLeavesAmountOut</seg>
+        </bo>
+        <position y="442.0"/>
+      </element>
+      <element uuid="62d50d41-dad7-4eb5-97dc-7f88b1c2835c" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>UserAction</seg>
+        </bo>
+        <position y="280.0"/>
+      </element>
+      <element uuid="192ff211-6c9e-4fa9-af73-962ac53b086e" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>WaterAmountOut</seg>
+        </bo>
+        <position y="712.0"/>
+      </element>
+      <element uuid="2435d329-bdd1-47c0-a3d4-bc551c06d059" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>WaterTemperatureOut</seg>
+        </bo>
+        <position y="604.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>MainProcessor</seg>
+      </bo>
+      <position x="829.9999999999999" y="140.0"/>
+      <size width="463.25333404541016" height="820.0"/>
+    </element>
+    <element uuid="9cf4a58a-8e21-47e4-95d8-5035d414832c" manual="true">
+      <element uuid="8b6ec410-2379-4de0-92d1-59e2fa9807c5" manual="true">
+        <element uuid="09c6fe51-8bf9-496f-94c6-4d616527f49a" manual="true" dockArea="right">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>RecipeOut</seg>
+          </bo>
+          <position x="208.8133430480957"/>
+        </element>
+        <element uuid="b5caffd3-985f-49c8-b2d8-f2284a9037bb" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>TouchEvent</seg>
+          </bo>
+          <position y="10.0"/>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>component_instance</seg>
+          <seg>GetRecipe</seg>
+        </bo>
+        <position/>
+        <size width="285.6533393859863" height="118.0"/>
+      </element>
+      <element uuid="24bbdcb8-e1ed-4cb7-9777-b6abf94375ce" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>RecipeOut</seg>
+        </bo>
+        <position x="208.8133430480957" y="10.0"/>
+      </element>
+      <element uuid="39e4c537-daab-41b5-9530-5e524201194e" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>TouchEvent</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>Recipe</seg>
+      </bo>
+      <position x="477.66665267944336" y="416.0"/>
+      <size width="285.6533393859863" height="118.0"/>
+    </element>
+    <element uuid="56d3c5fa-0df7-475d-b0c3-7c6f9335a198" manual="true">
+      <element uuid="1584060e-14a2-411b-9ad9-43246c919778" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>RecipeOut</seg>
+        </bo>
+        <position y="64.0"/>
+      </element>
+      <element uuid="8f7be20d-2ea4-4cfe-aae4-171023eb34c0" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>TouchEvent</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>RecipeStorage</seg>
+      </bo>
+      <position x="1350.0" y="170.0"/>
+      <size width="312.5199966430664" height="118.0"/>
+    </element>
+    <element uuid="25052661-c77b-4649-96c3-9945dd7a2395" manual="true">
+      <element uuid="83142337-8cb5-43ae-8cff-409c1ecfca9f" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>StartSignal</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="a043f7ba-780e-4e70-8b0f-9d6eecb274c1" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>TeaDone</seg>
+        </bo>
+        <position x="194.58667755126953" y="37.0"/>
+      </element>
+      <element uuid="d589e9f7-705b-4db9-8c67-68fe1bf572a6" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>TeaOut</seg>
+        </bo>
+        <position y="64.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>TeaProc</seg>
+      </bo>
+      <position x="510.0" y="840.0"/>
+      <size width="262.56000900268555" height="118.0"/>
+    </element>
+    <element uuid="c47566e1-f8d5-44b1-96df-06cb5840b780" manual="true">
+      <element uuid="40cf665c-827c-4bfa-8833-2bcbbf1c5da7" manual="true">
+        <element uuid="5485622a-4b7e-4f55-a8ff-23f75cc6f7c4" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>RecipeIn</seg>
+          </bo>
+          <position y="10.0"/>
+        </element>
+        <element uuid="d0543c70-889f-4f77-80d8-2fca49c2ea5f" manual="true" dockArea="left">
+          <bo>
+            <seg>org.osate.ge.diagrams.instance</seg>
+            <seg>feature_instance</seg>
+            <seg>TemperatureOut</seg>
+          </bo>
+          <position y="64.0"/>
+        </element>
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>component_instance</seg>
+          <seg>SelectTemperature</seg>
+        </bo>
+        <position/>
+        <size width="406.50662994384766" height="118.0"/>
+      </element>
+      <element uuid="3b1d988a-e86a-4f68-83fe-25b9cebe49b1" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>RecipeIn</seg>
+        </bo>
+        <position y="10.0"/>
+      </element>
+      <element uuid="b2615891-caa3-44dd-8031-7bc6b61a87dd" manual="true" dockArea="left">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>TemperatureOut</seg>
+        </bo>
+        <position y="64.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>Temperature</seg>
+      </bo>
+      <position x="1313.8399658203125" y="374.0"/>
+      <size width="406.50662994384766" height="118.0"/>
+    </element>
+    <element uuid="77db122f-2bd9-4962-a28a-6decd0f22aa1" manual="true">
+      <element uuid="5cecf75a-7d48-44c7-8fe5-9bc26b8a2172" manual="true" dockArea="right">
+        <bo>
+          <seg>org.osate.ge.diagrams.instance</seg>
+          <seg>feature_instance</seg>
+          <seg>TouchEvent</seg>
+        </bo>
+        <position x="210.22666931152344" y="10.0"/>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>component_instance</seg>
+        <seg>TouchPanel</seg>
+      </bo>
+      <position x="130.3599853515625" y="416.0"/>
+      <size width="295.34667205810547" height="64.0"/>
+    </element>
+    <element uuid="52c25ff7-e0a3-4bdd-b51a-a4e9913dbdf8" manual="true">
+      <element uuid="7be0420e-a9f2-488a-b2e6-4038b1ea7a4c" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+          <seg>1f1e56ca-c990-4656-9081-ddf35e4d694a</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn1 : UserInteractionSubsystem_impl_Instance.ActionsProc.TouchInput -> UserInteractionSubsystem_impl_Instance.ActionsProc.interpreter.TouchIn</seg>
+      </bo>
+    </element>
+    <element uuid="75257597-c870-4bd5-94b9-f8dafb9ac30f" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn1 : UserInteractionSubsystem_impl_Instance.Availability.IngredientIn -> UserInteractionSubsystem_impl_Instance.Availability.CheckAvailability.IngredientIn</seg>
+      </bo>
+    </element>
+    <element uuid="d872beb8-f2b7-4be6-a96f-940098347bda" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn1 : UserInteractionSubsystem_impl_Instance.Ingredient.RecipeIn -> UserInteractionSubsystem_impl_Instance.Ingredient.SelectIngredient.RecipeIn</seg>
+      </bo>
+    </element>
+    <element uuid="b6cec7cb-401d-4a44-82ae-aa5addad5c9a" manual="true">
+      <element uuid="4cd24d1c-9471-4089-84c8-b0ba4324a8b0" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+          <seg>1f1e56ca-c990-4656-9081-ddf35e4d694a</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn1 : UserInteractionSubsystem_impl_Instance.Recipe.TouchEvent -> UserInteractionSubsystem_impl_Instance.Recipe.GetRecipe.TouchEvent</seg>
+      </bo>
+    </element>
+    <element uuid="d52b33aa-7fab-403b-b64b-342793302a98" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn1 : UserInteractionSubsystem_impl_Instance.Temperature.RecipeIn -> UserInteractionSubsystem_impl_Instance.Temperature.SelectTemperature.RecipeIn</seg>
+      </bo>
+    </element>
+    <element uuid="605cb11f-dce8-46a1-a946-a924c9fdc5d0" manual="true">
+      <element uuid="a2738d53-7961-4cad-8ed6-ef6631610563" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+          <seg>1f1e56ca-c990-4656-9081-ddf35e4d694a</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn11 : UserInteractionSubsystem_impl_Instance.TouchPanel.TouchEvent -> UserInteractionSubsystem_impl_Instance.Recipe.TouchEvent</seg>
+      </bo>
+    </element>
+    <element uuid="69cf794a-cd0d-4adc-ae6f-8382a5a5131d" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn12 : UserInteractionSubsystem_impl_Instance.Recipe.RecipeOut -> UserInteractionSubsystem_impl_Instance.MainProcessor.RecipeIn</seg>
+      </bo>
+      <bendpoints>
+        <point x="460.586669921875" y="122.0"/>
+        <point x="460.586669921875" y="62.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="7452c6a3-3b26-4e7b-964f-d7793ad98487" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn13 : UserInteractionSubsystem_impl_Instance.MainProcessor.RecipeOut -> UserInteractionSubsystem_impl_Instance.Ingredient.RecipeIn</seg>
+      </bo>
+      <bendpoints>
+        <point x="973.8399658203125" y="80.0"/>
+        <point x="973.8399658203125" y="314.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="4f09b5e4-8858-47ff-9e5e-6d42b0cb810e" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn14 : UserInteractionSubsystem_impl_Instance.Ingredient.IngredientOut -> UserInteractionSubsystem_impl_Instance.MainProcessor.IngredientIn</seg>
+      </bo>
+    </element>
+    <element uuid="6547f24a-ed25-46fa-91de-69a4af53a533" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn15 : UserInteractionSubsystem_impl_Instance.MainProcessor.IngredientOut -> UserInteractionSubsystem_impl_Instance.Availability.IngredientIn</seg>
+      </bo>
+    </element>
+    <element uuid="93a38fd8-121a-4211-a2af-b17d3c3a5986" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn16 : UserInteractionSubsystem_impl_Instance.Availability.AvailabilityOut -> UserInteractionSubsystem_impl_Instance.MainProcessor.IsAvailable</seg>
+      </bo>
+    </element>
+    <element uuid="fbec63c0-f2c0-4cca-9301-80ce72f524bf" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn17 : UserInteractionSubsystem_impl_Instance.MainProcessor.RecipeOut -> UserInteractionSubsystem_impl_Instance.Temperature.RecipeIn</seg>
+      </bo>
+    </element>
+    <element uuid="4140ca4a-234f-4f52-ac18-1d2d156f2ead" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn18 : UserInteractionSubsystem_impl_Instance.ActionsProc.CommandOut -> UserInteractionSubsystem_impl_Instance.MainProcessor.UserAction</seg>
+      </bo>
+      <bendpoints>
+        <point x="470.586669921875" y="206.0"/>
+        <point x="470.586669921875" y="116.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="572dcaef-3d69-4799-9e4e-d0b502b18e05" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn19 : UserInteractionSubsystem_impl_Instance.MainProcessor.CupOut -> UserInteractionSubsystem_impl_Instance.Cup.StartSignal</seg>
+      </bo>
+      <bendpoints>
+        <point x="460.586669921875" y="8.0"/>
+        <point x="460.586669921875" y="38.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="96d2d274-04e4-4c5d-81da-ae709a352b15" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn2 : UserInteractionSubsystem_impl_Instance.ActionsProc.interpreter.CommandOut -> UserInteractionSubsystem_impl_Instance.ActionsProc.CommandOut</seg>
+      </bo>
+    </element>
+    <element uuid="fa49558b-f6e4-4a81-8606-01554043c02b" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn2 : UserInteractionSubsystem_impl_Instance.Availability.CheckAvailability.AvailabilityOut -> UserInteractionSubsystem_impl_Instance.Availability.AvailabilityOut</seg>
+      </bo>
+    </element>
+    <element uuid="d3eb9dd9-ef7d-4f69-b531-e1992ca90b45" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn2 : UserInteractionSubsystem_impl_Instance.Ingredient.SelectIngredient.IngredientOut -> UserInteractionSubsystem_impl_Instance.Ingredient.IngredientOut</seg>
+      </bo>
+    </element>
+    <element uuid="aad7359e-c9ad-44b3-b217-ec390ca65e88" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn2 : UserInteractionSubsystem_impl_Instance.MainProcessor.RecipeIn -> UserInteractionSubsystem_impl_Instance.MainProcessor.logic.RecipeIn</seg>
+      </bo>
+      <bendpoints>
+        <point x="646.413330078125" y="63.0"/>
+        <point x="646.413330078125" y="351.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="8e8c32a2-bdf4-4b27-a1f8-a5abe92968dc" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn2 : UserInteractionSubsystem_impl_Instance.Recipe.GetRecipe.RecipeOut -> UserInteractionSubsystem_impl_Instance.Recipe.RecipeOut</seg>
+      </bo>
+    </element>
+    <element uuid="17eeea04-6339-4da2-a542-e036365f5ec9" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn20 : UserInteractionSubsystem_impl_Instance.Cup.FinishSignal -> UserInteractionSubsystem_impl_Instance.MainProcessor.CupIn</seg>
+      </bo>
+      <bendpoints>
+        <point x="460.586669921875" y="-16.0"/>
+        <point x="460.586669921875" y="-46.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="fb45dcf6-6ed1-4c73-9d8b-91dbaebbfe4a" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn25 : UserInteractionSubsystem_impl_Instance.TeaProc.TeaDone -> UserInteractionSubsystem_impl_Instance.MainProcessor.TeaDone</seg>
+      </bo>
+      <bendpoints>
+        <point x="490.586669921875" y="455.0"/>
+        <point x="490.586669921875" y="224.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="6508e9fc-e605-4376-8185-1585389f5581" manual="true">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn26 : UserInteractionSubsystem_impl_Instance.CoffeeProc.CoffeeDone -> UserInteractionSubsystem_impl_Instance.MainProcessor.CoffeeDone</seg>
+      </bo>
+      <bendpoints>
+        <point x="480.586669921875" y="317.0"/>
+        <point x="480.586669921875" y="170.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="ab5f3bbe-3805-4d8d-918a-52e3347e4b1b" manual="true">
+      <element uuid="c5f926c4-c12b-4206-b2e7-79a339b66a4b" manual="true">
+        <bo>
+          <seg>pvg</seg>
+          <seg>Deployment_Properties::Actual_Connection_Binding</seg>
+          <seg>1f1e56ca-c990-4656-9081-ddf35e4d694a</seg>
+        </bo>
+      </element>
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>connection_reference</seg>
+        <seg>conn5 : UserInteractionSubsystem_impl_Instance.TouchPanel.TouchEvent -> UserInteractionSubsystem_impl_Instance.ActionsProc.TouchInput</seg>
+      </bo>
+      <bendpoints>
+        <point x="105.7066650390625" y="122.0"/>
+        <point x="105.7066650390625" y="206.0"/>
+      </bendpoints>
+    </element>
+    <element uuid="43eb3ee6-884e-43a8-8a6a-801870fd476b" manual="true" dockArea="left">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>feature_instance</seg>
+        <seg>BrewRequest</seg>
+      </bo>
+      <position y="312.0"/>
+    </element>
+    <element uuid="bd44c487-e545-4ee1-8339-04c90d4e025c" manual="true" dockArea="left">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>feature_instance</seg>
+        <seg>CoffeeDone</seg>
+      </bo>
+      <position y="576.0"/>
+    </element>
+    <element uuid="00b8c579-78e0-4700-b6c0-87076063eb03" manual="true" dockArea="left">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>feature_instance</seg>
+        <seg>PaymentRequest</seg>
+      </bo>
+      <position y="180.0"/>
+    </element>
+    <element uuid="be992103-bac6-4b0b-b031-dc6a536826c7" manual="true" dockArea="left">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>feature_instance</seg>
+        <seg>PaymentSuccess</seg>
+      </bo>
+      <position y="840.0"/>
+    </element>
+    <element uuid="7dd6258f-2912-4018-aa5e-fe7c98fb476b" manual="true" dockArea="left">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>feature_instance</seg>
+        <seg>SelectedRecipe</seg>
+      </bo>
+      <position y="444.0"/>
+    </element>
+    <element uuid="6dec1c77-fec6-4b0d-85b2-3d17abc74317" manual="true" dockArea="left">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>feature_instance</seg>
+        <seg>TeaDone</seg>
+      </bo>
+      <position y="708.0"/>
+    </element>
+    <element uuid="2f358f10-baee-484f-b4cd-97bb06c2f676" manual="true" dockArea="left">
+      <bo>
+        <seg>org.osate.ge.diagrams.instance</seg>
+        <seg>feature_instance</seg>
+        <seg>TempFeedback</seg>
+      </bo>
+      <position y="48.0"/>
+    </element>
+    <bo>
+      <seg>org.osate.ge.diagrams.instance</seg>
+      <seg>system_instance</seg>
+      <seg>/vendingmachine/instances/lab5_6_pak_userinteractionsubsystem_impl_instance.aaxl2</seg>
+    </bo>
+    <position x="-330.0" y="-340.0"/>
+    <size width="1821.0399169921875" height="1010.0"/>
+  </element>
+  <config type="structure" connectionPrimaryLabelsVisible="false">
+    <enabledAadlProperties>
+      <property>deployment_properties::actual_processor_binding</property>
+      <property>deployment_properties::actual_connection_binding</property>
+    </enabledAadlProperties>
+    <context>
+      <seg>org.osate.ge.diagrams.instance</seg>
+      <seg>system_instance</seg>
+      <seg>/vendingmachine/instances/lab5_6_pak_userinteractionsubsystem_impl_instance.aaxl2</seg>
+    </context>
+  </config>
+</diagram:Diagram>

@@ -1,0 +1,51 @@
+Check connection binding consistency Report
+
+ERROR:  Sensor.Temp -> Read_pr.TempReader.TempIn: Hardware (processor or device) of connection source and destination are not physically connected by bus.
+ERROR:  Read_pr.TempReader.Temp -> Cont_pr.Control.Temp: Hardware (processor or device) of connection source is not physically connected by bus specified in connection binding.
+ERROR:  Read_pr.TempReader.Temp -> Cont_pr.Control.Temp: Hardware (processor or device) of connection destination is not physically connected by bus specified in connection binding.
+ERROR:  Read_pr.TempReader.Temp -> CoolCont_pr.Cooling.Temp: Hardware (processor or device) of connection source is not physically connected by bus specified in connection binding.
+ERROR:  Read_pr.TempReader.Temp -> CoolCont_pr.Cooling.Temp: Hardware (processor or device) of connection destination is not physically connected by bus specified in connection binding.
+ERROR:  Cont_pr.Control.HeatCmd -> Heat_pr.HeaterCtrl.PowerIn: Hardware (processor or device) of connection source is not physically connected by bus specified in connection binding.
+ERROR:  Cont_pr.Control.HeatCmd -> Heat_pr.HeaterCtrl.PowerIn: Hardware (processor or device) of connection destination is not physically connected by bus specified in connection binding.
+ERROR:  Heat_pr.HeaterCtrl.PowerOut -> Heater.Power: Hardware (processor or device) of connection source and destination are not physically connected by bus.
+ERROR:  CoolCont_pr.Cooling.CoolCmd -> CoolHeat_pr.CoolerCtrl.PowerIn: Hardware (processor or device) of connection source is not physically connected by bus specified in connection binding.
+ERROR:  CoolCont_pr.Cooling.CoolCmd -> CoolHeat_pr.CoolerCtrl.PowerIn: Hardware (processor or device) of connection destination is not physically connected by bus specified in connection binding.
+ERROR:  CoolHeat_pr.CoolerCtrl.PowerOut -> Refrigerator.Power: Hardware (processor or device) of connection source and destination are not physically connected by bus.
+Warning! DispenseCup.FinishSignal -> LiftCup.StartSignal: Connection source and/or destination is not bound to hardware
+ERROR:  BeanStorage.BeansOut -> Grinder.BeansIn: Hardware (processor or device) of connection source is not physically connected by bus specified in connection binding.
+ERROR:  BeanStorage.BeansOut -> Grinder.BeansIn: Hardware (processor or device) of connection destination is not physically connected by bus specified in connection binding.
+ERROR:  Grinder.GroundOut -> Brewer.GroundIn: Hardware (processor or device) of connection source is not physically connected by bus specified in connection binding.
+ERROR:  Grinder.GroundOut -> Brewer.GroundIn: Hardware (processor or device) of connection destination is not physically connected by bus specified in connection binding.
+ERROR:  TeaDispense.LeavesOut -> Cooker.LeavesIn: Hardware (processor or device) of connection source is not physically connected by bus specified in connection binding.
+ERROR:  TeaDispense.LeavesOut -> Cooker.LeavesIn: Hardware (processor or device) of connection destination is not physically connected by bus specified in connection binding.
+Warning! CoinMech.ValueOut -> CoinCounterProc.NewCoinValue: Connection source and/or destination is not bound to hardware
+ERROR:  CoinMech.ValueOut -> PaymentProc.logic.CoinIn: Hardware (processor or device) of connection source is not physically connected by bus specified in connection binding.
+ERROR:  CoinMech.ValueOut -> PaymentProc.logic.CoinIn: Hardware (processor or device) of connection destination is not physically connected by bus specified in connection binding.
+Warning! BillAcceptor.ValueOut -> BillCounterProc.NewBillValue: Connection source and/or destination is not bound to hardware
+ERROR:  BillAcceptor.ValueOut -> PaymentProc.logic.BillIn: Hardware (processor or device) of connection source is not physically connected by bus specified in connection binding.
+ERROR:  BillAcceptor.ValueOut -> PaymentProc.logic.BillIn: Hardware (processor or device) of connection destination is not physically connected by bus specified in connection binding.
+ERROR:  CardScan.Auth -> PaymentProc.logic.CardIn: Hardware (processor or device) of connection source is not physically connected by bus specified in connection binding.
+ERROR:  CardScan.Auth -> PaymentProc.logic.CardIn: Hardware (processor or device) of connection destination is not physically connected by bus specified in connection binding.
+Warning! PaymentProc.logic.AmountOut -> Change.changeThread.NeededValueIn: Connection source and/or destination is not bound to hardware
+Warning! PaymentProc.logic.ChangeOut -> Change.changeThread.PaidValueIn: Connection source and/or destination is not bound to hardware
+ERROR:  TouchPanel.TouchEvent -> ActionsProc.interpreter.TouchIn: Hardware (processor or device) of connection source is not physically connected by bus specified in connection binding.
+ERROR:  TouchPanel.TouchEvent -> ActionsProc.interpreter.TouchIn: Hardware (processor or device) of connection destination is not physically connected by bus specified in connection binding.
+Warning! TouchPanel.TouchEvent -> Recipe.GetRecipe.TouchEvent: Connection source and/or destination is not bound to hardware
+Warning! ActionsProc.interpreter.CommandOut -> MainProcessor.UserAction: Connection source and/or destination is not bound to hardware
+Warning! MainProcessor.RecipeOut -> Ingredient.SelectIngredient.RecipeIn: Connection source and/or destination is not bound to hardware
+Warning! MainProcessor.RecipeOut -> Temperature.SelectTemperature.RecipeIn: Connection source and/or destination is not bound to hardware
+Warning! MainProcessor.IngredientOut -> Availability.CheckAvailability.IngredientIn: Connection source and/or destination is not bound to hardware
+Warning! MainProcessor.CupOut -> Cup.StartSignal: Connection source and/or destination is not bound to hardware
+Warning! Recipe.GetRecipe.RecipeOut -> MainProcessor.logic.RecipeIn: Connection source and/or destination is not bound to hardware
+Warning! Ingredient.SelectIngredient.IngredientOut -> MainProcessor.IngredientIn: Connection source and/or destination is not bound to hardware
+Warning! Availability.CheckAvailability.AvailabilityOut -> MainProcessor.IsAvailable: Connection source and/or destination is not bound to hardware
+Warning! Cup.FinishSignal -> MainProcessor.CupIn: Connection source and/or destination is not bound to hardware
+Warning! TeaProc.TeaDone -> MainProcessor.TeaDone: Connection source and/or destination is not bound to hardware
+Warning! CoffeeProc.CoffeeDone -> MainProcessor.CoffeeDone: Connection source and/or destination is not bound to hardware
+Warning! TemperatureSub.TempOut -> UI.TempFeedback: Connection source and/or destination is not bound to hardware
+Warning! BeverageSub.CoffeeReady -> UI.CoffeeDone: Connection source and/or destination is not bound to hardware
+Warning! BeverageSub.TeaReady -> UI.TeaDone: Connection source and/or destination is not bound to hardware
+Warning! PaymentSub.PaymentOK -> UI.PaymentSuccess: Connection source and/or destination is not bound to hardware
+Warning! UI.SelectedRecipe -> TemperatureSub.RecipeIn: Connection source and/or destination is not bound to hardware
+Warning! UI.BrewRequest -> BeverageSub.BrewCmd: Connection source and/or destination is not bound to hardware
+Warning! UI.PaymentRequest -> PaymentSub.PaymentInfo: Connection source and/or destination is not bound to hardware
