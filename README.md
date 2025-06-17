@@ -200,7 +200,6 @@ The following weights have been assigned to the system's hardware components:
 | `corei5`             | processor | 0.100       |
 | `CoffeeCPU`          | processor | 0.070       |
 | `TeaCPU`             | processor | 0.070       |
-| `ethernet`           | bus       | 0.200       |
 
 **Report**
 
